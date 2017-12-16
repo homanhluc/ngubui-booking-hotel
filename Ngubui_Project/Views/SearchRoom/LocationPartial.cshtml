@@ -1,0 +1,73 @@
+﻿
+@using Ngubui_Project.Models
+@model List<ROOM_NAME_DETAIL>
+
+@{
+    @ViewBag.Room
+    foreach (var item in Model)
+    {
+        <div class="strip_all_tour_list wow fadeIn animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <!-- <div class="wishlist">+</div> -->
+                    <a class="tooltip_flip tooltip-effect-1 ai  foo hrt1 wish_log abserve_icon-82" href="#" data-toggle="modal" data-target="#Login_pop">
+                        <span class="tooltip-content-flip"><span class="tooltip-back"></span></span>
+                        <input type="hidden" name="room_id" class="room_id" value="10">
+                    </a>
+                    <div class="img_list">
+                        <a data-roomcount="1" data-room="10" data-member="" data-start="Apr 26, Tue" data-end="May 3, Tue" data-area="Madurai, OH, United States" data-min="10" data-max="633" class="book_room">
+                            <div></div>
+                            <img style="cursor:pointer;" src="../22.jpg" alt="Image">
+                            <div class="short_info"><i class="icon_set_1_icon-6"></i>@item.LoaiPhong</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="clearfix visible-xs-block"></div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="tour_list_desc">
+                        <div class="score">
+                            Not rated
+                            <span>0.0</span>
+                        </div>
+                        <div class="rating">
+                            <i class="icon-star-empty"></i>
+                            <i class="icon-star-empty"></i>
+                            <i class="icon-star-empty"></i>
+                            <i class="icon-star-empty"></i>
+                            <i class="icon-star-empty"></i>
+                        </div>
+                        @if (item.TieuDe.Length > 30)
+                        {
+                            <h3 style="cursor:pointer;"><a data-min="10" data-max="633" class="book_room">@item.TieuDe.Substring(0,30)...</a></h3>
+                        }
+                        else
+                        {
+                            <h3 style="cursor:pointer;"><a href="@Url.Action("RoomDetail","Home", new {@ID_Room=item.ID_Room })" data-min="10" data-max="633" class="book_room">@item.TieuDe</a></h3>
+                        }
+                        <p>@item.MoTa</p>
+                        <ul class="add_info">
+                            <li>
+                                <div class="tooltip_styled tooltip-effect-4">
+                                    <span class="tooltip-item"><i class="icon_set_1_icon-41"></i></span>
+                                    <div class="tooltip-content">
+                                        <h4>Địa chỉ:</h4>
+                                        @item.DiaChi
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <div class="price_list">
+                        <div>
+                            <sup>Đ</sup>
+                            @item.GiaPhong<span class="normal_price_list"></span><small>*From/Per night</small>
+                            <p><a  href="@Url.Action("RoomDetail","Home", new {@ID_Room=item.ID_Room })"  class="btn btn-primary">Xem chi tiết</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}

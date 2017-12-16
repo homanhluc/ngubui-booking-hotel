@@ -1,0 +1,236 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- TOP AREA -->
+
+<div class="main_class" style="min-height:400px;">
+
+    <div id="stat" style="color: Red;"></div>
+
+    <!DOCTYPE html>
+    <!--[if IE 8]><html class="ie ie8"> <![endif]-->
+    <!--[if IE 9]><html class="ie ie9"> <![endif]-->
+    <!--[if gt IE 9]><!-->
+    <html>
+    <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="Citytours - Premium site template for city tours agencies, transfers and tickets.">
+        <meta name="author" content="Ansonika">
+        <title>CITY TOURS - City tours and travel site template by Ansonika</title>
+
+        <!-- Favicons-->
+        <link rel="shortcut icon" href="~/img/favicon.html" type="image/x-icon">
+        <link rel="apple-touch-icon" type="image/x-icon" href="~/img/apple-touch-icon-57x57-precomposed.html">
+        <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="~/img/apple-touch-icon-72x72-precomposed.html">
+        <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="~/img/apple-touch-icon-114x114-precomposed.html">
+        <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="~/img/apple-touch-icon-144x144-precomposed.html">
+
+        <!-- CSS -->
+        <link href="~/css/base.html" rel="stylesheet">
+
+        <!-- Google web fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Gochi+Hand' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+
+        <!--[if lt IE 9]>
+          <script src="js/html5shiv.min.js"></script>
+          <script src="js/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+    <body>
+        <!--[if lte IE 8]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>.</p>
+        <![endif]-->
+        <!-- End Preload -->
+
+        <div class="layer"></div>
+        <!-- Mobile menu overlay mask -->
+        <!-- Header================================================== -->
+        <!--  <div id="map-canvas" style="height:400px;"></div>
+         -->
+        <div class="space-top"></div>
+        <div id="map"></div>
+
+
+        <div class="container margin_60">
+            <div class="row">
+                <div class="col-md-8 col-sm-8">
+                    <div class="form_title">
+                        <h3><strong><i class="icon-pencil"></i></strong>Contact Us</h3>
+                        <p>
+                            Inceptos hac sagittis sit elit primis iaculis arcu quam justo per primis tempus ad iaculis cursus condimentum nullam pretium dui id sit lacus duis dignissim primis potenti aliquam malesuada ullamcorper
+
+                            Euismod volutpat risus luctus id varius volutpat adipiscing porttitor egestas nisl nunc luctus phasellus nibh tristique lacinia penatibus justo urna
+                        </p>
+                    </div>
+                    <div class="step">
+
+                        <div id="message-contact">
+
+
+                            <ul class="parsley-error-list"></ul>
+                        </div>
+                        <form method="POST" action="http://airbnb.abservetech.com/airstar/public/home/contact" accept-charset="UTF-8" class="form" parsley-validate="" novalidate=" ">
+                            <input name="_token" type="hidden" value="8NFpjG9OxBOrkVYz4NHHhHZU1tlRlp8oSWcHqhVe">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label for="name" class="sr-only">Name</label>
+                                        <input class="form-control" placeholder="Full Name:" required="true" name="name" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label for="email" class="sr-only">Email</label>
+                                        <input class="form-control" placeholder="Email:" required="true" name="sender" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End row -->
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label for="subject" class="sr-only">Email</label>
+                                        <input class="form-control" placeholder="Subject:" required="true email" name="subject" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label for="message" class="sr-only">Message</label>
+                                        <textarea class="form-control" placeholder="Message:" required="true" name="message" cols="50" rows="10"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <button class="btn btn-sm btn-primary" type="submit">Send us mail</button>
+                                    <input type="hidden" name="redirect" value="contact-us">
+                        </form><!--//form-->
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div><!-- End col-md-8 -->
+
+        <div class="col-md-4 col-sm-4">
+            <div class="box_style_1">
+                <h4>Email <span><i class="icon-pin pull-right"></i></span></h4>
+                <p>
+                    support@abservetech.com
+                </p>
+                <hr>
+                <h4>Phone Number<span><i class="icon-help pull-right"></i></span></h4>
+                <p>
+                    +(0452) 436 6678
+                </p>
+                <ul id="contact-info">
+                    <li>Skype</li>
+                    <li>Abservetech</li>
+                    <p>
+                        Address
+                        Abservetech Pvt Ltd
+                        1-A, 2nd West Cross Street,
+                        Krishnapuram Colony, India.
+                    </p>
+
+
+                </ul>
+            </div>
+            <div class="box_style_4">
+                <i class="icon_set_1_icon-57"></i>
+                <h4>Need <span>Help?</span></h4>
+                <a href="tel://004542344599" class="phone">+45 423 445 99</a>
+                <small>Monday to Friday 9.00am - 7.30pm</small>
+            </div>
+        </div><!-- End col-md-4 -->
+</div><!-- End row -->
+</div><!-- End container -->
+
+
+
+<div id="toTop"></div><!-- Back to top button -->
+<!-- Common scripts -->
+<script src="~/js/jquery-1.11.2.min.html"></script>
+<script src="~/js/common_scripts_min.html"></script>
+<script src="~/js/functions.html"></script>
+
+<!-- Specific scripts -->
+<script src="~/assets/validate.html"></script>
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script src="~/js/map_contact.html"></script>
+<script src="~/js/infobox.html"></script>
+
+
+<script type="text/javascript">/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script>
+</body>
+
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #map {
+        height: 500px;
+    }
+</style>
+
+<script>
+      // This example creates circles on the map, representing populations in North
+      // America.
+
+      // First, create an object containing LatLng and population for each city.
+      var citymap = {
+        chicago: {
+          center: {lat: 9.9475, lng: 78.1265},
+          population: 1000
+        }
+      };
+      //google map initMap function not defined error (Add this line)
+      google.maps.event.addDomListener(window, 'load', initMap);
+      function initMap() {
+        // Create the map.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: {lat: 9.9475, lng: 78.1265},
+          // mapTypeId: google.maps.MapTypeId.ROADMAP,
+          scrollwheel: false,
+        });
+
+        // Construct the circle for each value in citymap.
+        // Note: We scale the area of the circle based on the population.
+        for (var city in citymap) {
+          // Add the circle for this city to the map.
+          var cityCircle = new google.maps.Circle({
+            strokeColor: '#FF0075',
+            strokeOpacity: 0.4,
+            strokeWeight: 1,
+            fillColor: '#FF0075',
+            fillOpacity: 0.35,
+            map: map,
+            center: citymap[city].center,
+            radius: /*Math.sqrt(*/citymap[city].population/*) * 100*/
+          });
+        }
+        cityCircle.bindTo('center', marker, 'position');
+      }
+</script>
+
+
+<!-- Mirrored from airbnb.abservetech.com/airstar/public/contact-us by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Mar 2017 14:51:42 GMT -->
+</html>
+            </div>
+
+
+
+    </div>

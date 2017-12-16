@@ -1,0 +1,770 @@
+﻿@model Ngubui_Project.Models.ROOM_NAME_DETAIL
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ngubui || LK</title>
+    <link rel='stylesheet prefetch' href='~/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="~/css/style.css">
+    <link href="~/css/bootstrap-imageupload.min.css" rel="stylesheet">
+    <style>
+        .input-group-addon {
+            min-width: 120px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <section>
+                <div class="wizard">
+                    <div class="wizard-inner">
+                        <div class="connecting-line"></div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                                    <span class="round-tab">
+                                        <i class="glyphicon glyphicon-flag"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li role="presentation" class="disabled">
+                                <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                                    <span class="round-tab">
+                                        <i class="glyphicon glyphicon-pencil"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li role="presentation" class="disabled">
+                                <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                                    <span class="round-tab">
+                                        <i class="glyphicon glyphicon-picture"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li role="presentation" class="disabled">
+                                <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                                    <span class="round-tab">
+                                        <i class="glyphicon glyphicon-ok"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    @using (Html.BeginForm("UploadRoom", "BecomeHost", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+            
+                        @Html.HiddenFor(x => x.ID_User, new { @Value = Session["ID_User"] })
+                        @Html.HiddenFor(x => x.XetDuyet, new { @Value = "" })
+                    
+                            <div class="tab-content">
+                                <div class="tab-pane active" role="tabpanel" id="step1">
+                                    <h3>Chọn vị trí của phòng!</h3>
+                                    <div class="container">
+
+                                        <input type="text" class="form-control" name="maps_address" id="maps_address" value="" placeholder="Nhập tên địa điểm cần tìm" autocomplete="off">
+                                        <div id="maps_maparea">
+                                            <div id="maps_mapcanvas" style="margin-top: 10px; width: 1140px; height: 200px; position: relative; overflow: hidden;" class="form-group">
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-6">
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <input type="hidden" class="form-control" id="MapLocation" name="ToaDo" />
+                                                            @Html.ValidationMessageFor(x => x.ToaDo)
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <ul class="list-inline pull-right">
+                                                        <li><button id="fileId" name="fileId" type="button" class="btn btn-primary next-step">Bước tiếp theo</button></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="tab-pane" role="tabpanel" id="step2">
+                                    <h3>Nhập các thông tin cơ bản</h3>
+                                    <div class="row">
+                                        @* Loại phòng *@
+                                        <div class="col-lg-1"></div>
+                                        <div class="col-lg-5">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Loại phòng</span>
+                                                    @{
+                                                        List<SelectListItem> listloaiphong = new List<SelectListItem>();
+                                                        listloaiphong.Add(new SelectListItem
+                                                        {
+                                                            Text = "Khách sạn",
+                                                            Value = "Khách sạn",
+                                                        });
+                                                        listloaiphong.Add(new SelectListItem
+                                                        {
+                                                            Text = "Nhà nghỉ",
+                                                            Value = "Nhà nghỉ"
+                                                        });
+                                                        listloaiphong.Add(new SelectListItem
+                                                        {
+                                                            Text = "Phòng trọ",
+                                                            Value = "Phòng trọ"
+                                                        });
+                                                    }
+                                                    @Html.DropDownListFor(x => x.LoaiPhong, listloaiphong, "Loại phòng?", new { @class = "form-control dropdown-menu", @role = "menu" })
+                                                    @Html.ValidationMessageFor(x => x.LoaiPhong)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Sức chứa</span>
+                                                    @* Sức chứa khách *@
+                                                    @{
+                                                        List<SelectListItem> khach = new List<SelectListItem>();
+                                                        khach.Add(new SelectListItem
+                                                        {
+                                                            Text = "1 Khách",
+                                                            Value = "1",
+                                                        });
+                                                        khach.Add(new SelectListItem
+                                                        {
+                                                            Text = "2 Khách",
+                                                            Value = "2",
+                                                        });
+                                                        khach.Add(new SelectListItem
+                                                        {
+                                                            Text = "3 Khách",
+                                                            Value = "3",
+                                                        });
+                                                        khach.Add(new SelectListItem
+                                                        {
+                                                            Text = "4 Khách",
+                                                            Value = "4",
+                                                        });
+                                                        khach.Add(new SelectListItem
+                                                        {
+                                                            Text = "5 Khách",
+                                                            Value = "5",
+                                                        });
+                                                        khach.Add(new SelectListItem
+                                                        {
+                                                            Text = "6 Khách",
+                                                            Value = "6",
+                                                        });
+                                                        khach.Add(new SelectListItem
+                                                        {
+                                                            Text = "7 Khách",
+                                                            Value = "7",
+                                                        });
+                                                        khach.Add(new SelectListItem
+                                                        {
+                                                            Text = "8 Khách",
+                                                            Value = "8",
+                                                        });
+                                                        khach.Add(new SelectListItem
+                                                        {
+                                                            Text = "9 Khách",
+                                                            Value = "9",
+                                                        });
+                                                    }
+                                                    @Html.DropDownListFor(x => x.Khach, khach, "Sức chứa?", new { @class = "form-control dropdown-menu", @role = "menu" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-1"></div>
+                                        <div class="col-lg-5">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Số phòng ngủ</span>
+                                                    @* Số phòng ngủ*@
+                                                    @{
+                                                        List<SelectListItem> listsophongngu = new List<SelectListItem>();
+                                                        listsophongngu.Add(new SelectListItem
+                                                        {
+                                                            Text = "1 phòng",
+                                                            Value = "1",
+                                                        });
+                                                        listsophongngu.Add(new SelectListItem
+                                                        {
+                                                            Text = "2 phòng",
+                                                            Value = "2"
+                                                        });
+                                                        listsophongngu.Add(new SelectListItem
+                                                        {
+                                                            Text = "3 phòng",
+                                                            Value = "3"
+                                                        });
+                                                        listsophongngu.Add(new SelectListItem
+                                                        {
+                                                            Text = "4 phòng",
+                                                            Value = "4"
+                                                        });
+                                                        listsophongngu.Add(new SelectListItem
+                                                        {
+                                                            Text = "5 phòng",
+                                                            Value = "5"
+                                                        });
+                                                        listsophongngu.Add(new SelectListItem
+                                                        {
+                                                            Text = "6 phòng",
+                                                            Value = "6"
+                                                        });
+                                                    }
+                                                    @Html.DropDownListFor(x => x.SoPhongNgu, listsophongngu, "Số phòng ngủ?", new { @class = "form-control dropdown-menu", @role = "menu" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Số giường ngủ</span>
+                                                    @* Số giường ngủ *@
+                                                    @{
+                                                        List<SelectListItem> listsogiuongngu = new List<SelectListItem>();
+                                                        listsogiuongngu.Add(new SelectListItem
+                                                        {
+                                                            Text = "1 giường",
+                                                            Value = "1",
+                                                        });
+                                                        listsogiuongngu.Add(new SelectListItem
+                                                        {
+                                                            Text = "2 giường",
+                                                            Value = "2",
+                                                        });
+                                                        listsogiuongngu.Add(new SelectListItem
+                                                        {
+                                                            Text = "3 giường",
+                                                            Value = "3",
+                                                        });
+                                                        listsogiuongngu.Add(new SelectListItem
+                                                        {
+                                                            Text = "4 giường",
+                                                            Value = "4",
+                                                        });
+                                                        listsogiuongngu.Add(new SelectListItem
+                                                        {
+                                                            Text = "5 giường",
+                                                            Value = "5",
+                                                        });
+                                                        listsogiuongngu.Add(new SelectListItem
+                                                        {
+                                                            Text = "6 giường",
+                                                            Value = "6",
+                                                        });
+                                                    }
+                                                    @Html.DropDownListFor(x => x.SoGiuongNgu, listsogiuongngu, "Số giường ngủ?", new { @class = "form-control dropdown-menu", @role = "menu" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-1"></div>
+                                        <div class="col-lg-5">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Mạng wifi</span>
+                                                    @* Mạng wifi*@
+                                                    @{
+                                                        List<SelectListItem> wifi = new List<SelectListItem>();
+                                                        wifi.Add(new SelectListItem
+                                                        {
+                                                            Text = "Có",
+                                                            Value = "Có",
+                                                        });
+                                                        wifi.Add(new SelectListItem
+                                                        {
+                                                            Text = "Không",
+                                                            Value = "Không",
+                                                        });
+                                                    }
+                                                    @Html.DropDownListFor(x => x.Wifi, wifi, "Mạng wifi?", new { @class = "form-control dropdown-menu", @role = "menu" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Bãi đậu xe</span>
+                                                    @* Bãi đậu xe *@
+                                                    @{
+                                                        List<SelectListItem> baixe = new List<SelectListItem>();
+                                                        baixe.Add(new SelectListItem
+                                                        {
+                                                            Text = "Có",
+                                                            Value = "Có",
+                                                        });
+                                                        baixe.Add(new SelectListItem
+                                                        {
+                                                            Text = "Không",
+                                                            Value = "Không",
+                                                        });
+                                                    }
+                                                    @Html.DropDownListFor(x => x.BaiXe, baixe, "Bãi đậu xe?", new { @class = "form-control dropdown-menu", @role = "menu" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-1"></div>
+                                        <div class="col-lg-5">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Bán đồ ăn</span>
+                                                    @* Bán đồ ăn*@
+                                                    @{
+                                                        List<SelectListItem> thucan = new List<SelectListItem>();
+                                                        thucan.Add(new SelectListItem
+                                                        {
+                                                            Text = "Có",
+                                                            Value = "Có",
+                                                        });
+                                                        thucan.Add(new SelectListItem
+                                                        {
+                                                            Text = "Không",
+                                                            Value = "Không",
+                                                        });
+                                                    }
+                                                    @Html.DropDownListFor(x => x.ThucAn, thucan, "Bán đồ ăn?", new { @class = "form-control dropdown-menu", @role = "menu" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Bán đồ uống</span>
+                                                    @* Bán đồ uống *@
+                                                    @{
+                                                        List<SelectListItem> thucuong = new List<SelectListItem>();
+                                                        thucuong.Add(new SelectListItem
+                                                        {
+                                                            Text = "Có",
+                                                            Value = "Có",
+                                                        });
+                                                        thucuong.Add(new SelectListItem
+                                                        {
+                                                            Text = "Không",
+                                                            Value = "Không",
+                                                        });
+                                                    }
+                                                    @Html.DropDownListFor(x => x.ThucUong, thucuong, "Bán đồ uống?", new { @class = "form-control dropdown-menu", @role = "menu" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-1"></div>
+                                        <div class="col-lg-5">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Mô tả ngắn</span>
+                                                    @* Mô tả ngắn*@
+                                                    @Html.TextAreaFor(x => x.MoTa, new { @class = "form-control", @placeholder = "Ít nhất 30 kí tự!" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Nội quy</span>
+                                                    @* Nội quy*@
+                                                    @Html.TextAreaFor(x => x.NoiQuy, new { @class = "form-control" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-1"></div>
+                                        <div class="col-lg-5">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Địa chỉ</span>
+                                                    @* Địa chỉ*@
+                                                    @Html.EditorFor(x => x.DiaChi, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(x => x.DiaChi)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Giá phòng</span>
+                                                    @* Giá phòng*@
+                                                    @Html.EditorFor(x => x.GiaPhong, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(x => x.GiaPhong)
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="list-inline pull-right">
+                                        <li><button type="button" class="btn btn-default prev-step">Quay trở lại</button></li>
+                                        <li><button type="button" class="btn btn-primary next-step">Bước tiếp theo</button></li>
+                                    </ul>
+
+                                </div>
+                                <div class="tab-pane" role="tabpanel" id="step3">
+                                    @* upload ảnh *@
+                                    <div class="row">
+                                        <div class="col-lg-3"></div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Tiêu đề đăng tải</span>
+                                                    @Html.EditorFor(x => x.TieuDe, new { htmlAttributes = new { @class = "form-control", @placeholder = "Tiêu đề phải dài hơn 15 kí tự" } })
+                                                    @Html.ValidationMessageFor(x => x.TieuDe)
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3"></div>
+                                        <div class="col-lg-6">
+                                            <div class="imageupload panel panel-default">
+                                                <div class="panel-heading clearfix">
+                                                    <h3 class="panel-title pull-left">Ảnh đại diện cho phòng</h3>
+                                                    <div class="btn-group pull-right">
+                                                        <button type="button" class="btn btn-default active">File</button>
+                                                        <button type="button" class="btn btn-default">URL</button>
+                                                    </div>
+                                                </div>
+                                                <div class="file-tab panel-body">
+                                                    <label class="btn btn-default btn-file">
+                                                        <span>Chọn đường dẫn</span>
+                                                        <!-- The file is stored here. -->
+                                                        <input id="RoomImage" type="file" name="RoomImage">
+                                                    </label>
+                                                    <button type="button" class="btn btn-default">Xóa</button>
+                                                </div>
+                                                <div class="url-tab panel-body">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control hasclear" placeholder="Image URL">
+                                                        <div class="input-group-btn">
+                                                            <button type="button" class="btn btn-default">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                    <button type="button" class="btn btn-default">Remove</button>
+                                                    <!-- The URL is stored here. -->
+                                                    <input type="hidden" id="RoomImage" name="RoomImage">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @* Image room *@
+                                    @* Image 1 *@
+                                    <div class="row">
+                                        <div class="col-lg-3"></div>
+                                        <div class="col-lg-6">
+                                            <div class="imageupload panel panel-default">
+                                                <div class="panel-heading clearfix">
+                                                    <h3 class="panel-title pull-left">Ảnh chi tiết phòng</h3>
+                                                </div>
+                                                <div class="file-tab panel-body">
+                                                    <label class="btn btn-default btn-file">
+                                                        <span>Chọn đường dẫn</span>
+                                                        <!-- The file is stored here. -->
+                                                        <input id="Image1" type="file" name="Image1">
+                                                       
+                                                    </label>
+                                                    <button type="button" class="btn btn-default">Xóa</button>
+                                                </div>
+                                                <div class="url-tab panel-body">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control hasclear" placeholder="Image URL">
+                                                        <div class="input-group-btn">
+                                                            <button type="button" class="btn btn-default">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                    <button type="button" class="btn btn-default">Xóa</button>
+                                                    <!-- The URL is stored here. -->
+                                                    <input type="hidden" id="Image1" name="Image1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @* image 2 *@
+                                    <div class="row">
+                                        <div class="col-lg-3"></div>
+                                        <div class="col-lg-6">
+                                            <div class="imageupload panel panel-default">
+                                                <div class="file-tab panel-body">
+                                                    <label class="btn btn-default btn-file">
+                                                        <span>Chọn đường dẫn</span>
+                                                        <!-- The file is stored here. -->
+                                                        <input id="Image2" type="file" name="Image2">
+                                                      
+                                                    </label>
+                                                    <button type="button" class="btn btn-default">Remove</button>
+                                                </div>
+                                                <div class="url-tab panel-body">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control hasclear" placeholder="Image URL">
+                                                        <div class="input-group-btn">
+                                                            <button type="button" class="btn btn-default">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                    <button type="button" class="btn btn-default">Remove</button>
+                                                    <!-- The URL is stored here. -->
+                                                    <input type="hidden" id="Image2" name="Image2">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @* image 3 *@
+                                    <div class="row">
+                                        <div class="col-lg-3"></div>
+                                        <div class="col-lg-6">
+                                            <div class="imageupload panel panel-default">
+                                                <div class="file-tab panel-body">
+                                                    <label class="btn btn-default btn-file">
+                                                        <span>Chọn đường dẫn</span>
+                                                        <!-- The file is stored here. -->
+                                                        <input id="Image3" type="file" name="Image3">
+                                                   
+                                                    </label>
+                                                    <button type="button" class="btn btn-default">Remove</button>
+                                                </div>
+                                                <div class="url-tab panel-body">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control hasclear" placeholder="Image URL">
+                                                        <div class="input-group-btn">
+                                                            <button type="button" class="btn btn-default">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                    <button type="button" class="btn btn-default">Remove</button>
+                                                    <!-- The URL is stored here. -->
+                                                    <input type="hidden" id="Image3" name="Image3">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @* image 4 *@
+                                    <div class="row">
+                                        <div class="col-lg-3"></div>
+                                        <div class="col-lg-6">
+                                            <div class="imageupload panel panel-default">
+                                                <div class="file-tab panel-body">
+                                                    <label class="btn btn-default btn-file">
+                                                        <span>Chọn đường dẫn</span>
+                                                        <!-- The file is stored here. -->
+                                                        <input id="Image4" type="file" name="Image4">
+                                                     
+                                                    </label>
+                                                    <button type="button" class="btn btn-default">Remove</button>
+                                                </div>
+                                                <div class="url-tab panel-body">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control hasclear" placeholder="Image URL">
+                                                        <div class="input-group-btn">
+                                                            <button type="button" class="btn btn-default">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                    <button type="button" class="btn btn-default">Remove</button>
+                                                    <!-- The URL is stored here. -->
+                                                    <input type="hidden" id="Image4" name="Image4">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @* image 5 *@
+                                    <div class="row">
+                                        <div class="col-lg-3"></div>
+                                        <div class="col-lg-6">
+                                            <div class="imageupload panel panel-default">
+                                                <div class="file-tab panel-body">
+                                                    <label class="btn btn-default btn-file">
+                                                        <span>Chọn đường dẫn</span>
+                                                        <!-- The file is stored here. -->
+                                                        <input id="Image5" type="file" name="Image5">
+                                         
+                                                    </label>
+                                                    <button type="button" class="btn btn-default">Remove</button>
+                                                </div>
+                                                <div class="url-tab panel-body">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control hasclear" placeholder="Image URL">
+                                                        <div class="input-group-btn">
+                                                            <button type="button" class="btn btn-default">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                    <button type="button" class="btn btn-default">Remove</button>
+                                                    <!-- The URL is stored here. -->
+                                                    <input type="hidden" id="Image5" name="Image5">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @* image 6 *@
+                                    <div class="row">
+                                        <div class="col-lg-3"></div>
+                                        <div class="col-lg-6">
+                                            <div class="imageupload panel panel-default">
+                                                <div class="file-tab panel-body">
+                                                    <label class="btn btn-default btn-file">
+                                                        <span>Chọn đường dẫn</span>
+                                                        <!-- The file is stored here. -->
+                                                        <input id="Image6" type="file" name="Image6">
+                                                      
+                                                    </label>
+                                                    <button type="button" class="btn btn-default">Remove</button>
+                                                </div>
+                                                <div class="url-tab panel-body">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control hasclear" placeholder="Image URL">
+                                                        <div class="input-group-btn">
+                                                            <button type="button" class="btn btn-default">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                    <button type="button" class="btn btn-default">Remove</button>
+                                                    <!-- The URL is stored here. -->
+                                                    <input type="hidden" id="Image6" name="Image6">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @* image 7 *@
+                                    <div class="row">
+                                        <div class="col-lg-3"></div>
+                                        <div class="col-lg-6">
+                                            <div class="imageupload panel panel-default">
+                                                <div class="file-tab panel-body">
+                                                    <label class="btn btn-default btn-file">
+                                                        <span>Chọn đường dẫn</span>
+                                                        <!-- The file is stored here. -->
+                                                        <input id="Image7" type="file" name="Image7">
+                                                    
+                                                    </label>
+                                                    <button type="button" class="btn btn-default">Remove</button>
+                                                </div>
+                                                <div class="url-tab panel-body">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control hasclear" placeholder="Image URL">
+                                                        <div class="input-group-btn">
+                                                            <button type="button" class="btn btn-default">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                    <button type="button" class="btn btn-default">Remove</button>
+                                                    <!-- The URL is stored here. -->
+                                                    <input type="hidden" id="Image7" name="Image7">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @* image 8 *@
+                                    <div class="row">
+                                        <div class="col-lg-3"></div>
+                                        <div class="col-lg-6">
+                                            <div class="imageupload panel panel-default">
+                                                <div class="file-tab panel-body">
+                                                    <label class="btn btn-default btn-file">
+                                                        <span>Chọn đường dẫn</span>
+                                                        <!-- The file is stored here. -->
+                                                        <input id="Image8" type="file" name="Image8">
+                                                   
+                                                    </label>
+                                                    <button type="button" class="btn btn-default">Remove</button>
+                                                </div>
+                                                <div class="url-tab panel-body">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control hasclear" placeholder="Image URL">
+                                                        <div class="input-group-btn">
+                                                            <button type="button" class="btn btn-default">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                    <button type="button" class="btn btn-default">Remove</button>
+                                                    <!-- The URL is stored here. -->
+                                                    <input type="hidden" id="Image8" name="Image8">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @* image 9 *@
+                                    <div class="row">
+                                        <div class="col-lg-3"></div>
+                                        <div class="col-lg-6">
+                                            <div class="imageupload panel panel-default">
+                                                <div class="file-tab panel-body">
+                                                    <label class="btn btn-default btn-file">
+                                                        <span>Chọn đường dẫn</span>
+                                                        <!-- The file is stored here. -->
+                                                        <input id="Image9" type="file" name="Image9">
+                                              
+                                                    </label>
+                                                    <button type="button" class="btn btn-default">Remove</button>
+                                                </div>
+                                                <div class="url-tab panel-body">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control hasclear" placeholder="Image URL">
+                                                        <div class="input-group-btn">
+                                                            <button type="button" class="btn btn-default">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                    <button type="button" class="btn btn-default">Remove</button>
+                                                    <!-- The URL is stored here. -->
+                                                    <input type="hidden" id="Image9" name="Image9">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    @*  *@
+                                    <ul class="list-inline pull-right">
+                                        <li><button type="button" class="btn btn-default prev-step">Quay trở lại</button></li>
+                                        <li><button type="button" class="btn btn-primary btn-info-full next-step">Bước tiếp theo</button></li>
+                                    </ul>
+                                </div>
+                                <div class="tab-pane" role="tabpanel" id="complete">
+                                    <div class="row">
+                                        <h3>Hoàn thành</h3>
+                                        <p>Bạn có thể đăng phòng của mình lên ngay bây giờ!</p>
+                                    </div>
+                                    <div class="row">
+                                            <div class="col-lg-4">
+                                                <input value="ĐĂNG PHÒNG" type="submit" class="btn btn-primary btn-lg" style="height:100px;width:200px;"/>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                       
+                                                        }
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="~/js/bootstrap-imageupload.min.js"></script>
+    <script src='~/js/uploadimage.js'></script>
+    <script src='~/js/bootstrap.min.js'></script>
+    <script src="~/js/index.js"></script>
+    <script src="~/js/maplocation.js"></script>
+    <script>
+        var $imageupload = $('.imageupload');
+        $imageupload.imageupload();
+
+        $('#imageupload-disable').on('click', function () {
+            $imageupload.imageupload('disable');
+            $(this).blur();
+        })
+
+        $('#imageupload-enable').on('click', function () {
+            $imageupload.imageupload('enable');
+            $(this).blur();
+        })
+
+        $('#imageupload-reset').on('click', function () {
+            $imageupload.imageupload('reset');
+            $(this).blur();
+        });
+    </script>
+</body>
+</html>

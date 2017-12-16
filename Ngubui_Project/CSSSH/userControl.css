@@ -1,0 +1,483 @@
+﻿/*Danh mục*/
+.bg_title_category {
+    background: url('../Image/title_category.png');
+    height: 32px;
+    width: 275px;
+    padding-left: 25px;
+    padding-top: 13px;
+    font-size: 18px;
+    color: white;
+    text-shadow: 1px 1px 2px #70AE1B;
+}
+
+.bg_title_category2 {
+    background-color: #faf8f1;
+    height: 30px;
+    padding-left: 25px;
+    padding-top: 12px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.cate_item {
+    font-weight: bold;
+    height: 32px;
+    width: 275px;
+    padding-left: 25px;
+    padding-top: 11px;
+    font-size: 14px;
+    background-image: url('../Image/ic_bullet_next.png');
+    background-position: right 25px top 16px;
+    background-repeat: no-repeat;
+    margin: 0px;
+}
+
+    .cate_item:hover {
+        background-color: #faf8f1;
+    }
+
+.cate_item_text {
+    font-weight: normal;
+    width: 235px;
+    padding: 10px 25px 10px 40px;
+    background-image: url('../Image/marker.png');
+    background-position: left 25px top 20px;
+    background-repeat: no-repeat;
+    margin: 0px;
+}
+
+    .cate_item_text:hover {
+        background-color: #faf8f1;
+    }
+
+.cate_item_text_orange {
+    font-weight: normal;
+    width: 235px;
+    padding: 5px 25px 5px 40px;
+    background-image: url('../Image/marker.png');
+    background-position: left 25px top 14px;
+    background-repeat: no-repeat;
+    color: #ff8401;
+    margin: 0;
+    font-size: 13px;
+}
+
+    .cate_item_text_orange:hover {
+        text-decoration: underline;
+    }
+
+.cate_link {
+    color: #8c6635;
+    text-decoration: none;
+}
+
+/*Code nổi bật, bài viết nổi bật*/
+.bg_title_top {
+    background: url('../Image/title_top.png');
+    height: 32px;
+    width: 275px;
+    padding-left: 25px;
+    padding-top: 13px;
+    font-size: 18px;
+    color: white;
+    text-shadow: 1px 1px 2px #70AE1B;
+}
+
+.bg_title_deve {
+    background: url('../Image/title_deve.html');
+    height: 32px;
+    width: 280px;
+    padding-left: 30px;
+    padding-top: 13px;
+    font-size: 18px;
+    color: white;
+    text-shadow: 1px 1px 2px #70AE1B;
+}
+
+.bg_title_video {
+    background: url('../Image/title_video.png');
+    height: 32px;
+    width: 280px;
+    padding-left: 30px;
+    padding-top: 13px;
+    font-size: 18px;
+    color: white;
+}
+
+.top_item1 {
+    height: 120px;
+    width: 250px;
+    padding: 0 25px;
+}
+
+.top_item2 {
+    height: 120px;
+    width: 250px;
+    padding: 0 25px;
+    background-color: #faf8f1;
+}
+
+.deve_item1 {
+    height: 105px;
+    width: 250px;
+    padding: 0 25px;
+}
+
+.deve_item2 {
+    height: 105px;
+    width: 250px;
+    padding: 0 25px;
+    background-color: #faf8f1;
+}
+
+.top_img {
+    width: 100px;
+    height: 70px;
+    margin-top: 15px;
+    box-shadow: 1px 1px 3px #ac8f79;
+    border-radius: 4px;
+    background-color: white;
+    float: left;
+    font-size: 12px;
+    overflow:hidden;
+}
+
+.deve_img {
+    width: 100px;
+    height: 75px;
+    margin-top: 15px;
+    box-shadow: 1px 1px 3px #ac8f79;
+    border-radius: 4px;
+    background-color: white;
+    float: left;
+    font-size: 12px;
+    overflow:hidden;
+}
+
+.top_title_link {
+    color: #8c6635;
+    text-decoration: none;
+}
+
+.top_title {
+    margin-top: 15px;
+    width: 135px;
+    height: 75px;
+    line-height:18px;
+    overflow: hidden;
+    font-weight: bold;
+    float: right;
+    font-size: 12px;
+    margin-bottom:0px;
+}
+
+    .top_title:hover {
+        text-decoration: underline;
+    }
+
+.deve_title {
+    margin-top: 15px;
+    width: 135px;
+    height: 75px;
+    overflow: hidden;
+    font-weight: bold;
+    float: right;
+    font-size: 12px;
+}
+
+    .deve_title:hover {
+        text-decoration: underline;
+    }
+
+.video_title {
+    margin-top: 15px;
+    width: 135px;
+    height: 75px;
+    overflow: hidden;
+    font-weight: bold;
+    float: right;
+    font-size: 12px;
+    line-height:18px;
+}
+
+    .video_title:hover {
+        text-decoration: underline;
+    }
+
+.top_cate {
+    height: 20px;
+    overflow: hidden;
+    float: left;
+    color: #ff8401;
+    text-decoration: none;
+    font-style: italic;
+    padding-right:5px;
+}
+
+.deve_cate {
+    margin-top: 15px;
+    margin-left: 15px;
+    height: 20px;
+    overflow: hidden;
+    float: left;
+    color: #ff8401;
+    text-decoration: none;
+    font-style: italic;
+    width: 135px;
+}
+
+.top_cate:hover, deve_cate:hover {
+    text-decoration: underline;
+}
+
+.top_view {
+    background-image: url('../Image/ic_view.png');
+    background-position: right 0px top 5px;
+    background-repeat: no-repeat;
+    padding-right: 20px;
+    height: 20px;
+    overflow: hidden;
+    float: right;
+    color: #a9834f;
+}
+
+.top_viewall {
+    height: 35px;
+    text-align: right;
+    padding: 10px 25px 0 0;
+}
+
+/*User top, 10 user new*/
+.user_box {
+    margin-top: 40px;
+}
+
+.user_left {
+    width: 380px;
+    float: left;
+    margin-bottom: 15px;
+}
+
+.user_right {
+    width: 260px;
+    float: right;
+    margin-bottom: 15px;
+}
+
+.user_title_left {
+    height: 33px;
+    padding-top: 12px;
+    padding-left: 20px;
+    background-color: #f4f0e2;
+    border-radius: 3px 0 0 3px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+    .user_title_left span {
+        color: #84c52c;
+        font-weight: bold;
+    }
+
+.user_title_right {
+    height: 33px;
+    padding-top: 12px;
+    padding-left: 70px;
+    font-weight: bold;
+    color: white;
+    border-radius: 0 3px 3px 0;
+    font-size: 14px;
+    background: url('../Image/ic_cup.png') 40px 12px no-repeat #a9834f;
+    margin-bottom: 15px;
+}
+
+
+.user_top_item {
+    height: 45px;
+    width: 260px;
+    padding: 10px 0;
+}
+
+.user_top_item2 {
+    height: 45px;
+    width: 250px;
+    padding: 10px 25px;
+}
+
+.user_top_item3 {
+    height: 45px;
+    width: 250px;
+    padding: 10px 25px;
+    background-color: #faf8f1;
+}
+
+.user_top_img {
+    width: 45px;
+    height: 45px;
+    border-radius: 4px;
+    background: url('../Image/avanta.png');
+    float: left;
+    overflow:hidden;
+}
+
+.user_top_title_link {
+    color: #84c52c;
+    text-decoration: none;
+}
+
+.user_top_title {
+    width: 205px;
+    height: 20px;
+    overflow: hidden;
+    font-weight: bold;
+    float: right;
+    font-size: 12px;
+    margin: 0;
+}
+
+.user_top_title2 {
+    width: 195px;
+    height: 20px;
+    overflow: hidden;
+    font-weight: bold;
+    float: right;
+    font-size: 12px;
+    margin: 0;
+}
+
+    .user_top_title:hover, .user_top_title2:hover {
+        text-decoration: underline;
+    }
+
+.user_top_info {
+    width: 205px;
+    height: 20px;
+    overflow: hidden;
+    float: right;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.user_top_info2 {
+    width: 195px;
+    height: 20px;
+    overflow: hidden;
+    float: right;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.user_date {
+    height: 20px;
+    overflow: hidden;
+    float: right;
+}
+
+    .user_date span {
+        color: #ff8401;
+    }
+
+.user_point {
+    background: url('../Image/ic_point.png') 0 5px no-repeat;
+    padding-left: 20px;
+    height: 20px;
+    overflow: hidden;
+    float: left;
+    color: #ff8401;
+}
+
+.user_new_item {
+    height: 16px;
+    width: 380px;
+    padding: 5px 0;
+    clear: both;
+}
+
+.user_new_stt {
+    width: 45px;
+    padding-left: 20px;
+    overflow: hidden;
+    float: left;
+    color: #ff8401;
+}
+
+.user_new_name_link {
+    color: #84c52c;
+    text-decoration: none;
+}
+
+.user_new_name {
+    width: 175px;
+    padding-left: 30px;
+    overflow: hidden;
+    float: left;
+    font-weight: bold;
+}
+
+    .user_new_name:hover {
+        text-decoration: underline;
+    }
+
+.user_new_date {
+    width: 80px;
+    padding-right: 30px;
+    overflow: hidden;
+    text-align: right;
+    float: left;
+}
+
+.user_viewall {
+    text-align: right;
+    margin-top: 15px;
+}
+/*Hoạt động gần đây*/
+.action {
+    height: 190px;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+.action_box {
+    margin: -5px 15px 0px 15px;
+    color: #d5c6ae;
+}
+
+    .action_box ul {
+        padding: 0;
+        width:270px;
+    }
+
+    .action_box li {
+        background: url('../Image/marker.png') no-repeat left 0px top 14px;
+        list-style: none;
+        padding: 7px 0px 6px 13px;
+        line-height: 15px;
+    }
+
+        .action_box li .lnkGreen {
+            color: #84c52c;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+            .action_box li .lnkGreen:hover {
+                text-decoration: underline;
+            }
+
+        .action_box li .lnkOrange {
+            color: #a9834f;
+            text-decoration: none;
+        }
+
+            .action_box li .lnkOrange:hover {
+                color: #ff8401;
+            }
+
+        .action_box li .Orange {
+            color: #ff8401;
+        }
+
+        .action_box li .Green {
+            color: #84c52c;
+        }

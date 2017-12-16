@@ -1,0 +1,35 @@
+﻿@using Ngubui_Project.Models;
+@model List<ROOM_NAME_DETAIL>
+@{
+    foreach (var item in Model)
+    {
+
+        <li>
+            <a style="cursor:pointer" href="@Url.Action("RoomDetail", new {@ID_Room = item.ID_Room })" title="Xem chi tiết">
+                <div class="booking-item booking-item-small book_direct" data-roomcount="" data-member="1" data-room="1" data-start="" data-end="" data-area="Madurai,India" class="book_room" data-min="10" data-max="633">
+
+                    <div class="row">
+                        <div class="col-xs-4 trendy">
+                            <img src="data:image;base64,@Convert.ToBase64String((byte[])@item.AnhDaiDien)" data-roomcount="" data-member="1" data-room="1" data-start="" data-end="" data-area="Madurai,India" class="book_room" data-min="10" data-max="633" class="book_room" alt="Image Alternative text" title="Premium room" />
+                        </div>
+                        <div class="col-xs-4">
+                            <h5 class="booking-item-title">@item.TieuDe</h5>
+
+                            <span class="booking-item-price">
+                               @String.Format("{0:0,0}", item.GiaPhong)
+                            </span>
+                        </div>
+                        <div class="col-xs-4">
+                            <br />
+                            <br />
+                            <span class="booking-item-price-from">Giá</span><span class="booking-item-price">
+                                VNĐ/Ngày
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+
+    }
+}

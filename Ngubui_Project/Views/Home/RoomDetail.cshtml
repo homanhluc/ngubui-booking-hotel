@@ -1,0 +1,775 @@
+﻿@using Ngubui_Project.Models;
+@model ROOM_NAME_DETAIL
+@if (Session["Account"] != null)
+{
+    Layout = "~/Views/Shared/_LayoutLogged.cshtml";
+}
+else
+{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{ 
+    var und = Session["UND"] as Ngubui_Project.Models.USER_NAME_DETAIL;
+    var un = Session["UN"] as Ngubui_Project.Models.USER_NAME;
+}
+<div class="main_class" style="min-height:400px;">
+
+    <div id="stat" style="color: Red;"></div>
+
+    <div id="preloader" style="display: none;">
+        <div class="sk-spinner sk-spinner-wave">
+            <div class="sk-rect1"></div>
+            <div class="sk-rect2"></div>
+            <div class="sk-rect3"></div>
+            <div class="sk-rect4"></div>
+            <div class="sk-rect5"></div>
+        </div>
+    </div>
+
+    <div class="layer"></div><div id="wish_add1" class="popup_abs"><span></span></div>
+
+    <section class="parallax-window" data-parallax="scroll" data-image-src="" data-natural-width="1400" data-natural-height="470">
+        <img class="detail_baner" src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image1"])">
+        <div class="parallax-content-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-sm-8">
+                        @*<span class="rating">
+                            <!-- <i class="fa fa-star"></i> -->
+                            <i class="icon-star voted"></i>
+                            <!-- <i class="fa fa-star"></i> -->
+                            <i class="icon-star voted"></i>
+                            <!-- <i class="fa fa-star"></i> -->
+                            <i class="icon-star voted"></i>
+                            <!-- <i class="fa fa-star"></i> -->
+                            <i class="icon-star voted"></i>
+                            <!-- <i class="fa fa-star-o text-gray"></i> -->
+                            <i class=" icon-star-empty"></i>
+                        </span>*@
+                        <h1>@Model.TieuDe</h1>
+                        <span>@Model.DiaChi</span>
+
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div id="price_single_main" class="hotel">
+                            Giá/Ngày<span><sup>VNĐ</sup>@String.Format("{0:0,0}", Model.GiaPhong)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="position">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li>
+                    <a>Chủ phòng: @un.Ho @un.Ten</a>
+                </li>
+                @*<li class="">
+                    India
+                </li>
+                <li class="">
+                    Madurai
+                </li>
+                <li class="active">
+                    city hotels
+                </li>
+                <li class="active">
+
+                </li>*@
+            </ul>
+        </div>
+    </div>
+
+    <div class="map_collapse map_close" id="map_cllpse">
+        <div id="map"></div>
+    </div>
+@if (Model.XetDuyet == "Có")
+{
+    <script>
+        function initMap() {
+            var Location = new google.maps.LatLng(@Model.ToaDo)
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 17,
+                center: Location
+            });
+
+        var image = 'http://i.imgur.com/5JtLzwS.png';
+        var marker = new google.maps.Marker({
+                position: Location,
+                map: map,
+                icon: image,
+                title: 'Đã kiểm duyệt'
+            });
+
+        }
+    </script>
+}
+else
+{
+    <script>
+        function initMap() {
+            var Location = new google.maps.LatLng(@Model.ToaDo)
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 17,
+                center: Location
+            });
+        var marker = new google.maps.Marker({
+                position: Location,
+                map: map,
+                title: 'Chưa kiểm duyệt'
+            });
+
+        }
+    </script>
+}
+
+   
+
+
+
+
+
+
+    <script ></script>
+    <div class="container margin_60">
+        <div class="row">
+            <div class="col-md-8" id="single_tour_desc">
+                @*<div id="single_tour_feat">
+                    <ul>
+                        <li><i class="im im-air"></i>Điều hòa</li>
+                        <li><i class="im im-wheel-chair"></i>Tiện nghi cho khách khuyết tật</li>
+                        <li><i class="im im-climate-control"></i>Kiểm soát khí hậu</li>
+                        <li><i class="im im-business-person"></i>Dịch vụ ăn sáng</li>
+                        <li><i class="im im-pool"></i>Biển</li>
+                        <li><i class="im im-patio"></i>Thư viện</li>
+                        <li><i class="im im-fitness"></i>Massage</li>
+                        <li><i class="im im-kitchen"></i>Bếp cảm ứng</li>
+                    </ul>
+                </div>*@
+                <div id="Img_carousel" class="slider-pro">
+                    <div class="sp-slides">
+                        <div class="sp-slide">
+                            <img alt="Image" class="sp-image" src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image1"])" data-src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image1"])" data-small="data:image;base64,@Convert.ToBase64String((byte[])Session["Image1"])" data-medium="data:image;base64,@Convert.ToBase64String((byte[])Session["Image1"])" data-large="data:image;base64,@Convert.ToBase64String((byte[])Session["Image1"])" data-retina="data:image;base64,@Convert.ToBase64String((byte[])Session["Image1"])">
+                       </div>
+                        <div class="sp-slide">
+                            <img alt="Image" class="sp-image" src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image2"])" data-src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image2"])" data-small="data:image;base64,@Convert.ToBase64String((byte[])Session["Image2"])" data-medium="data:image;base64,@Convert.ToBase64String((byte[])Session["Image2"])" data-large="data:image;base64,@Convert.ToBase64String((byte[])Session["Image2"])" data-retina="data:image;base64,@Convert.ToBase64String((byte[])Session["Image2"])">
+                        </div>
+                        <div class="sp-slide">
+                            <img alt="Image" class="sp-image" src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image3"])" data-src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image3"])" data-small="data:image;base64,@Convert.ToBase64String((byte[])Session["Image3"])" data-medium="data:image;base64,@Convert.ToBase64String((byte[])Session["Image3"])" data-large="data:image;base64,@Convert.ToBase64String((byte[])Session["Image3"])" data-retina="data:image;base64,@Convert.ToBase64String((byte[])Session["Image3"])">
+                        </div>
+                        <div class="sp-slide">
+                            <img alt="Image" class="sp-image" src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image4"])" data-src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image4"])" data-small="data:image;base64,@Convert.ToBase64String((byte[])Session["Image4"])" data-medium="data:image;base64,@Convert.ToBase64String((byte[])Session["Image4"])" data-large="data:image;base64,@Convert.ToBase64String((byte[])Session["Image4"])" data-retina="data:image;base64,@Convert.ToBase64String((byte[])Session["Image4"])">
+                        </div>
+                        <div class="sp-slide">
+                            <img alt="Image" class="sp-image" src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image5"])" data-src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image5"])" data-small="data:image;base64,@Convert.ToBase64String((byte[])Session["Image5"])" data-medium="data:image;base64,@Convert.ToBase64String((byte[])Session["Image5"])" data-large="data:image;base64,@Convert.ToBase64String((byte[])Session["Image5"])" data-retina="data:image;base64,@Convert.ToBase64String((byte[])Session["Image5"])">
+                        </div>
+                        <div class="sp-slide">
+                            <img alt="Image" class="sp-image" src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image6"])" data-src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image6"])" data-small="data:image;base64,@Convert.ToBase64String((byte[])Session["Image6"])" data-medium="data:image;base64,@Convert.ToBase64String((byte[])Session["Image6"])" data-large="data:image;base64,@Convert.ToBase64String((byte[])Session["Image6"])" data-retina="data:image;base64,@Convert.ToBase64String((byte[])Session["Image6"])">
+                        </div>
+                        <div class="sp-slide">
+                            <img alt="Image" class="sp-image" src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image7"])" data-src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image7"])" data-small="data:image;base64,@Convert.ToBase64String((byte[])Session["Image7"])" data-medium="data:image;base64,@Convert.ToBase64String((byte[])Session["Image7"])" data-large="data:image;base64,@Convert.ToBase64String((byte[])Session["Image7"])" data-retina="data:image;base64,@Convert.ToBase64String((byte[])Session["Image7"])">
+                        </div>
+                        <div class="sp-slide">
+                            <img alt="Image" class="sp-image" src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image8"])" data-src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image8"])" data-small="data:image;base64,@Convert.ToBase64String((byte[])Session["Image8"])" data-medium="data:image;base64,@Convert.ToBase64String((byte[])Session["Image8"])" data-large="data:image;base64,@Convert.ToBase64String((byte[])Session["Image8"])" data-retina="data:image;base64,@Convert.ToBase64String((byte[])Session["Image8"])">
+                        </div>
+                        <div class="sp-slide">
+                            <img alt="Image" class="sp-image" src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image9"])" data-src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image9"])" data-small="data:image;base64,@Convert.ToBase64String((byte[])Session["Image9"])" data-medium="data:image;base64,@Convert.ToBase64String((byte[])Session["Image9"])" data-large="data:image;base64,@Convert.ToBase64String((byte[])Session["Image9"])" data-retina="data:image;base64,@Convert.ToBase64String((byte[])Session["Image9"])">
+                        </div>
+                    </div>
+                    <div class="sp-thumbnails">
+                        <img alt="Image" class="sp-thumbnail" src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image1"])"/>
+                        <img alt="Image" class="sp-thumbnail" src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image2"])" />
+                        <img alt="Image" class="sp-thumbnail" src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image3"])" />
+                        <img alt="Image" class="sp-thumbnail" src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image4"])" />
+                        <img alt="Image" class="sp-thumbnail" src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image5"])" />
+                        <img alt="Image" class="sp-thumbnail" src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image6"])" />
+                        <img alt="Image" class="sp-thumbnail" src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image7"])" />
+                        <img alt="Image" class="sp-thumbnail" src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image8"])" />
+                        <img alt="Image" class="sp-thumbnail" src="data:image;base64,@Convert.ToBase64String((byte[])Session["Image9"])" />
+
+                    </div>
+
+                </div>
+                <script type="text/javascript">
+    $( document ).ready(function( $ ) {
+        $( '#Img_carousel' ).sliderPro({
+                                width: 960,
+            height: 500,
+            fade: true,
+            arrows: true,
+            buttons: false,
+            fullScreen: false,
+            smallSize: 500,
+            startSlide: 0,
+            mediumSize: 1000,
+            largeSize: 3000,
+            thumbnailArrows: true,
+            autoplay: false
+        });
+                            });
+                </script>
+                <hr>
+                <div class="row">
+                    <div class="col-md-3" id="tab-2">
+                        <h3>Miêu tả</h3>
+                    </div>
+                    <div class="col-md-9">
+                            <h5>@Model.MoTa</h5>
+                    </div><!-- End col-md-9  -->
+                </div><!-- End row  -->
+                <div class="row">
+                    <div class="col-md-3" id="tab-2">
+                        <h3>Loại phòng</h3>
+                    </div>
+                    <div class="col-md-9">
+                        <h5>@Model.LoaiPhong</h5>
+                    </div><!-- End col-md-9  -->
+                </div><!-- End row  -->
+                <div class="row">
+                    <div class="col-md-3" id="tab-2">
+                        <h3>Số phòng ngủ</h3>
+                    </div>
+                    <div class="col-md-9">
+                        <h5>@Model.SoPhongNgu</h5>
+                    </div><!-- End col-md-9  -->
+                </div><!-- End row  -->
+                <div class="row">
+                    <div class="col-md-3" id="tab-2">
+                        <h3>Số giường ngủ</h3>
+                    </div>
+                    <div class="col-md-9">
+                        <h5>@Model.SoGiuongNgu</h5>
+                    </div><!-- End col-md-9  -->
+                </div><!-- End row  -->
+                <div class="row">
+                    <div class="col-md-3" id="tab-2">
+                        <h3>Sức chứa</h3>
+                    </div>
+                    <div class="col-md-9">
+                        <h5>@Model.Khach</h5>
+                    </div><!-- End col-md-9  -->
+                </div><!-- End row  -->
+                <div class="row">
+                    <div class="col-md-3" id="tab-2">
+                        <h3>Mạng wifi</h3>
+                    </div>
+                    <div class="col-md-9">
+                        <h5>@Model.Wifi</h5>
+                    </div><!-- End col-md-9  -->
+                </div><!-- End row  -->
+                <div class="row">
+                    <div class="col-md-3" id="tab-2">
+                        <h3>Bán thức ăn</h3>
+                    </div>
+                    <div class="col-md-9">
+                        <h5>@Model.ThucAn</h5>
+                    </div><!-- End col-md-9  -->
+                </div><!-- End row  -->
+                <div class="row">
+                    <div class="col-md-3" id="tab-2">
+                        <h3>Bán thức uống</h3>
+                    </div>
+                    <div class="col-md-9">
+                        <h5>@Model.ThucUong</h5>
+                    </div><!-- End col-md-9  -->
+                </div><!-- End row  -->
+                <div class="row">
+                    <div class="col-md-3" id="tab-2">
+                        <h3>Bãi đậu xe</h3>
+                    </div>
+                    <div class="col-md-9">
+                        <h5>@Model.BaiXe</h5>
+                    </div><!-- End col-md-9  -->
+                </div><!-- End row  -->
+                <div class="row">
+                    <div class="col-md-3" id="tab-2">
+                        <h3>Nội quy</h3>
+                    </div>
+                    <div class="col-md-9">
+                        <h5>@Model.NoiQuy</h5>
+                    </div><!-- End col-md-9  -->
+                </div><!-- End row  -->
+                <hr>
+            
+                <div class="row">
+                    <div class="col-md-3" id="tab-2">
+                        <h3>Chủ phòng: </h3>
+                    </div>
+                    <div class="col-md-9">
+                        @if (und.AnhDaiDien != null)
+                        {
+                            <img class="origin round user_image" src="data:image;base64,@Convert.ToBase64String((byte[])und.AnhDaiDien)" />
+                        }
+                        else
+                        {
+                            <img class="origin round user_image" src="~/Images/user.jpg" />
+                        }
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3" id="tab-2">
+                        <h3>Địa chỉ</h3>
+                    </div>
+                    <div class="col-md-9">
+                        <h5>@und.DiaChi</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3" id="tab-2">
+                        <h3>Số điện thoại:</h3>
+                    </div>
+                    <div class="col-md-9">
+                        <h5>@und.SoDienThoai</h5>
+                    </div>
+                </div>
+                <hr>
+             
+                <div class="row">
+                    <div id="rev_emsg" class="alert"></div>
+                    <input type="hidden" id="reviewer_id" value="" />
+                    <input type="hidden" id="already_reviewed" value= />
+                    <div class="mt20">
+                        <!--  include($review_form) -->
+                        @*<div class="col-xs-12 row">
+                            <div class="col-md-3">
+                                <h3>Đánh giá</h3>
+                                <a href="#" class="btn_1 add_bottom_30 review_btn" data-toggle="modal" data-target="#Login_pop">Để lại đánh giá</a>
+                            </div>
+                            <div class="col-md-9">
+                                <div id="score_detail">
+                                    <span>3.5</span>
+                                    Trung bình
+
+                                    <small>(Based on 6 Reviews)</small>
+                                </div>
+                                <div class="row" id="rating_summary">
+                                    <div class="col-md-6">
+                                        <ul>
+                                            <li>
+                                                Xuất sắc
+                                                <div class="rating">
+                                                    <i class="icon-smile voted"></i>
+                                                    <i class="icon-smile voted"></i>
+                                                    <i class="icon-smile"></i>
+                                                    <i class="icon-smile"></i>
+                                                    <i class="icon-smile"></i>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                Rất tốt
+                                                <div class="rating">
+                                                    <i class="icon-smile"></i>
+                                                    <i class="icon-smile"></i>
+                                                    <i class="icon-smile"></i>
+                                                    <i class="icon-smile"></i>
+                                                    <i class="icon-smile"></i>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                Trung bình
+                                                <div class="rating">
+                                                    <i class="icon-smile voted"></i>
+                                                    <i class="icon-smile"></i>
+                                                    <i class="icon-smile"></i>
+                                                    <i class="icon-smile"></i>
+                                                    <i class="icon-smile"></i>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul>
+                                            <li>
+                                                Poor
+                                                <div class="rating">
+                                                    <i class="icon-smile voted"></i>
+                                                    <i class="icon-smile voted"></i>
+                                                    <i class="icon-smile"></i>
+                                                    <i class="icon-smile"></i>
+                                                    <i class="icon-smile"></i>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                Terrible
+                                                <div class="rating">
+                                                    <i class="icon-smile"></i>
+                                                    <i class="icon-smile"></i>
+                                                    <i class="icon-smile"></i>
+                                                    <i class="icon-smile"></i>
+                                                    <i class="icon-smile"></i>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>                    <hr>
+                                <div class="review_view">
+                                    <div class="review_strip_single">
+                                        <img src="../../uploads/users/5.png" alt="Image Alternative text" title="Otwell" class="img-circle" />
+                                        <!-- <img src="img/avatar1.jpg" alt="Image" class="img-circle"> -->
+                                        <!-- <small> - 10 March 2015 -</small> -->
+                                        <h4>Otwell</h4>
+                                        <div class="rating">
+                                            <i class="icon-smile voted"></i>
+                                            <i class="icon-smile voted"></i>
+                                            <i class="icon-smile voted"></i>
+                                            <i class="icon-smile voted"></i>
+                                            <i class="icon-smile voted"></i>
+                                        </div>
+                                        Overall Rating Review Title<br>
+                                        Overall Rating
+                                        Review Title
+
+                                        <span class="read-more-show">More<i class="fa fa-angle-down"></i></span>
+                                        <span class="read-more-content hide_content">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <ul class="list booking-item-raiting-summary-list">
+                                                        <li>
+                                                            <div class="booking-item-raiting-list-title">
+                                                                Sleep
+                                                            </div>
+                                                            <ul class="icon-group booking-item-rating-stars">
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <div class="booking-item-raiting-list-title">
+                                                                Location
+                                                            </div>
+                                                            <ul class="icon-group booking-item-rating-stars">
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <div class="booking-item-raiting-list-title">
+                                                                Service
+                                                            </div>
+                                                            <ul class="icon-group booking-item-rating-stars">
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <ul class="list booking-item-raiting-summary-list">
+                                                        <li>
+                                                            <div class="booking-item-raiting-list-title">
+                                                                Clearness
+                                                            </div>
+                                                            <ul class="icon-group booking-item-rating-stars">
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <div class="booking-item-raiting-list-title">
+                                                                Rooms
+                                                            </div>
+                                                            <ul class="icon-group booking-item-rating-stars">
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <span class="read-more-hide">Less <i class="fa fa-angle-up"></i></span>
+                                        </span>
+                                    </div><!-- End review strip -->
+                                    <div class="review_strip_single">
+                                        <img src="../../uploads/users/default_image.png" alt="Image Alternative text" title="" class="img-circle" />
+                                        <!-- <img src="img/avatar1.jpg" alt="Image" class="img-circle"> -->
+                                        <!-- <small> - 10 March 2015 -</small> -->
+                                        <h4></h4>
+                                        <br>
+                                        <div class="rating">
+                                            <i class="icon-smile voted"></i>
+                                            <i class="icon-smile voted"></i>
+                                            <i class="icon-smile"></i>
+                                            <i class="icon-smile"></i>
+                                            <i class="icon-smile"></i>
+                                        </div>
+                                        Review Title<br>
+                                        Review Title
+                                        <span class="read-more-show">More<i class="fa fa-angle-down"></i></span>
+                                        <span class="read-more-content hide_content">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <ul class="list booking-item-raiting-summary-list">
+                                                        <li>
+                                                            <div class="booking-item-raiting-list-title">
+                                                                Sleep
+                                                            </div>
+                                                            <ul class="icon-group booking-item-rating-stars">
+                                                                <li><i class="fa fa-smile-o text-gray"></i></li>
+                                                                <li><i class="fa fa-smile-o text-gray"></i></li>
+                                                                <li><i class="fa fa-smile-o text-gray"></i></li>
+                                                                <li><i class="fa fa-smile-o text-gray"></i></li>
+                                                                <li><i class="fa fa-smile-o text-gray"></i></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <div class="booking-item-raiting-list-title">
+                                                                Location
+                                                            </div>
+                                                            <ul class="icon-group booking-item-rating-stars">
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                                <li><i class="fa fa-smile-o text-gray"></i></li>
+                                                                <li><i class="fa fa-smile-o text-gray"></i></li>
+                                                                <li><i class="fa fa-smile-o text-gray"></i></li>
+                                                                <li><i class="fa fa-smile-o text-gray"></i></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <div class="booking-item-raiting-list-title">
+                                                                Service
+                                                            </div>
+                                                            <ul class="icon-group booking-item-rating-stars">
+                                                                <li><i class="fa fa-smile-o"></i></li>
+                                                                <li><i class="fa fa-smile-o text-gray"></i></li>
+                                                                <li><i class="fa fa-smile-o text-gray"></i></li>
+                                                                <li><i class="fa fa-smile-o text-gray"></i></li>
+                                                                <li><i class="fa fa-smile-o text-gray"></i></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <ul class="list booking-item-raiting-summary-list">
+                                                        <li>
+                                                            <div class="booking-item-raiting-list-title">
+                                                                Clearness
+                                                            </div>
+                                                            <ul class="icon-group booking-item-rating-stars">
+                                                                <li><i class="fa fa-smile-o text-gray"></i></li>
+                                                                <li><i class="fa fa-smile-o text-gray"></i></li>
+                                                                <li><i class="fa fa-smile-o text-gray"></i></li>
+                                                                <li><i class="fa fa-smile-o text-gray"></i></li>
+                                                                <li><i class="fa fa-smile-o text-gray"></i></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <div class="booking-item-raiting-list-title">
+                                                                Rooms
+                                                            </div>
+                                                            <ul class="icon-group booking-item-rating-stars">
+                                                                <li><i class="fa fa-smile-o text-gray"></i></li>
+                                                                <li><i class="fa fa-smile-o text-gray"></i></li>
+                                                                <li><i class="fa fa-smile-o text-gray"></i></li>
+                                                                <li><i class="fa fa-smile-o text-gray"></i></li>
+                                                                <li><i class="fa fa-smile-o text-gray"></i></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <span class="read-more-hide">Less <i class="fa fa-angle-up"></i></span>
+                                        </span>
+                                    </div><!-- End review strip -->
+                                    <div class="pagination">
+                                        <input type="hidden" class="room_id" value=1>
+                                        <ul class='pagin pagination' id="pagin">
+                                            <input type="hidden" class="total_page" value=3>
+
+
+                                            <li class="pagenum active" value="1" id="1"><span>1</span></li>
+
+
+                                            <li class="pagenum" value="2" id="2"><span>2</span></li>
+
+
+                                            <li class="pagenum" value="3" id="3"><span>3</span></li>
+
+                                            <li><span class="next">Next</span></li>
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+                    </div>
+                </div>
+
+            </div><!--End  single_tour_desc-->
+
+            <aside class="col-md-4">
+                <p class="hidden-sm hidden-xs">
+                    <a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap">Xem trên bản đồ</a>
+                </p>
+                <div class="box_style_1 expose">
+
+                    <h3 class="inner">Kiểm tra</h3>
+                    <div class="row">
+                       
+                     @using (Html.BeginForm("CheckDate", "Home", FormMethod.Post))
+                     {
+                            <div id="area"></div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label><i class="icon-calendar-7"></i> Check-in</label>
+                                        <input id="check_ins" name="Checkin" class="form-control" placeholder="Check in" value="">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label><i class="icon-calendar-7"></i> Check-out</label>
+                                        <input id="check_outs" name="Checkout" class="form-control" placeholder="Check out" value="">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Số khách</label>
+                                        <div class="numbers-row">
+                                            <input type="number" value="1" id="adults" class="qty2 form-control" name="SoKhach" required min="1" max="10">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+
+                            <!-- edit_ Book_avail avail a_tag -->
+
+                         if (Session["Email"] != null)
+                         {
+                                <input class="btn_full" type="submit" value="Đặt phòng" />
+                         }
+                         else
+                         {
+                                @Html.ActionLink("Đặt phòng", "Loggin", "Account", null, new { @class = "btn_full" })
+                         }
+                     }
+
+
+                    </div>
+
+                    <input type="hidden" class="user_id" value="">
+                    <input type="hidden" name="room_id1" class="room_id1" value="1">
+
+                    <a class="btn_full_outline" data-toggle="modal" data-target="#Login_pop">
+                        <i class=" icon-heart"></i> Thêm vào danh sách
+                    </a>
+
+                </div><!--/box_style_1 -->
+                <div class="">
+                    <h4 class="space-4 text-center-sm">Các phòng tương tự</h4>
+                    <ul class="booking-list">
+                        @Html.Action("SimilarRoomPartial","Home")
+                    </ul>
+                </div>
+            </aside>
+        </div><!--End row -->
+    </div><!--End container -->
+    <script type="text/javascript">
+
+$(function()
+{
+
+
+});
+
+var unavailableDates =  ["04-11-2016","05-11-2016"];
+
+function unavailable(date) {
+    dmy =("0"+ date.getDate()).slice(-2) + "-" + ("0"+(date.getMonth() + 1)).slice(-2) + "-" + date.getFullYear();
+
+    if ($.inArray(dmy, unavailableDates) == -1) {
+        console.log(unavailableDates);
+        return true;
+    } else {
+        return false;/*[false, "", "Unavailable"];*/
+    }
+}
+var date = new Date();
+var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+$(function() {
+    $("#check_ins").datepicker({
+        startDate: today,
+        changeMonth: true, // this will allow users to chnage the month
+        changeYear: true,
+        autoclose: true, // this will allow users to chnage the year*/
+        //defaultDate: new Date("3-1-2012"),
+        dateFormat: 'dd MM yy',
+        beforeShowDay: unavailable
+    });
+
+});
+
+$(document).ready (function()   {
+    $("#check_outs").datepicker({
+
+        startDate:today,
+        changeMonth: true, // this will allow users to chnage the month
+        changeYear: true, // this will allow users to chnage the year*/
+        //defaultDate: new Date("3-1-2012"),
+        autoclose: true,
+        dateFormat: 'dd MM yy',
+        beforeShowDay: unavailable
+
+});
+});
+
+
+
+$(document).ready(function()
+
+{
+
+     /*$('#check_ins').datepicker({
+
+      beforeShowDay:
+          function(dt)
+          {
+
+            // use dt.getDay() to restrict to certain days of the week
+            // or a custom function like "available" below to do more complex things
+            return [dt.getDay() == 0 || dt.getDay() == 6 || available(dt), "" ];
+          }
+    });*/
+
+
+
+// $("#start1").datepicker('setDate', 'today');
+
+// $("#end1").datepicker('setDate', '+7d');
+
+// $("#start1").datepicker({
+
+//     minDate: 0
+
+// });
+
+// $("#end1").datepicker({
+
+//     minDate: 0
+
+// });
+
+})
+
+    </script>
+

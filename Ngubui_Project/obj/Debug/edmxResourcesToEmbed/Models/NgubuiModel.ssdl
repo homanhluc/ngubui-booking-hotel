@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NgubuiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BOOK_ROOM">
+    <Key>
+      <PropertyRef Name="ID_Book" />
+    </Key>
+    <Property Name="ID_User" Type="int" />
+    <Property Name="ID_Room" Type="int" />
+    <Property Name="NgayDatPhong" Type="nvarchar" MaxLength="20" />
+    <Property Name="NgayNhanPhong" Type="nvarchar" MaxLength="20" />
+    <Property Name="TrangThai" Type="nvarchar" MaxLength="20" />
+    <Property Name="ID_Book" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ROOM_IMAGE">
+    <Key>
+      <PropertyRef Name="ID_Room" />
+    </Key>
+    <Property Name="ID_Room" Type="int" Nullable="false" />
+    <Property Name="Image1" Type="varbinary(max)" />
+    <Property Name="Image2" Type="varbinary(max)" />
+    <Property Name="Image3" Type="varbinary(max)" />
+    <Property Name="Image4" Type="varbinary(max)" />
+    <Property Name="Image5" Type="varbinary(max)" />
+    <Property Name="Image6" Type="varbinary(max)" />
+    <Property Name="Image7" Type="varbinary(max)" />
+    <Property Name="Image8" Type="varbinary(max)" />
+    <Property Name="Image9" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="ROOM_NAME">
+    <Key>
+      <PropertyRef Name="ID_Room" />
+    </Key>
+    <Property Name="ID_Room" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_User" Type="int" />
+    <Property Name="TrangThai" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ROOM_NAME_DETAIL">
+    <Key>
+      <PropertyRef Name="ID_Room" />
+    </Key>
+    <Property Name="ID_Room" Type="int" Nullable="false" />
+    <Property Name="LoaiPhong" Type="nvarchar" MaxLength="20" />
+    <Property Name="Khach" Type="smallint" />
+    <Property Name="SoPhongNgu" Type="smallint" />
+    <Property Name="SoGiuongNgu" Type="smallint" />
+    <Property Name="Wifi" Type="nvarchar" MaxLength="10" />
+    <Property Name="BaiXe" Type="nvarchar" MaxLength="10" />
+    <Property Name="ThucAn" Type="nvarchar" MaxLength="100" />
+    <Property Name="ThucUong" Type="nvarchar" MaxLength="100" />
+    <Property Name="NoiQuy" Type="nvarchar" MaxLength="200" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="200" />
+    <Property Name="TieuDe" Type="nvarchar" MaxLength="50" />
+    <Property Name="GiaPhong" Type="int" />
+    <Property Name="AnhDaiDien" Type="varbinary(max)" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
+    <Property Name="ToaDo" Type="nvarchar" MaxLength="50" />
+    <Property Name="ID_User" Type="int" />
+    <Property Name="XetDuyet" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="USER_NAME">
+    <Key>
+      <PropertyRef Name="ID_User" />
+    </Key>
+    <Property Name="ID_User" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="20" />
+    <Property Name="Ho" Type="nvarchar" MaxLength="20" />
+    <Property Name="Email" Type="nvarchar" MaxLength="60" />
+    <Property Name="MatKhau" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="USER_NAME_DETAIL">
+    <Key>
+      <PropertyRef Name="ID_User" />
+    </Key>
+    <Property Name="ID_User" Type="int" Nullable="false" />
+    <Property Name="TenTaiKhoan" Type="nvarchar" MaxLength="50" />
+    <Property Name="SoDienThoai" Type="nvarchar" MaxLength="20" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+    <Property Name="ThanhPho" Type="nvarchar" MaxLength="20" />
+    <Property Name="TinhHuyen" Type="nvarchar" MaxLength="20" />
+    <Property Name="MaBuuDien" Type="nvarchar" MaxLength="20" />
+    <Property Name="QuocGia" Type="nvarchar" MaxLength="20" />
+    <Property Name="AnhDaiDien" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="WHISLIST_ROOM">
+    <Key>
+      <PropertyRef Name="ID_Whislist" />
+    </Key>
+    <Property Name="ID_User" Type="int" />
+    <Property Name="ID_Room" Type="int" />
+    <Property Name="NgayThemVao" Type="date" />
+    <Property Name="ID_Whislist" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_BOOK_ROOM_ROOM_NAME">
+    <End Role="ROOM_NAME" Type="Self.ROOM_NAME" Multiplicity="0..1" />
+    <End Role="BOOK_ROOM" Type="Self.BOOK_ROOM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROOM_NAME">
+        <PropertyRef Name="ID_Room" />
+      </Principal>
+      <Dependent Role="BOOK_ROOM">
+        <PropertyRef Name="ID_Room" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BOOK_ROOM_USER_NAME">
+    <End Role="USER_NAME" Type="Self.USER_NAME" Multiplicity="0..1" />
+    <End Role="BOOK_ROOM" Type="Self.BOOK_ROOM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER_NAME">
+        <PropertyRef Name="ID_User" />
+      </Principal>
+      <Dependent Role="BOOK_ROOM">
+        <PropertyRef Name="ID_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ROOM_IMAGE_ROOM_NAME_DETAIL">
+    <End Role="ROOM_NAME_DETAIL" Type="Self.ROOM_NAME_DETAIL" Multiplicity="1" />
+    <End Role="ROOM_IMAGE" Type="Self.ROOM_IMAGE" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ROOM_NAME_DETAIL">
+        <PropertyRef Name="ID_Room" />
+      </Principal>
+      <Dependent Role="ROOM_IMAGE">
+        <PropertyRef Name="ID_Room" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ROOM_NAME_DETAIL_ROOM_NAME">
+    <End Role="ROOM_NAME" Type="Self.ROOM_NAME" Multiplicity="1" />
+    <End Role="ROOM_NAME_DETAIL" Type="Self.ROOM_NAME_DETAIL" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ROOM_NAME">
+        <PropertyRef Name="ID_Room" />
+      </Principal>
+      <Dependent Role="ROOM_NAME_DETAIL">
+        <PropertyRef Name="ID_Room" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ROOM_NAME_USER_NAME">
+    <End Role="USER_NAME" Type="Self.USER_NAME" Multiplicity="0..1" />
+    <End Role="ROOM_NAME" Type="Self.ROOM_NAME" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER_NAME">
+        <PropertyRef Name="ID_User" />
+      </Principal>
+      <Dependent Role="ROOM_NAME">
+        <PropertyRef Name="ID_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USER_NAME_DETAIL_USER_NAME">
+    <End Role="USER_NAME" Type="Self.USER_NAME" Multiplicity="1" />
+    <End Role="USER_NAME_DETAIL" Type="Self.USER_NAME_DETAIL" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="USER_NAME">
+        <PropertyRef Name="ID_User" />
+      </Principal>
+      <Dependent Role="USER_NAME_DETAIL">
+        <PropertyRef Name="ID_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WHISLIST_ROOM_ROOM_NAME">
+    <End Role="ROOM_NAME" Type="Self.ROOM_NAME" Multiplicity="0..1" />
+    <End Role="WHISLIST_ROOM" Type="Self.WHISLIST_ROOM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROOM_NAME">
+        <PropertyRef Name="ID_Room" />
+      </Principal>
+      <Dependent Role="WHISLIST_ROOM">
+        <PropertyRef Name="ID_Room" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WHISLIST_ROOM_USER_NAME">
+    <End Role="USER_NAME" Type="Self.USER_NAME" Multiplicity="0..1" />
+    <End Role="WHISLIST_ROOM" Type="Self.WHISLIST_ROOM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER_NAME">
+        <PropertyRef Name="ID_User" />
+      </Principal>
+      <Dependent Role="WHISLIST_ROOM">
+        <PropertyRef Name="ID_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NgubuiModelStoreContainer">
+    <EntitySet Name="BOOK_ROOM" EntityType="Self.BOOK_ROOM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ROOM_IMAGE" EntityType="Self.ROOM_IMAGE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ROOM_NAME" EntityType="Self.ROOM_NAME" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ROOM_NAME_DETAIL" EntityType="Self.ROOM_NAME_DETAIL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USER_NAME" EntityType="Self.USER_NAME" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USER_NAME_DETAIL" EntityType="Self.USER_NAME_DETAIL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WHISLIST_ROOM" EntityType="Self.WHISLIST_ROOM" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_BOOK_ROOM_ROOM_NAME" Association="Self.FK_BOOK_ROOM_ROOM_NAME">
+      <End Role="ROOM_NAME" EntitySet="ROOM_NAME" />
+      <End Role="BOOK_ROOM" EntitySet="BOOK_ROOM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BOOK_ROOM_USER_NAME" Association="Self.FK_BOOK_ROOM_USER_NAME">
+      <End Role="USER_NAME" EntitySet="USER_NAME" />
+      <End Role="BOOK_ROOM" EntitySet="BOOK_ROOM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ROOM_IMAGE_ROOM_NAME_DETAIL" Association="Self.FK_ROOM_IMAGE_ROOM_NAME_DETAIL">
+      <End Role="ROOM_NAME_DETAIL" EntitySet="ROOM_NAME_DETAIL" />
+      <End Role="ROOM_IMAGE" EntitySet="ROOM_IMAGE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ROOM_NAME_DETAIL_ROOM_NAME" Association="Self.FK_ROOM_NAME_DETAIL_ROOM_NAME">
+      <End Role="ROOM_NAME" EntitySet="ROOM_NAME" />
+      <End Role="ROOM_NAME_DETAIL" EntitySet="ROOM_NAME_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ROOM_NAME_USER_NAME" Association="Self.FK_ROOM_NAME_USER_NAME">
+      <End Role="USER_NAME" EntitySet="USER_NAME" />
+      <End Role="ROOM_NAME" EntitySet="ROOM_NAME" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_NAME_DETAIL_USER_NAME" Association="Self.FK_USER_NAME_DETAIL_USER_NAME">
+      <End Role="USER_NAME" EntitySet="USER_NAME" />
+      <End Role="USER_NAME_DETAIL" EntitySet="USER_NAME_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WHISLIST_ROOM_ROOM_NAME" Association="Self.FK_WHISLIST_ROOM_ROOM_NAME">
+      <End Role="ROOM_NAME" EntitySet="ROOM_NAME" />
+      <End Role="WHISLIST_ROOM" EntitySet="WHISLIST_ROOM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WHISLIST_ROOM_USER_NAME" Association="Self.FK_WHISLIST_ROOM_USER_NAME">
+      <End Role="USER_NAME" EntitySet="USER_NAME" />
+      <End Role="WHISLIST_ROOM" EntitySet="WHISLIST_ROOM" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

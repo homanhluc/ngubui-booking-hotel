@@ -1,0 +1,180 @@
+﻿@model Ngubui_Project.Models.USER_NAME
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ngubui || LK </title>
+
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="~/abserve/themes/abserve/css/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="~/abserve/themes/abserve/css/img/apple-touch-icon-57x57-precomposed.html">
+
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="~/abserve/themes/abserve/css/img/apple-touch-icon-72x72-precomposed.html">
+
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="~/abserve/themes/abserve/css/img/apple-touch-icon-114x114-precomposed.html">
+
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="~/abserve/themes/abserve/css/img/apple-touch-icon-144x144-precomposed.html">
+
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyBmakwIjdQn-ZZi9VdDpG9Bc17AJvppfSc" type="text/javascript"></script>
+    <script type='text/javascript' src="~/abserve/js/gmaps.js"></script>
+    <script type="text/javascript">
+
+    </script>
+    <script type="text/javascript" src="~/abserve/js/plugins/jquery.min.js"></script>
+    <script type='text/javascript' src="~/abserve/js/jquery.sliderPro.min.js"></script>
+    <script src="~/abserve/themes/abserve/js/ionrangeslider.js"></script>
+
+    <!-- CSS -->
+    <link href="~/abserve/css/slider-pro.min.css" rel="stylesheet">
+    <link href="~/abserve/themes/abserve/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/abserve/themes/abserve/css/blog.css" rel="stylesheet">
+    <link href="~/abserve/themes/abserve/css/animate.min.css" rel="stylesheet">
+    <link href="~/abserve/themes/abserve/css/style.css" rel="stylesheet">
+    <link href="~/abserve/themes/abserve/css/abserve.css" rel="stylesheet">
+    <link href="~/abserve/themes/abserve/css/grey.css" rel="stylesheet">
+    <link href="~/abserve/themes/abserve/css/menu.css" rel="stylesheet">
+    <link href="~/abserve/themes/abserve/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/abserve/themes/abserve/css/icomoon.css">
+    <link href="~/abserve/themes/abserve/css/icon_font.css" rel="stylesheet">
+    <link href="~/abserve/themes/abserve/css/mystyles.css" rel="stylesheet">
+    <link href="~/abserve/themes/abserve/css/ion.rangeSlider.css" rel="stylesheet">
+    <link href="~/abserve/themes/abserve/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+    <link href="~/abserve/themes/abserve/css/responsive.css" rel="stylesheet">
+
+
+
+    <link href="~/abserve/themes/abserve/css/fontello/css/icon_set_1.css" rel="stylesheet">
+
+    <link href="~/abserve/themes/abserve/css/fontello/css/icon_set_2.css" rel="stylesheet">
+
+    <link href="~/abserve/themes/abserve/css/fontello/css/fontello.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="register_log">
+        <div class="register_log_bg"></div>
+
+        <div class="log_box">
+
+            <div class="text-center delayp1">
+
+                <a href="@Url.Action("Index","Home")">
+
+
+                    <img src="~/abserve/images/airstar_logo.png" alt="AirStar" />
+
+
+                </a>
+
+            </div>
+            @using (Html.BeginForm())
+            {
+                <h3>@ViewBag.succes</h3>
+            <form method="POST" action="~/airstar/public/user/create" accept-charset="UTF-8" class="form-signup" autocomplete="off">
+                <input name="_token" type="hidden" value="8gORNUxqQ7eaYQJgFThyyDE6BQM77JwvlWWZ49dk">
+                @Html.ValidationSummary(true)
+                @Html.AntiForgeryToken()
+
+                <ul class="parsley-error-list"></ul>
+
+
+
+                <div class="form-group has-feedback">
+
+                    <label>Họ	 </label><i class="icon-users form-control-feedfront"></i>
+
+                    @Html.EditorFor(model=>model.Ho, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Ho)
+
+                </div>
+
+
+
+                <div class="form-group has-feedback">
+
+                    <label>Tên	 </label><i class="icon-users form-control-feedfront"></i>
+
+                    @Html.EditorFor(model => model.Ten, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Ten)
+
+
+                </div>
+
+
+
+                <div class="form-group has-feedback">
+
+                    <label>Địa chỉ Email	 </label>
+
+                    <i class="glyphicon-map-marker form-control-feedfront"></i>
+
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+
+
+
+                <div class="form-group has-feedback">
+
+                    <label>Mật khẩu	</label>
+
+                    <i class="icon-lock form-control-feedfront"></i>
+
+                    @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @class = "form-control", @type = "password" } })
+                    @Html.ValidationMessageFor(model => model.MatKhau)
+                </div>
+
+
+
+                <div class="form-group has-feedback">
+
+                    <label>Nhập lại mật khẩu	</label>
+
+                    <i class="icon-lock form-control-feedfront"></i>
+                    @Html.EditorFor(model => model.MatKhauConfirm, new { htmlAttributes = new { @class = "form-control", @type = "password" } })
+                    @Html.ValidationMessageFor(model => model.MatKhauConfirm)
+                </div>
+
+
+
+
+
+                <div class="row form-actions">
+
+                    <div class="col-sm-12">
+
+                        <button type="submit" style="width:100%;" class="btn btn-primary pull-right">Đăng ký	</button>
+
+                    </div>
+
+                </div>
+           <br />
+
+                    <div>
+
+
+                        <a href="" class="btn btn-primary"><i class="icon-facebook"></i> Facebook </a>
+
+                        <a href="" class="btn btn-danger"><i class="icon-google"></i> Google </a>
+
+                        <a href="" class="btn btn-info"><i class="icon-twitter"></i> Twitter </a>
+
+                    </div>
+                    <label style="padding:10px 0">
+
+                        Bạn đã có tài khoản ?<a class="have_account" href="@Url.Action("Loggin","Account")"> Đăng nhập  </a>
+
+                    </label>
+
+            </form>
+            }
+        </div>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5ceb3d7942e54fbfacee761c9092a223" Name="Diagram1">
+        <EntityTypeShape EntityType="NgubuiModel.BOOK_ROOM" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NgubuiModel.ROOM_IMAGE" Width="1.5" PointX="10.5" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NgubuiModel.ROOM_NAME" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NgubuiModel.ROOM_NAME_DETAIL" Width="1.5" PointX="8.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="NgubuiModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NgubuiModel.USER_NAME" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NgubuiModel.USER_NAME_DETAIL" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NgubuiModel.WHISLIST_ROOM" Width="1.5" PointX="5.25" PointY="12.375" IsExpanded="true" />
+        <AssociationConnector Association="NgubuiModel.FK_BOOK_ROOM_ROOM_NAME" ManuallyRouted="false" />
+        <AssociationConnector Association="NgubuiModel.FK_BOOK_ROOM_USER_NAME" ManuallyRouted="false" />
+        <AssociationConnector Association="NgubuiModel.FK_ROOM_IMAGE_ROOM_NAME_DETAIL" ManuallyRouted="false" />
+        <AssociationConnector Association="NgubuiModel.FK_ROOM_NAME_DETAIL_ROOM_NAME" ManuallyRouted="false" />
+        <AssociationConnector Association="NgubuiModel.FK_ROOM_NAME_USER_NAME" ManuallyRouted="false" />
+        <AssociationConnector Association="NgubuiModel.FK_WHISLIST_ROOM_ROOM_NAME" ManuallyRouted="false" />
+        <AssociationConnector Association="NgubuiModel.FK_USER_NAME_DETAIL_USER_NAME" ManuallyRouted="false" />
+        <AssociationConnector Association="NgubuiModel.FK_WHISLIST_ROOM_USER_NAME" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,420 @@
+﻿@using PagedList.Mvc;
+@using PagedList;
+@model IPagedList<Ngubui_Project.Models.ROOM_NAME_DETAIL>
+@if (Session["Account"] != null)
+{
+    Layout = "~/Views/Shared/_LayoutLogged.cshtml";
+}
+else
+{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main_class" style="min-height:400px;">
+
+    <div id="stat" style="color: Red;"></div>
+
+    <div id="preloader" style="display: none;">
+        <div class="sk-spinner sk-spinner-wave">
+            <div class="sk-rect1"></div>
+            <div class="sk-rect2"></div>
+            <div class="sk-rect3"></div>
+            <div class="sk-rect4"></div>
+            <div class="sk-rect5"></div>
+        </div>
+    </div>
+
+    <section class="parallax-window" data-parallax="scroll" data-image-src="http://imgur.com/a/O8RYF" data-natural-width="1400" data-natural-height="470">
+        <div class="parallax-content-1">
+            <div class="animated fadeInDown">
+                <h1>KẾT QUẢ TÌM KIẾM</h1>
+                <p>Danh sách các phòng có địa chỉ gần trùng với từ khóa mà bạn nhập</p>
+                <div class="hidden-xs search_one">
+                    <!-- <h2>seach_rooms</h2> -->
+                    @using (Html.BeginForm("RoomSearchResult", "SearchRoom", FormMethod.Post))
+                    {
+                        <form class="hotel_search_form" id="search_form" action="#" method="get">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                    <div class="form-group form-group-lg form-group-icon-left">
+                                        <i class="fa fa-map-marker input-icon"></i>
+                                        <label>Nơi bạn muốn đến?</label>
+                                        @Html.TextBox("txtTimKiem", "", htmlAttributes: new { @class = "typeahead form-control city_tab", @placeholder = "Nhập tên thành phố hoặc tỉnh", @name = "search_city", @id = "city_tab" })
+                                        <div id="city_err" style="display: none; text-align: left;">Nhập tên thành phố hoặc tỉnh</div>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="page" value="1">
+                                <div class="col-md-8 col-sm-8 col-xs-12">
+                                    <div class="input-daterange" data-date-format="M d, yyyy">
+                                        <div class="row">
+                                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                                <div class="form-group form-group-lg form-group-icon-left">
+                                                    <i class="fa fa-calendar input-icon input-icon-highlight"></i>
+                                                    <label>Check-in</label>
+                                                    <input class="form-control" name="start" type="text" data-stdate="Apr 26, Tue" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                                <div class="form-group form-group-lg form-group-icon-left">
+                                                    <i class="fa fa-calendar input-icon input-icon-highlight"></i>
+                                                    <label>Check-out</label>
+                                                    <input class="form-control" name="end" type="text" data-endate="May 3, Tue" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                                <div class="form-group form-group-lg form-group-select-plus">
+                                                    <label>Khách</label>
+                                                    <div class="btn-group btn-group-select-num" data-toggle="buttons">
+                                                        <label class="btn btn-primary">
+                                                            <input value="1" type="radio" name="guest_nf" />1
+                                                        </label>
+                                                        <label class="btn btn-primary">
+                                                            <input value="2" type="radio" name="guest_nf" />2
+                                                        </label>
+                                                        <label class="btn btn-primary">
+                                                            <input value="3" type="radio" name="guest_nf" />3
+                                                        </label>
+                                                        <label class="btn btn-primary">
+                                                            <input value="on" type="radio" name="options" />3+
+                                                        </label>
+                                                    </div>
+                                                    <select name="selt_guest" class="form-control hidden">
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option selected="selected">4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                        <option>9</option>
+                                                        <option>10</option>
+                                                        <option>11</option>
+                                                        <option>12</option>
+                                                        <option>13</option>
+                                                        <option>14</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-12"><button class="btn btn-primary btn-lg marg_t_30" type="submit">Tìm kiếm</button></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    }
+
+
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            $('input.date-pick, .input-daterange input[name="start"]').datepicker('setDate', 'Apr 26, Tue');
+                            $('.input-daterange input[name="end"]').datepicker('setDate', 'May 3, Tue');
+                        })
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section><!-- End section -->
+
+
+    <div id="position">
+        <div class="container">
+            <ul class="breadcrumb1">
+                <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+
+            </ul>
+        </div>
+    </div>
+
+    <article class="entry">
+        <div class="entry-content">
+
+
+
+        </div>
+    </article>
+
+
+    <style>
+        #map_canvas {
+            width: 99%;
+            height: 200px;
+            border: solid 1px #ccc;
+        }
+    </style>
+
+    <div class="map_collapse map_close" id="map_cllpse">
+        <div id="map"></div>
+    </div>
+
+    <div class="container margin_60">
+        <div class="row">
+            <aside class="col-lg-3 col-md-3">
+                <p>
+                    <a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap">Xem trên bản đồ</a>
+                </p>
+                <div class="hidden-md hidden-lg search_two">
+                    <!-- <h2>seach_rooms</h2> -->
+                    <form class="hotel_search_form" id="search_form" action="#" method="get">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group form-group-lg form-group-icon-left">
+                                    <i class="fa fa-map-marker input-icon"></i>
+                                    <label>Where are you going?</label>
+                                    <input required class="typeahead form-control city_tab" placeholder="Enter Correct City Ex:City, State, Country" value="Madurai, OH, United States" name="search_city" type="text" id="city_tab" />
+                                    <div id="city_err" style="display: none; text-align: left;">Enter Correct City Ex:City, State, Country</div>
+                                </div>
+                            </div>
+                            <input type="hidden" name="page" value="1">
+                            <div class="col-md-8 col-sm-8 col-xs-12">
+                                <div class="input-daterange" data-date-format="M d, yyyy">
+                                    <div class="row">
+                                        <div class="col-md-3 col-sm-3 col-xs-12">
+                                            <div class="form-group form-group-lg form-group-icon-left">
+                                                <i class="fa fa-calendar input-icon input-icon-highlight"></i>
+                                                <label>Check-in</label>
+                                                <input class="form-control" name="start" type="text" data-stdate="Apr 26, Tue" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 col-xs-12">
+                                            <div class="form-group form-group-lg form-group-icon-left">
+                                                <i class="fa fa-calendar input-icon input-icon-highlight"></i>
+                                                <label>Check-out</label>
+                                                <input class="form-control" name="end" type="text" data-endate="May 3, Tue" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 col-xs-12">
+                                            <div class="form-group form-group-lg form-group-select-plus">
+                                                <label>Guests</label>
+                                                <div class="btn-group btn-group-select-num" data-toggle="buttons">
+                                                    <label class="btn btn-primary">
+                                                        <input value="1" type="radio" name="guest_nf" />1
+                                                    </label>
+                                                    <label class="btn btn-primary">
+                                                        <input value="2" type="radio" name="guest_nf" />2
+                                                    </label>
+                                                    <label class="btn btn-primary">
+                                                        <input value="3" type="radio" name="guest_nf" />3
+                                                    </label>
+                                                    <label class="btn btn-primary">
+                                                        <input value="on" type="radio" name="options" />3+
+                                                    </label>
+                                                </div>
+                                                <select name="selt_guest" class="form-control hidden">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option selected="selected">4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                    <option>13</option>
+                                                    <option>14</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-2 col-xs-12"><button class="btn btn-primary btn-lg marg_t_30" type="submit">search<!-- core. --></button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            $('input.date-pick, .input-daterange input[name="start"]').datepicker('setDate', 'Apr 26, Tue');
+                            $('.input-daterange input[name="end"]').datepicker('setDate', 'May 3, Tue');
+                        })
+                    </script>
+                </div>
+                <div id="filters_col">
+                    <a data-toggle="collapse" href="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters" id="filters_col_bt"><i class="icon_set_1_icon-65"></i>Lọc tìm kiếm<i class="icon-plus-1 pull-right"></i></a>
+                    <div class="collapse in" id="collapseFilters">
+     
+                        <!-- <div class="filter_type">
+                            <h6>Star Category</h6>
+                            <ul>
+                                <li><label><input class="checkbox_design" type="checkbox"><span class="rating">
+                                <i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i>
+                                </span>(15)</label></li>
+
+                                <li><label><input class="checkbox_design" type="checkbox"><span class="rating">
+                                <i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81"></i>
+                                </span>(45)</label></li>
+
+                                <li><label><input class="checkbox_design" type="checkbox"><span class="rating">
+                                <i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81"></i><i class="icon_set_1_icon-81"></i>
+                                </span>(35)</label></li>
+
+                                <li><label><input class="checkbox_design" type="checkbox"><span class="rating">
+                                <i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81"></i><i class="icon_set_1_icon-81"></i><i class="icon_set_1_icon-81"></i>
+                                </span>(25)</label></li>
+
+                                <li><label><input class="checkbox_design" type="checkbox"><span class="rating">
+                                <i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81"></i><i class="icon_set_1_icon-81"></i><i class="icon_set_1_icon-81"></i><i class="icon_set_1_icon-81"></i>
+                                </span>(15)</label></li>
+                            </ul>
+                        </div> -->
+                        <div class="filter_type">
+                            <h6>Giá phòng</h6>
+                            <label>
+                                <input class="i-check iCheck-helper amen" name="General" type="checkbox" value="1" />Từ 100.000đ đến 500.000đ
+                            </label>
+
+                            <label>
+                                <input class="i-check iCheck-helper amen" name="General" type="checkbox" value="2" />Từ 500.000đ đến 1.000.000đ
+                            </label>
+
+                            <label>
+                                <input class="i-check iCheck-helper amen" name="Services" type="checkbox" value="3" />Lớn hơn 1.000.000đ
+                            </label>
+
+                        </div><!--End filter_type -->
+                        <div class="filter_type">
+                            <h6>Loại phòng</h6>
+                            <label>
+                                <input class="i-check iCheck-helper amen" name="General" type="checkbox" value="1" />Khách Sạn
+                            </label>
+
+                            <label>
+                                <input class="i-check iCheck-helper amen" name="General" type="checkbox" value="2" />Nhà Nghỉ
+                            </label>
+
+                            <label>
+                                <input class="i-check iCheck-helper amen" name="Services" type="checkbox" value="3" />Phòng Trọ
+                            </label>
+
+                        </div><!--End filter_type -->
+                    </div><!--End collapse -->
+                </div>
+            </aside>
+
+            <div class="col-lg-9 col-md-8">
+
+                <div class="room_list">
+                    <div class="row">
+                        <input type="hidden" name="user_id" class="user_id" value="">
+                        <div id="wish_add" class="popup_abs"><span></span></div>
+
+
+
+                        @{
+                            foreach (var item in Model)
+                            {
+
+                                <div class="strip_all_tour_list wow fadeIn animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                            <!-- <div class="wishlist">+</div> -->
+                                            <a class="tooltip_flip tooltip-effect-1 ai  foo hrt1 wish_log abserve_icon-82" href="#" data-toggle="modal" data-target="#Login_pop">
+                                                <span class="tooltip-content-flip"><span class="tooltip-back"></span></span>
+                                                <input type="hidden" name="room_id" class="room_id" value="10">
+                                            </a>
+                                            <div class="img_list">
+                                                <a href="@Url.Action("RoomDetail", new { @ID_Room = item.ID_Room })" class="book_room">
+                                                    <div></div>
+                                                    <img style="cursor:pointer;" src="data:image;base64,@Convert.ToBase64String((byte[])item.AnhDaiDien)" alt="Image">
+
+                                                    <div class="short_info"><i class="icon_set_1_icon-6"></i>@Html.DisplayFor(modelItem => item.LoaiPhong)</div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix visible-xs-block"></div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6">
+                                            <div class="tour_list_desc">
+
+                                                @*<div class="rating">
+                                                        <i class="icon-star-empty"></i>
+                                                        <i class="icon-star-empty"></i>
+                                                        <i class="icon-star-empty"></i>
+                                                        <i class="icon-star-empty"></i>
+                                                        <i class="icon-star-empty"></i>
+                                                    </div>*@
+                                                <h3 style="cursor:pointer;"><a href="@Url.Action("RoomDetail", new { @ID_Room = item.ID_Room })" class="book_room">@Html.DisplayFor(modelItem => item.TieuDe)</a></h3>
+                                                <p>@Html.DisplayFor(modelItem => item.MoTa)</p>
+                                                <ul class="add_info">
+                                                    <li>
+                                                        <div class="tooltip_styled tooltip-effect-4">
+                                                            <span class="tooltip-item"><i class="icon_set_1_icon-41"></i></span>
+                                                            <div class="tooltip-content">
+                                                                <h4>Address</h4>
+                                                                @Html.DisplayFor(modelItem => item.DiaChi)
+
+                                                                <!-- <a href="#">View on map</a> -->
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2">
+                                            <div class="price_list">
+                                                <div>
+                                                    <sup>VNĐ</sup>
+                                                    @String.Format("{0:0,0}", Html.DisplayFor(modelItem => item.GiaPhong))<span class="normal_price_list"></span><small>Ngày</small>
+                                                    <p><a href="@Url.Action("RoomDetail", "Home", new { @ID_Room = item.ID_Room })" class="btn btn-primary book_room Book_avail avail a_tag">Xem chi tiết</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+
+
+
+                    </div>
+                    <div class="text-center">
+                        <ul class="pagination">
+                            @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+                            @Html.PagedListPager(Model, page => Url.Action("RoomSearchResult", new { page = page, @sTuKhoa = ViewBag.TuKhoa }))
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="gap"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+        var locations = [
+            @foreach(var item in Model){
+
+            <Text>
+                 ['@item.DiaChi'+' <p><a href="@Url.Action("RoomDetail", "Home", new { @ID_Room = item.ID_Room })" class="btn btn-primary book_room Book_avail avail a_tag">Xem chi tiết</a></p>', @item.ToaDo, @Model.Count()],
+            </Text>
+            }
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 10,
+      center: new google.maps.LatLng(10.989795, 106.652499),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+    for (i = 0; i < locations.length; i++) {
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+    });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+</script>
+

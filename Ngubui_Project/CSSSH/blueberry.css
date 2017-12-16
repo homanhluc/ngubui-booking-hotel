@@ -1,0 +1,161 @@
+/*Slide banner right
+ * jQuery Blueberry Slider v0.4 BETA
+ * http://marktyrrell.com/labs/blueberry/
+ */
+
+.blueberry {width: 300px;  margin: 0 auto; }
+.blueberry .slides {
+	display: block;
+	position: relative;
+	overflow: hidden;
+    width:300px;
+    height:200px;
+    padding:0px;
+    margin:0px;
+}
+.blueberry .slides li {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+.blueberry .slides li img {
+	/*display: block;*/
+	max-width: none;
+}
+.blueberry .slides li.active { display: block; position: relative; }
+.blueberry .crop li img { width: auto; }
+
+.blueberry .pagers {
+	text-align: center;
+      padding:0px;
+      margin: 0;
+      display:none;
+}
+.blueberry .pagers li { display: inline-block; }
+.blueberry .pagers li a,
+.blueberry .pagers li a span {
+	display: block;
+	height: 4px;
+	width: 4px;
+}
+.blueberry .pagers li a {
+	padding: 5px 8px;
+-webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+	border-radius: 6px;
+}
+.blueberry .pagers li a span {
+	overflow: hidden;
+	background: #c0c0c0;
+	text-indent: -9999px;
+-webkit-border-radius: 2px;
+   -moz-border-radius: 2px;
+	border-radius: 2px;
+}
+.blueberry .pagers li.active a span { background: #a9834f; }
+/*banner main 640 x 200*/ 
+.Mainberry {width: 970px;border-radius:3px;overflow:hidden;  margin: 0 auto; }
+.Mainberry .slides {
+	display: block;
+	position: relative;
+	overflow: hidden;
+    width:970px;
+    height:130px;
+    padding:0px;
+    margin:0px;
+}
+.Mainberry .slides li {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+.Mainberry .slides li img {
+	/*display: block;*/
+	max-width: none;
+}
+.Mainberry .slides li.active { display: block; position: relative; }
+.Mainberry .crop li img { width: auto; }
+
+.Mainberry .pagers {
+	text-align: center;
+      padding:0px;
+      margin: 0;
+      display:none;
+}
+.Mainberry .pagers li { display: inline-block; }
+.Mainberry .pagers li a,
+.Mainberry .pagers li a span {
+	display: block;
+	height: 4px;
+	width: 4px;
+}
+.Mainberry .pagers li a {
+	padding: 5px 8px;
+-webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+	border-radius: 6px;
+}
+.Mainberry .pagers li a span {
+	overflow: hidden;
+	background: #c0c0c0;
+	text-indent: -9999px;
+-webkit-border-radius: 2px;
+   -moz-border-radius: 2px;
+	border-radius: 2px;
+}
+.Mainberry .pagers li.active a span { background: #a9834f; }
+/*video 640 x 100*/ 
+.Videoberry {width: 640px;  margin: 0 auto; }
+.Videoberry .slides {
+	display: block;
+	position: relative;
+	overflow: hidden;
+    width:640px;
+    height:100px;
+    padding:0px;
+    margin:0px;
+}
+.Videoberry .slides li {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+.Videoberry .slides li img {
+	/*display: block;*/
+	max-width: none;
+}
+.Videoberry .slides li.active { display: block; position: relative; }
+.Videoberry .crop li img { width: auto; }
+
+.Videoberry .pagers {
+	text-align: center;
+      padding:0px;
+      margin: 0;
+      display:none;
+}
+.Videoberry .pagers li { display: inline-block; }
+.Videoberry .pagers li a,
+.Videoberry .pagers li a span {
+	display: block;
+	height: 4px;
+	width: 4px;
+}
+.Videoberry .pagers li a {
+	padding: 5px 8px;
+-webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+	border-radius: 6px;
+}
+.Videoberry .pagers li a span {
+	overflow: hidden;
+	background: #c0c0c0;
+	text-indent: -9999px;
+-webkit-border-radius: 2px;
+   -moz-border-radius: 2px;
+	border-radius: 2px;
+}
+.Videoberry .pagers li.active a span { background: #a9834f; }
+

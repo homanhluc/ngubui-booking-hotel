@@ -1,0 +1,39 @@
+﻿@using Ngubui_Project.Models;
+@model List<ROOM_NAME_DETAIL>
+
+@{
+    foreach (var item in Model)
+    {
+        <div data-wow-delay="0.1s" class="col-md-4 col-sm-6 col-xs-6 full_width wow zoomIn animated" style="visibility: visible; animation-delay: 0.1s; animation-name: zoomIn;">
+            <div class="tour_container">
+                <div class="img_container">
+                    <a style="cursor:pointer" href="@Url.Action("RoomDetail", new {@ID_Room = item.ID_Room })" title="Xem chi tiết">
+                        <img data-roomcount="1" data-room="25" data-member="1" data-start="" data-end="" data-area="timbuktu,taured" data-min="10" data-max="633" class="book_room" src="data:image;base64,@Convert.ToBase64String((byte[])@item.AnhDaiDien)" alt="Dicky" title="Dicky">
+                        <div class="detail_text">DETAILS</div>
+                        <div class="ribbon top_rated"></div>
+                        <div class="short_info">
+                            @item.DiaChi
+                            <span class="price">         
+                               @String.Format("{0:0,0}", item.GiaPhong)<sup>VNĐ</sup>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div class="tour_title">
+                    <h3><strong>@item.TieuDe</strong> <!-- Private Room --></h3>
+                    <div class="rating">
+                        @if(item.XetDuyet == "Có")
+                        {
+                            <p style="color:dodgerblue">Đã kiểm duyệt</p>
+                        }
+                        else
+                        {
+                            <p>Chưa kiểm duyệt</p>
+                        }
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}

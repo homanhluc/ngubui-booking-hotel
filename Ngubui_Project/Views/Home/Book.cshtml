@@ -1,0 +1,130 @@
+﻿@using Ngubui_Project.Models;
+
+@{
+    var checkdate = Session["Checkdate"] as Ngubui_Project.Models.ROOM_NAME_DETAIL;
+    var User = Session["Account"] as Ngubui_Project.Models.USER_NAME;
+    Layout = "~/Views/Shared/_LayoutLogged.cshtml";
+}
+
+<!-- TOP AREA -->
+
+<div class="main_class" style="min-height:400px;">
+
+    <div id="stat" style="color: Red;"></div>
+
+    <div class="gap"></div>
+    <div class="container margin_60">
+        <div class="row">
+            <div class="col-md-8">
+                <table class="table table-striped options_cart">
+                    <thead>
+                        <tr>
+                            <th colspan="3">
+                                Xác nhận đặt phòng
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="width:60%">
+                                Ngày nhận phòng
+                            </td>
+                            <td style="width:35%">
+                                @checkdate.Checkin
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Ngày trả phòng
+                            </td>
+                            <td>
+                                @checkdate.Checkout
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Số khách
+                            </td>
+                            <td>
+                                @checkdate.SoKhach
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Địa chỉ
+                            </td>
+                            <td>
+                                @Session["DiaChi"]
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Loại phòng
+                            </td>
+                            <td>
+                               @Session["LoaiPhong"]
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Giá thực tế
+                            </td>
+                            <td>
+                                @String.Format("{0:0,0}", @Session["Gia"])
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <aside class="col-md-4">
+                <div class="box_style_1">
+                    <h3 class="inner">TỔNG CHI PHÍ</h3>
+                    <form action="" method="post">
+                        <input value="1" name="room_id" type="hidden">
+                        <input type="hidden" name="pay" value="paypal">
+                        <table class="table table_summary">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Giá thực tế
+                                    </td>
+                                    <td class="text-right">
+                                       
+                                        @String.Format("{0:0,0}", @Session["Gia"])
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Số đêm
+                                    </td>
+                                    <td class="text-right">
+                                        <p id="sodem"></p>
+                                    </td>
+                                </tr>
+                                <tr class="total">
+                                    <td>
+                                        Giá tổng
+                                    </td>
+                                    <td class="text-right">
+                                       <p id="tong"></p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <a href="@Url.Action("BookingConfirmation","Home", new {@ID_Room = Session["ID_Room"], @ID_User = User.ID_User })" class="btn_full" >Xác nhận</a>
+                        <a class="btn_full_outline" href="javascript:history.go(-1)"><i class="icon-right"></i>Hủy</a>
+                    </form>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
+<script>
+
+    var cin = new Date("@checkdate.Checkin").getDate();
+    var cou = new Date("@checkdate.Checkout").getDate();
+    var nn = cou-cin;
+    var mm = nn * @Session["Gia"] ;
+    document.getElementById("sodem").innerHTML = nn;
+    document.getElementById("tong").innerHTML = mm;
+</script>

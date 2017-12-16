@@ -1,0 +1,370 @@
+﻿
+@if (Session["Account"] != null)
+{
+ 
+    Layout = "~/Views/Shared/_LayoutLogged.cshtml";
+
+}
+else
+{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+    <!-- Main -->
+
+    <div class="main_class" style="min-height:400px;">
+
+        <div id="stat" style="color: Red;"></div>
+
+        <div class="top-area show-onload">
+            <div class="bg-holder full">
+                <div class="bg-mask"></div>
+                <div class="bg-img" style="background: rgba(0, 0, 0, 0) url('../../abserve/themes/abserve/img/bg_image.jpg') no-repeat fixed 0 0 / cover;"></div>
+                <video class="bg-video" preload="auto" autoplay="true" loop="loop" muted="muted" poster="img/video-bg.html">
+                    <source src="~/media/paris.webm" type="video/webm" />
+                    <source src="~/media/paris.mp4" type="video/mp4" />
+                </video>
+                <div class="bg-front full-height">
+                    <div class="container rel full-height">
+                        <div class="search-tabs search-tabs-bg search-tabs-bottom">
+                            <div class="tabbable">
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="tab-1">
+                                        <h2>Tìm phòng</h2>
+                                        @using (Html.BeginForm("RoomSearchResult","SearchRoom", FormMethod.Post)) {
+                                        <form class="hotel_search_form" id="search_form" action="" method="get">
+                                            <div class="row">
+                                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="form-group form-group-lg form-group-icon-left">
+                                                        <i class="fa fa-map-marker input-icon"></i>
+                                                        <label>Nơi bạn muốn đến?</label>
+                                                        @Html.TextBox("txtTimKiem","",htmlAttributes: new { @class = "typeahead form-control city_tab", @placeholder = "Nhập tên thành phố hoặc tỉnh", @name = "search_city", @id = "city_tab" })
+                                                        <div id="city_err" style="display: none; text-align: left;">Nhập tên thành phố hoặc tỉnh</div>
+                                                    </div>
+                                                </div>
+                                                <input type="hidden" name="page" value="1">
+                                                <div class="col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="input-daterange" data-date-format="M d, yyyy">
+                                                        <div class="row">
+                                                            <div class="col-md-4 col-sm-4">
+                                                                <div class="form-group form-group-lg form-group-icon-left">
+                                                                    <i class="fa fa-calendar input-icon input-icon-highlight"></i>
+                                                                    <label>Check-in</label>
+                                                                    <input class="form-control" name="start" type="text" data-stdate="" value="" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4 col-sm-4">
+                                                                <div class="form-group form-group-lg form-group-icon-left">
+                                                                    <i class="fa fa-calendar input-icon input-icon-highlight"></i>
+                                                                    <label>Check-out</label>
+                                                                    <input class="form-control" name="end" type="text" data-endate="" value="" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3 col-sm-4">
+                                                                <div class="form-group form-group-lg form-group-select-plus">
+                                                                    <label>Khách</label>
+                                                                    <div class="btn-group btn-group-select-num" data-toggle="buttons">
+                                                                        <label class="btn btn-primary active">
+                                                                            <input value="1" type="radio" name="guest_nf" checked="checked" />1
+                                                                        </label>
+                                                                        <label class="btn btn-primary">
+                                                                            <input value="2" type="radio" name="guest_nf" />2
+                                                                        </label>
+                                                                        <label class="btn btn-primary">
+                                                                            <input value="3" type="radio" name="guest_nf" />3
+                                                                        </label>
+                                                                        <label class="btn btn-primary">
+                                                                            <input value="on" type="radio" name="options" />3+
+                                                                        </label>
+                                                                    </div>
+                                                                    <select name="selt_guest" class="form-control hidden">
+                                                                        <option>1</option>
+                                                                        <option>2</option>
+                                                                        <option>3</option>
+                                                                        <option>4</option>
+                                                                        <option>5</option>
+                                                                        <option>6</option>
+                                                                        <option>7</option>
+                                                                        <option>8</option>
+                                                                        <option>9</option>
+                                                                        <option>10</option>
+                                                                        <option>11</option>
+                                                                        <option>12</option>
+                                                                        <option>13</option>
+                                                                        <option>14</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-primary btn-lg" type="submit">Tìm kiếm</button>
+                                        </form>
+                                        }
+                                        <script type="text/javascript">
+$(document).ready(function()
+                                        {
+    $('input.date-pick, .input-daterange input[name="start"]').datepicker('setDate', 'today');
+    $('.input-daterange input[name="end"]').datepicker('setDate', '+7d');
+                                        })
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END TOP AREA  -->
+
+        <div class="container">
+            <!-- <div class="gap"></div> -->
+            <div class="section-title">
+                <label>CÁC PHÒNG ĐƯỢC ĐÁNH GIÁ CAO NHẤT</label>
+                <h4>XẾP HẠNG CAO NHẤT</h4>
+            </div>
+            <div class="row row-wrap">
+
+                @Html.Action("NewRoomPartial", "Home")
+
+            </div>
+
+            <!-- </form> -->
+        </div>
+        <!-- Start Lastminute deal -->
+        <div class="last_deal_bg">
+            <div class="container">
+                <div id="owl-slider" style="opacity: 1;display: block;">
+                    <div class="gap gap-big text-center text-white item">
+                        <h2 class="text-uc mb20">THAM QUAN ĐỊA ĐIỂM DU LỊCH</h2>
+                        <h5 class="last-minute-title">Một số nơi được đánh giá cao</h5>
+                        <ul class="list-inline-block mb0 last-minute-rating">
+                            <li><i class="fa fa-star-o"></i></li>
+                            <li><i class="fa fa-star-o"></i></li>
+                            <li><i class="fa fa-star-o"></i></li>
+                            <li><i class="fa fa-star-o"></i></li>
+                            <li><i class="fa fa-star-o"></i></li>
+                        </ul>
+                        <p class="last-minute-date" id="time"></p>
+                        <a data-roomcount="" data-member="" data-room="19" data-start="" data-end="" data-area="Madurai,India" data-min="10" data-max="633" class="btn btn-lg btn-white btn-ghost book_room">Xem ngay <i class="fa fa-angle-right"></i></a>
+                        <script>
+                            var today = new Date();
+                            document.getElementById('time').innerHTML = today;
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Lastminutedeal -->
+        <div class="container trends">
+            <div class="gap"></div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <h3>Khách sạn <small><!-- <a href="#">view all</a> --></small></h3>
+                    <ul class="booking-list sponsors-carousel">
+                        @Html.Action("KhachSanPartial", "Home")
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <h3>Nhà nghỉ<small><!-- <a href="#">view all</a> --></small></h3>
+                    <ul class="booking-list sponsors-carousel">
+                        @Html.Action("NhaNghiPartial", "Home")
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <h3>Phòng trọ<small><!-- <a href="#">view all</a> --></small></h3>
+                    <ul class="booking-list sponsors-carousel">
+                        @Html.Action("PhongTroPartial", "Home")
+                    </ul>
+                </div>
+            </div>
+            <div class="gap gap-small"></div>
+        </div>
+
+        <div class="choose_img">
+            <div class="choose_us">
+                <div class="container margin_60">
+
+                    <div class="main_title">
+                        <h2>TẠI SAO CHỌN CHÚNG TÔI</h2>
+                        <h4>LÝ DO DÀNH CHO BẠN</h4>
+                        <p>Bình Dương có nhiều địa danh nổi tiếng như Phú Lợi, Lai Khê.Ngoài ra còn có khu du lịch Đại Nam lớn nhất Đông Nam Á.
+                        <BR>Hãy để Ngubui hỗ trợ bạn để có 1 chuyến đi thú vị, tiết kiệm bằng cách đặt phòng khách sạn, nhà nghĩ tại Bình Dương ngay bây giờ với chi phí cạnh tranh</p>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-4 col-sm-6 col-xs-12 wow zoomIn" data-wow-delay="0.2s">
+                            <div class="feature_home">
+                                <p>
+                                    <div class="">
+                                        <div class="thumb">
+                                            <header class="thumb-header">
+                                                <i class="fa fa-briefcase"></i>
+                                            </header>
+                                            <div class="thumb-caption">
+                                                <h5 class="thumb-title"><a href="#" class="text-darken">Lưu lại những trải nghiệm</a></h5>
+                                <p class="thumb-desc">
+                                    Những khoảng khắc du ngoạn cùng bạn bè, người thân của bạn
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12 wow zoomIn" data-wow-delay="0.4s">
+                <div class="feature_home">
+                    <p>
+                        <div class="">
+                            <div class="thumb">
+                                <header class="thumb-header">
+                                    <i class="fa fa-thumbs-o-up"></i>
+                                </header>
+                                <div class="thumb-caption">
+                                    <h5 class="thumb-title"><a href="#" class="text-darken">Thỏa mãn sở thích</a></h5>
+                    <p class="thumb-desc">
+                        Hãy sống một cách tận hưởng, vui vẽ cùng những người thân của bạn
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        </p>
+    </div>
+    </div>
+
+    <div class="col-md-4 col-sm-12 col-xs-12 wow zoomIn" data-wow-delay="0.6s">
+        <div class="feature_home">
+            <p>
+                <div class="">
+                    <div class="thumb">
+                        <header class="thumb-header">
+                            <i class="fa fa-lock"></i>
+                        </header>
+                        <div class="thumb-caption">
+                            <h5 class="thumb-title"><a href="#" class="text-darken">Tin tưởng chúng tôi</a></h5>
+            <p class="thumb-desc">
+                Hãy để chúng tôi giúp bạn đi đến nơi bạn muốn một cách đơn giản nhất
+            </p>
+        </div>
+    </div>
+    </div>
+    </p>
+    </div>
+    </div>
+    </div><!--End row -->
+    </div>
+    </div>
+    </div>
+    <div class="container">
+        <!-- <div class="gap"></div> -->
+        <div class="section-title">
+            <label>ĐIỂM DU LỊCH THU HÚT NHẤT</label>
+            <h4>CHỌN ĐIỂM ĐẾN TIẾP THEO CỦA BẠN</h4>
+        </div>
+        <div class="row row-wrap">
+
+            <div class="col-md-3 col-sm-6 col-xs-6 full_width top_destination">
+                <a class="hover_img_tw " href="">
+                   
+                    <img src="~/uploads/top1.jpg" />
+                    <div class="thumb-title">Đại Nam</div>
+                    <div class="thumb-desc">Địa điểm du lịch tâm linh mang đậm văn hóa truyền thống của dân tộc</div>
+                </a>
+            </div>
+
+
+            <div class="col-md-3 col-sm-6 col-xs-6 full_width top_destination">
+                <a class="hover_img_tw" href="">
+                    <img src="~/uploads/top2.jpg"  />
+                    <div class="thumb-title">Thành Phố Mới</div>
+                    <div class="thumb-desc">Địa điểm vui chơi, giải trí, dã ngoại đầy hấp dẫn</div>
+                </a>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-6 full_width top_destination">
+                <a class="hover_img_tw" href="">
+                    <img src="~/uploads/top3.jpg"  />
+                    <div class="thumb-title">Hồ Dầu Tiếng</div>
+                    <div class="thumb-desc">Địa điểm du lịch lý thú dành cho du khách</div>
+                </a>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-6 full_width top_destination">
+                <a class="hover_img_tw" href="">
+                    <img src="~/uploads/top4.jpg" />
+                    <div class="thumb-title"> Nhà thờ Phú Cường</div>
+                    <div class="thumb-desc">Một trong những tòa thánh lớn nhất ở Bình Dương</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+
+jQuery(document).ready(function() {
+
+
+
+        window.prettyPrint && prettyPrint();
+
+        jQuery("#owl-slider").owlCarousel({
+
+            loop: true,
+
+            autoPlay: true,
+
+            items: 1,
+
+            itemsDesktop: [1199, 1],
+
+            itemsDesktopSmall: [979, 1],
+
+            itemsTablet: [768, 1],
+
+            nav: true
+
+        });
+
+        jQuery('.sponsors-carousel').carouFredSel({
+
+            items:3,
+
+            direction: "up",
+
+            auto : {
+
+            items           : 1,
+
+            easing          : "linear",
+
+            duration        : 500,
+
+            pauseOnHover    : true
+
+            }
+
+        });
+
+
+
+    });
+
+
+
+    </script>
+    </div>
+    </div>
+
+   
+    
+
+
+
+
+

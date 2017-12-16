@@ -1,0 +1,180 @@
+﻿@model Ngubui_Project.Models.USER_NAME
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from airbnb.abservetech.com/airstar/public/user/login by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Mar 2017 14:51:44 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ngubui || LK</title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <link href="../abserve/js/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../abserve/themes/abserve/css/abserve.css" rel="stylesheet">
+    <link href="../abserve/css/animate.css" rel="stylesheet">
+    <link href="../abserve/css/icons.min.css" rel="stylesheet">
+    <link href="../abserve/fonts/awesome/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../use.edgefonts.net/source-sans-pro.js"></script>
+
+    <script type="text/javascript" src="../abserve/js/plugins/jquery.min.js"></script>
+    <script type="text/javascript" src="../abserve/js/plugins/parsley.js"></script>
+    <script type="text/javascript" src="../abserve/js/plugins/bootstrap/js/bootstrap.js"></script>
+
+
+
+</head>
+<body>
+    <div class="register_log">
+        <div class="register_log_bg"></div>
+
+
+
+        <div class="log_box">
+
+            <div class="text-center">
+
+                <a href="http://airbnb.abservetech.com/airstar/public">
+
+
+                    <img src="../abserve/images/airstar_logo.png" alt="AirStar" />
+
+
+                </a>
+
+            </div>
+
+            <div class="tab-content">
+
+                <div class="tab-pane active m-t" id="tab-sign-in">
+    @using (Html.BeginForm("Loggin", "Account", FormMethod.Post))
+    {
+        //this  is for create form tag
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)// this is for prevent CSRF attack
+                    <form method="post" action="" class="form-vertical" autocomplete="off">
+
+
+                        <input type="hidden" name="_token" value="8NFpjG9OxBOrkVYz4NHHhHZU1tlRlp8oSWcHqhVe">
+
+
+                        <ul class="parsley-error-list"></ul>
+
+                        <div class="form-group has-feedback">
+
+                            <label>Địa chỉ Email	</label>
+                            @Html.EditorFor(x=>x.Email, new { htmlAttributes = new { @placeholder = "Email Address", @class = "form-control", @onfocus = "this.removeAttribute('readonly');", @name = "email", @required = "email" } })
+                            @Html.ValidationMessageFor(x => x.Email)
+                            <i class="icon-users form-control-feedfront"></i>
+
+                        </div>
+
+
+
+                        <div class="form-group has-feedback">
+
+                            <label>Mật khẩu	</label>
+                            @Html.EditorFor(x => x.MatKhau, new { htmlAttributes = new { @type = "Password", @placeholder = "Password", @class = "form-control", @onfocus = "this.removeAttribute('readonly');", @name = "password", @required = "true" } })
+                            @Html.ValidationMessageFor(x => x.MatKhau)
+
+                            <i class="icon-lock form-control-feedfront"></i>
+
+                        </div>
+
+
+
+                        <div class="form-group has-feedback">
+
+                            <input type="checkbox" name="remember" value="1" />
+
+                            <label> Nhớ mật khẩu?	</label>
+
+                            <a href="" style="color: #e04f67;text-decoration: none;" class="forget" data-toggle="tab">Quên mật khẩu</a>
+
+                        </div>
+
+                        <div class="form-group has-feedback text-center">
+
+                            <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>
+
+                        </div>
+
+                        <div class="animated fadeInUp delayp1">
+
+                            <div class="form-group has-feedback text-center">
+
+
+
+                                <br />
+
+                                <p class="text-muted text-center"><b> Đăng nhập với tài khoản </b>	  </p>
+
+
+                                <div>
+
+
+
+                                    <a href="" class="btn btn-primary"><i class="icon-facebook"></i> Facebook </a>
+
+
+
+
+                                    <a href="" class="btn btn-danger"><i class="icon-google"></i> Google </a>
+
+
+
+
+                                    <a href="" class="btn btn-info"><i class="icon-twitter"></i> Twitter </a>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+}
+                </div>
+
+
+
+
+
+
+
+           
+
+            </div>
+
+
+
+            <label style="padding:10px 0">Bạn chưa có tài khoản?<a class="have_account" href="@Url.Action("Register","Account")" style="text-decoration: none;">  Đăng ký</a></label>
+
+
+        </div>
+
+        <script type="text/javascript">
+
+	$(document).ready(function(){
+
+		$('#or').click(function(){
+
+		$('#fr').toggle();
+
+		});
+
+	});
+
+        </script>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+.sb_dropdown_menu {
+    border: 1px solid #fff;
+    background: #f4f0e2;
+    background: -webkit-gradient(linear, left top, left bottom, from(#faf8f1), to(#f4f0e2));
+    background: -moz-linear-gradient(top, #faf8f1, #f4f0e2);
+    font-size: 13px;
+    -moz-box-shadow: 1px 1px 4px #a9834f;
+    -webkit-box-shadow: 1px 1px 4px #a9834f;
+    box-shadow: 1px 1px 4px #a9834f;
+    outline: none;
+    padding: 0px 5px 5px 10px;
+    width: 295px;
+    float: left;    
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    width: 595px;
+    position: absolute;
+    top: 80px;
+    z-index:99999;
+}
+.sb_dropdown {
+    border: 1px solid #fff;
+    background: #f4f0e2;
+    background: -webkit-gradient(linear, left top, left bottom, from(#faf8f1), to(#f4f0e2));
+    background: -moz-linear-gradient(top, #faf8f1, #f4f0e2);
+    font-size: 13px;
+    -moz-box-shadow: 1px 1px 4px #a9834f;
+    -webkit-box-shadow: 1px 1px 4px #a9834f;
+    box-shadow: 1px 1px 4px #a9834f;
+    outline: none;
+    padding: 0px 5px 5px 10px;
+    width: 295px;
+    float: left;    
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    width: 595px;
+    position: absolute;
+    top: 57px;
+    z-index:99999;
+    font-weight:bold;
+}
+.group_dropdown {
+    float: left;
+    list-style: none;
+    padding: 5px 5px;
+    text-align: left;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.list1 {
+    width: 350px;
+}
+
+.list2 {
+    width: 195px;
+    margin-left: 10px;
+}
+
+ul.list1 li {
+    line-height: 32px;
+    height: 32px;
+    float: left;
+    width: 50%;
+}
+
+ul.list2 li {
+    line-height: 32px;
+    height: 32px;
+}
+
+ul.group_dropdown li input[type="checkbox"] {
+    float: left;
+    margin: 10px 4px 0 5px;
+}
+
+ul.group_dropdown li.sb_filter {
+    width: 100%;
+    clear: both;
+    background: url("../Image/bg_orange.jpg");
+    color: white;
+    font-size: 12px;
+    letter-spacing: 1px;
+    height: 16px;
+    line-height: 16px;
+    font-weight: bold;
+    padding: 7px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+.list1 li.menu a, .list2 li.menu a{
+    padding:5px 10px 5px 10px;
+    cursor:pointer;
+}
+.list1 li.menu a:hover, .list2 li.menu a:hover{
+    cursor:pointer;
+    background-color:#84c52c;
+    border-radius:3px;
+    color:white;
+    padding:5px 10px 5px 10px;
+    width:150px;
+}

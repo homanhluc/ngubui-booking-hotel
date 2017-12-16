@@ -1,0 +1,804 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> Ngubui || LK </title>
+
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="~/abserve/themes/abserve/css/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="~/abserve/themes/abserve/css/img/apple-touch-icon-57x57-precomposed.html">
+
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="~/abserve/themes/abserve/css/img/apple-touch-icon-72x72-precomposed.html">
+
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="~/abserve/themes/abserve/css/img/apple-touch-icon-114x114-precomposed.html">
+
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="~/abserve/themes/abserve/css/img/apple-touch-icon-144x144-precomposed.html">
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyBmakwIjdQn-ZZi9VdDpG9Bc17AJvppfSc" type="text/javascript"></script>
+    <script type='text/javascript' src="~/abserve/js/gmaps.js"></script>
+    <script type="text/javascript">
+
+    </script>
+    <script type="text/javascript" src="~/abserve/js/plugins/jquery.min.js"></script>
+    <script type='text/javascript' src="~/abserve/js/jquery.sliderPro.min.js"></script>
+    <script src="~/abserve/themes/abserve/js/ionrangeslider.js"></script>
+
+    <!-- CSS -->
+    <link href="~/abserve/css/slider-pro.min.css" rel="stylesheet">
+    <link href="~/abserve/themes/abserve/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/abserve/themes/abserve/css/blog.css" rel="stylesheet">
+    <link href="~/abserve/themes/abserve/css/animate.min.css" rel="stylesheet">
+    <link href="~/abserve/themes/abserve/css/style.css" rel="stylesheet">
+    <link href="~/abserve/themes/abserve/css/abserve.css" rel="stylesheet">
+    <link href="~/abserve/themes/abserve/css/grey.css" rel="stylesheet">
+    <link href="~/abserve/themes/abserve/css/menu.css" rel="stylesheet">
+    <link href="~/abserve/themes/abserve/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/abserve/themes/abserve/css/icomoon.css">
+    <link href="~/abserve/themes/abserve/css/icon_font.css" rel="stylesheet">
+    <link href="~/abserve/themes/abserve/css/mystyles.css" rel="stylesheet">
+    <link href="~/abserve/themes/abserve/css/ion.rangeSlider.css" rel="stylesheet">
+    <link href="~/abserve/themes/abserve/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+    <link href="~/abserve/themes/abserve/css/responsive.css" rel="stylesheet">
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF5n-X5G_LPjig6Gf8HIvjPI3XTSFWgfc&callback=initMap">
+    </script>
+
+    <link href="~/abserve/themes/abserve/css/fontello/css/icon_set_1.css" rel="stylesheet">
+
+    <link href="~/abserve/themes/abserve/css/fontello/css/icon_set_2.css" rel="stylesheet">
+
+    <link href="~/abserve/themes/abserve/css/fontello/css/fontello.css" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Head -->
+    <div class="pre-header abserve">
+
+        <div class="global-wrap">
+            <!-- Header================================================== -->
+            <header>
+                <div class="container">
+                    <div class="col-md-3 col-sm-2 col-xs-3 no_pad">
+                        <div class="navbar-header">
+
+
+                            <a class="navbar-brand" href="@Url.Action("Index","Home")">
+
+                                <div id="logo">
+                                    <img src="~/abserve/images/logo.png" width="160" height="34" alt="City tours" data-retina="true" class="logo_normal">
+                                    <img src="~/abserve/images/airstar_logo.png" width="160" height="34" alt="City tours" data-retina="true" class="logo_sticky">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="collapse navbar-collapse bs-example-navbar-collapse-1">
+                        <div class="col-md-9 col-sm-9 col-xs-9 center_menu">
+                            <ul class="nav navbar-nav top_nav" style="">
+                                <li class="">
+                                    <a href="@Url.Action("About","Home")">
+                                        <i class=""></i> <span>
+
+                                            Thông tin
+
+
+                                        </span>
+
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="@Url.Action("Faq","Home")">
+                                        <i class=""></i> <span>
+
+                                            FAQ
+
+
+                                        </span>
+
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="@Url.Action("Contact","Home")">
+                                        <i class=""></i> <span>
+
+                                            Liên hệ
+
+
+                                        </span>
+
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+
+
+                    <ul class="nav navbar-nav navbar-righ" id="top_tools">
+                        <li>
+                            <div class="dropdown dropdown-access">
+                                @Html.ActionLink("Đăng nhập", "Loggin", "Account", null, new { @class = "dropdown-toggle", @id = "access_link" })
+                            </div><!-- End Dropdown access -->
+                        </li>
+                        <li>
+                            <div class="dropdown dropdown-access">
+                                 @Html.ActionLink("Đăng Ký","Register","Account",null, new {@class= "dropdown-toggle", @id= "access_link" })
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown dropdown-access">
+                                @Html.ActionLink("Đăng Phòng", "Loggin", "Account", null, new { @class = "dropdown-toggle", @id = "access_link" })
+                            </div>
+                        </li>
+                    </ul>
+
+
+
+                </div>
+        </div><!-- container -->
+        </header><!-- End Header -->
+    </div>
+    <!-- Main -->
+        @RenderBody()
+    <!-- Footer -->
+    <div class="abs_footer_code"></div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 full_width">
+                    <h4>LIÊN HỆ VỚI CHÚNG TÔI</h4>
+                    <div class="contact_us"><i class="fa fa-home input-icon"></i>Hỗ trợ khách hàng</div>
+                    <div class="contact_us"><a href="homanhluc.it@gmail.com"><i class="fa fa-envelope input-icon"></i>homanhluc.it@gmail.com</a></div>
+                    <div class="contact_us"><i class="fa fa-phone input-icon"></i> +1-234-567-78901</div>
+                    <ul class="list list-horizontal list-space">
+                        <li>
+                            <a href="https://www.facebook.com/abservetech/" class="fa fa-facebook box-icon-normal round animate-icon-bottom-to-top"></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/abservetech/" class="fa fa-twitter box-icon-normal round animate-icon-bottom-to-top"></a>
+                        </li>
+                        <li>
+                            <a href="https://plus.google.com/+AbservetechIT/" class="fa fa-google-plus box-icon-normal round animate-icon-bottom-to-top"></a>
+                        </li>
+                        <li>
+                            <a href="skype: abservetech" class="fa fa-skype box-icon-normal round animate-icon-bottom-to-top"></a>
+                        </li>
+                        <li>
+                            <a href="https://in.linkedin.com/in/abservetech" class="fa fa-linkedin box-icon-normal round animate-icon-bottom-to-top"></a>
+                        </li>
+                        <li>
+                            <a href="https://www.pinterest.com/abservetech" class="fa fa-pinterest box-icon-normal round animate-icon-bottom-to-top"></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 col-sm-3 col-xs-6 full_width">
+                    <h4>NHẬN TIN MỚI</h4>
+
+                    <form id="new_ltr">
+
+                        <label>Nhập địa chỉ Mail của bạn</label>
+
+                        <input type="text" id="n_email" class="form-control" style="max-width:240px;">
+
+                        <p class="mt5">
+                            <small>*Chúng tôi cam kết không spam</small>
+
+                        </p>
+
+                        <p id="n_status"></p>
+
+                        <input type="submit" class="btn btn-primary news_letter" value="Subscribe">
+
+                    </form>
+
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 col-xs-6 full_width">
+                    <h4>THÔNG TIN</h4>
+                    <ul class="list list-footer">
+                        <li>
+                            <a href="contact-us.html">Help</a>
+                        </li>
+                        <li>
+                            <a href="faq.html">Policies</a>
+                        </li>
+                        <li>
+                            <a href="about-us.html">Feedback</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-5 col-xs-6 full_width">
+                    <h4>KHÁM PHÁ</h4>
+                    <ul class="list list-footer">
+                        <li>
+                            <a href="about-us.html">Về chúng tôi</a>
+                        </li>
+                        <li>
+                            <a href="contact-us.html">Liên hệ với chúng tôi</a>
+                        </li>
+                        <li>
+                            <a href="faq.html">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-2 col-sm-3 setlan">
+                    <h4>CÀI ĐẶT</h4>
+                    <ul class="list list-footer">
+
+                        <li class="user dropdown">
+                            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                                <!-- <i class="fa fa-flag-o"></i> -->
+                                Việt Nam
+
+                                <i class="caret"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-left icons-right">
+
+                                <li>
+                                    <a href="index.html">
+                                        <i class="icon-flag">English</i>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="list list-footer">
+                        <li class="user dropdown">
+                            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                                VNĐ<i class="caret"></i>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-left icons-right">
+                                <li>
+                                    <a href="index.html">
+                                        USD
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- End row -->
+            <div class="row1">
+                <div class="col-md-12">
+                    <div id="social_footer">
+                        <p>© Design by LK</p>
+                    </div>
+                </div>
+            </div><!-- End row -->
+        </div><!-- End container -->
+    </footer><!-- End footer -->
+
+    <div class="modal fade" id="myReview" tabindex="-1" role="dialog" aria-labelledby="myReviewLabel" aria-hidden="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" id="myReviewLabel">Viết nhận xét của bạn</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="message-review">
+                    </div>
+                    <form id="myForm">
+                        <input type="hidden" name="user_id" class="user_id" value="">
+                        <input type="hidden" name="usr_img" class="usr_img" value="">
+                        <input type="hidden" name="username" class="username" value="">
+                        <div class="col-md-6 col-xs-12 revew_div">
+                            Đánh giá tổng thể
+                            <ul class="list booking-item-raiting-summary-list stats-list-select">
+                                <li>
+                                    <ul class="icon-group booking-item-rating-stars overall star-rating">
+                                        <li rel="tooltip" data-placement="bottom" data-original-title="Khủng khiếp!" class="one-star flag">
+                                            <span class="flagtext">Khủng khiếp</span>
+                                            <i class="fa fa-star-o star1overall"></i>
+
+                                        </li>
+                                        <li rel="tooltip" data-placement="bottom" data-original-title="Không tốt!" class="one-star flag">
+                                            <span class="flagtext">Không tốt</span>
+                                            <i class="fa fa-star-o star2overall"></i>
+
+                                        </li>
+                                        <li rel="tooltip" data-placement="bottom" data-original-title="Khá tốt!" class="one-star flag">
+                                            <span class="flagtext">Khá tốt</span>
+                                            <i class="fa fa-star-o star3overall"></i>
+
+                                        </li>
+                                        <li rel="tooltip" data-placement="bottom" data-original-title="Gần hoàn hảo!" class="one-star flag">
+                                            <span class="flagtext">Gần hoàn hảo</span>
+                                            <i class="fa fa-star-o star4overall"></i>
+
+                                        </li>
+                                        <li rel="tooltip" data-placement="bottom" data-original-title="Hoàn hảo!" class="one-star flag">
+                                            <span class="flagtext">Hoàn hảo</span>
+                                            <i class="fa fa-star-o star5overall"></i>
+                                        </li>
+                                    </ul>
+                                    <div class="over_all" style="display: none;"> </div>
+                                </li>
+                            </ul>
+                            <div class="form-group revw_tle_div">
+                                <label>Nhập tiêu đề đánh giá</label>
+                                <input class="form-control revw_tle" type="text" name="revw_tle" id="revw_tle">
+                                <div class="tle_error" style="display: none;"> </div>
+                            </div>
+
+                            <div class="form-group revw_desc_div">
+                                <label>Đánh giá văn bản</label>
+                                <textarea class="form-control revw_desc" name="revw_desc" rows="6"></textarea>
+                                <div class="desc_error" style="display: none;">Mô tả không thể để trống</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <ul class="list booking-item-raiting-summary-list stats-list-select">
+                                <li>
+                                    <div class="booking-item-raiting-list-title">
+                                        Ngủ
+                                    </div>
+                                    <ul class="icon-group booking-item-rating-stars sleep">
+                                        <li value="1">
+                                            <i class="fa fa-smile-o star1sleep"></i>
+                                        </li>
+                                        <li value="2">
+                                            <i class="fa fa-smile-o star2sleep"></i>
+                                        </li>
+                                        <li value="3">
+                                            <i class="fa fa-smile-o star3sleep"></i>
+                                        </li>
+                                        <li value="4">
+                                            <i class="fa fa-smile-o star4sleep"></i>
+                                        </li>
+                                        <li value="5">
+                                            <i class="fa fa-smile-o star5sleep"></i>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="booking-item-raiting-list-title">
+                                        Vị trí
+                                    </div>
+                                    <ul class="icon-group booking-item-rating-stars location">
+                                        <li value="1">
+                                            <i class="fa fa-smile-o star1location"></i>
+                                        </li>
+                                        <li value="2">
+                                            <i class="fa fa-smile-o star2location"></i>
+                                        </li>
+                                        <li value="3">
+                                            <i class="fa fa-smile-o star3location"></i>
+                                        </li>
+                                        <li value="4">
+                                            <i class="fa fa-smile-o star4location"></i>
+                                        </li>
+                                        <li value="5">
+                                            <i class="fa fa-smile-o star5location"></i>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="booking-item-raiting-list-title ">
+                                        Dịch vụ
+                                    </div>
+                                    <ul class="icon-group booking-item-rating-stars service">
+                                        <li value="1">
+                                            <i class="fa fa-smile-o star1service"></i>
+                                        </li>
+                                        <li value="2">
+                                            <i class="fa fa-smile-o star2service"></i>
+                                        </li>
+                                        <li value="3">
+                                            <i class="fa fa-smile-o star3service"></i>
+                                        </li>
+                                        <li value="4">
+                                            <i class="fa fa-smile-o star4service"></i>
+                                        </li>
+                                        <li value="5">
+                                            <i class="fa fa-smile-o star5service"></i>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="booking-item-raiting-list-title">
+                                        Sự rõ ràng
+                                    </div>
+                                    <ul class="icon-group booking-item-rating-stars cleanliness">
+                                        <li value="1">
+                                            <i class="fa fa-smile-o star1cleanliness"></i>
+                                        </li>
+                                        <li value="2">
+                                            <i class="fa fa-smile-o star2cleanliness"></i>
+                                        </li>
+                                        <li value="3">
+                                            <i class="fa fa-smile-o star3cleanliness"></i>
+                                        </li>
+                                        <li value="4">
+                                            <i class="fa fa-smile-o star4cleanliness"></i>
+                                        </li>
+                                        <li value="5">
+                                            <i class="fa fa-smile-o star5cleanliness"></i>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="booking-item-raiting-list-title">
+                                        Phòng
+                                    </div>
+                                    <ul class="icon-group booking-item-rating-stars rooms">
+                                        <li value="1">
+                                            <i class="fa fa-smile-o star1rooms"></i>
+                                        </li>
+                                        <li value="2">
+                                            <i class="fa fa-smile-o star2rooms"></i>
+                                        </li>
+                                        <li value="3">
+                                            <i class="fa fa-smile-o star3rooms"></i>
+                                        </li>
+                                        <li value="4">
+                                            <i class="fa fa-smile-o star4rooms"></i>
+                                        </li>
+                                        <li value="5">
+                                            <i class="fa fa-smile-o star5rooms"></i>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="ratng_error" style="display: none;">Cơ sở đánh giá</div>
+                            <input type="hidden" class="room_id" value= />
+                            <a class="btn btn-primary review_submit">Để lại một đánh giá</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade jhgj" id="Login_pop" tabindex="-1" role="dialog" aria-labelledby="Login_popLabel" aria-hidden="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">
+                    <!--                 <div class="signin_block">
+                     -->
+                    <div id="valid_log"></div>
+                    <form id="login_form" class="login_form form-vertical">
+                        <input type="hidden" name="_token" value="8NFpjG9OxBOrkVYz4NHHhHZU1tlRlp8oSWcHqhVe">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                <a href="" class="bt_facebook"><i class="icon-facebook"></i></a>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                <a href="" class="bt_paypal"><i class="icon-twitter"></i></a>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                <a href="" class="bt_paypal"><i class="icon-google"></i></a>
+                            </div>
+                        </div>
+                        <div class="login-or">
+                            <hr class="hr-or"><span class="span-or">or</span>
+                        </div>
+                        <div class="form-group">
+                            <input required="true" type="text" name="email" class="form-control" id="inputUsernameEmail" class="inputUsernameEmail" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input required="true" type="password" name="password" class="form-control" id="inputPassword" class="inputPassword" placeholder="Mật khẩu">
+                        </div>
+                        <div class="form-group remember_me" style="">
+                            <input type="checkbox" name="remember" value="1" />
+                            <label> Nhớ mật khẩu?   </label>
+                            <!-- <a id="forgot_pw">Forgot password?</a> -->
+                        </div>
+                        <div class="form-group has-feedback text-center">
+                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        </div>
+                    </form>
+                </div>
+                <label style="padding:10px 0">Bạn không có tài khoản?<a class="have_account" data-dismiss="modal" data-toggle="modal" data-target="#Signup_pop" style="text-decoration: none;cursor:pointer;">  Đăng ký </a></label>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="modal fade" id="Signup_pop" tabindex="-1" role="dialog" aria-labelledby="Signup_popLabel" aria-hidden="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">
+                    <form id="sign_pop" class="form-vertical">
+                        <input type="hidden" name="_token" value="8NFpjG9OxBOrkVYz4NHHhHZU1tlRlp8oSWcHqhVe">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                <a href="" class="bt_facebook">
+                                    <i class="icon-facebook"></i>
+                                </a>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                <a href="" class="bt_paypal">
+                                    <i class="icon-twitter"></i>
+                                </a>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                <a href="" class="bt_paypal">
+                                    <i class="icon-google"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="login-or">
+                            <hr class="hr-or"><span class="span-or">or</span>
+                        </div>
+
+                        <div class="form-group">
+                            <form method="POST" action="" accept-charset="UTF-8" class="form-signup">
+                                <input name="_token" type="hidden" value="8NFpjG9OxBOrkVYz4NHHhHZU1tlRlp8oSWcHqhVe">
+                                <ul class="parsley-error-list"></ul>
+                                <input class="form-control" placeholder="First Name" required="" name="firstname" type="text">
+                        </div>
+
+                        <div class="form-group">
+                            <input class="form-control" placeholder="Họ" required="" name="lastname" type="text">
+                        </div>
+
+                        <div class="form-group">
+                            <input class="form-control" placeholder="Địa chỉ email" required="email" name="email" type="text">
+                        </div>
+
+                        <div class="form-group">
+                            <input class="form-control" placeholder="Mật khẩu" required="" name="password" type="password" value="">
+                        </div>
+
+                        <div class="form-group">
+                            <input class="form-control" placeholder="Xác nhận mật khẩu" required="" name="password_confirmation" type="password" value="">
+                        </div>
+                        <div class="row form-actions">
+                            <div class="col-sm-12">
+                                <button type="submit" style="width:100%;" class="btn btn-primary pull-right">Sign Up   </button>
+                            </div>
+                        </div>
+                    </form>
+                    <label style="padding:10px 0">
+                        Có một tài khoản ?<a class="have_account" data-dismiss="modal" data-toggle="modal" data-target="#Login_pop" style="text-decoration: none;cursor:pointer;"> Đăng nhập  </a>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        jQuery(document).ready(function() {
+            $('#forgot_pw').click(function(){
+                $('.signin_block').hide();
+                $('.forget_block').show();
+            });
+            $('#tab-sign-in').click(function(){
+                //$('.dropdown-access').addClass('open');
+                $('.forget_block').hide();
+                $('.signin_block').show();
+            });
+            window.prettyPrint && prettyPrint();
+            jQuery(".owl-carousel").owlCarousel({
+                loop: true,
+                autoPlay: true,
+                items: 1,
+                nav: true
+            });
+            jQuery('.sponsors-carousel').carouFredSel({
+                items:3,
+                direction: "up",
+                auto : {
+                items           : 1,
+                easing          : "linear",
+                duration        : 500,
+                pauseOnHover    : true
+                }
+            });
+
+        });
+</script>   
+<script src="~/abserve/themes/abserve/js/jquery.js"></script>
+
+<script src="~/abserve/themes/abserve/js/bootstrap.js"></script>
+
+<script src="~/abserve/themes/abserve/js/slimmenu.js"></script>
+
+
+<script src="~/abserve/themes/abserve/js/bootstrap-datepicker.js"></script>
+<script type='text/javascript' src="~/abserve/js/datepicker_advanced.js"></script>
+<script>
+              $('input.date-pick').datepicker('setDate', 'today');
+</script>
+
+<script src="~/abserve/themes/abserve/js/bootstrap-timepicker.js"></script>
+
+<script src="~/abserve/themes/abserve/js/nicescroll.js"></script>
+
+<script src="~/abserve/themes/abserve/js/dropit.js"></script>
+
+<script src="~/abserve/themes/abserve/js/ionrangeslider.js"></script>
+<!--  -->
+<script src="~/abserve/themes/abserve/js/parallax.js"></script>
+<script src="~/abserve/themes/abserve/js/wow.min.js"></script>
+
+<script src="~/abserve/themes/abserve/js/icheck.js"></script>
+
+<script src="~/abserve/themes/abserve/js/fotorama.js"></script>
+
+<script src="~/abserve/themes/abserve/js/typeahead.js"></script>
+
+<script src="~/abserve/themes/abserve/js/card-payment.js"></script>
+
+<script src="~/abserve/themes/abserve/js/magnific.js"></script>
+
+<script src="~/abserve/themes/abserve/js/owl-carousel.js"></script>
+
+<script src="~/abserve/themes/abserve/js/carouFredSel.js"></script>
+
+<script src="~/abserve/themes/abserve/js/fitvids.js"></script>
+
+<script src="~/abserve/themes/abserve/js/tweet.js"></script>
+
+<script src="~/abserve/themes/abserve/js/countdown.js"></script>
+
+<script src="~/abserve/themes/abserve/js/gridrotator.js"></script>
+
+<script src="~/abserve/themes/abserve/js/custom.js"></script>
+
+<script src="~/abserve/themes/abserve/js/hotel.js"></script>
+
+<script type="text/javascript">
+            $(document).on('submit','#login_form',function(e){
+                e.preventDefault();
+                if($(this).find('#inputUsernameEmail').val() == '')
+                {
+                    alert('Email is required');
+                    return false;
+                }
+                else if($(this).find('#inputPassword').val() == '')
+                {
+                    alert('Password is required');
+                    return false;
+                }
+                $.ajax({
+                url: base_url+'user/signinpop',
+                type: 'POST',
+                // dataType:'json',
+                data: $(this).serialize()+ '&login = login',
+                success: function(data) {
+                    console.log(data);
+                    if(data == "Your username/password combination was incorrect")
+                    {
+                        $('#valid_log').html('<div class="alert alert-danger fade in block-inner">'+data+'<button data-dismiss="alert" class="close" type="button"> x </button></div>').show();
+                            setTimeout(function(){$('#valid_log').html('').hide()}, 2000);
+                    }
+                    else if(data == 'true'){
+                        //alert('success');
+                        window.location.reload();
+                    }
+                    else
+                    {
+                        var obj = jQuery.parseJSON(data);
+                        var e   = obj.email;
+                        if(e == "The email format is invalid."){
+                            $('#valid_log').html('<div class="alert alert-danger fade in block-inner">'+e+'<button data-dismiss="alert" class="close" type="button"> x </button></div>').show();
+                            setTimeout(function(){$('#valid_log').html('').hide()}, 2000);
+                        }
+                    }
+                    return false;
+                    var obj = jQuery.parseJSON(data);
+                    var e   = obj.email;
+                    if(e == "The email format is invalid."){
+                        $('#valid_log').html('<div class="alert alert-danger fade in block-inner">'+e+'<button data-dismiss="alert" class="close" type="button"> x </button></div>').show();
+                        setTimeout(function(){$('#valid_log').html('').hide()}, 2000);
+                    }
+                    else if(e == "Success.") {
+                        //alert('success');
+                        //window.location.reload();
+                    } else {
+                        $('#valid_log').html('<div class="alert alert-danger fade in block-inner">'+data+'<button data-dismiss="alert" class="close" type="button"> x </button></div>').show();
+                        setTimeout(function(){$('#valid_log').html('').hide()}, 2000);
+                    }
+                }
+                });
+            });
+            $(document).on('submit','#sign_pop',function(e){
+                e.preventDefault();
+                $.ajax({
+                url: base_url+'user/createpop',
+                type: 'POST',
+                data: $("#sign_pop").serialize()+ '&regis = regis',
+                success: function(data) {
+                    var obj = jQuery.parseJSON(data);
+                    console.log(obj);
+                    var e   = obj.message;
+                    if(obj.res == 'success')
+                    {
+                        $('#valid_sig').html('<div class="alert alert-success fade in block-inner"><button data-dismiss="alert" class="close" type="button"> x </button>'+e+'</div>').show();
+                        $('#sign_pop').find("input[type=text],input[type=password]").val("");
+                    }
+                    else
+                    {
+                        $('#valid_sig').html('<div class="alert alert-danger fade in block-inner"><button data-dismiss="alert" class="close" type="button"> x </button>'+e+'</div>').show();
+                    }
+                    setTimeout(function(){$('#valid_log').html('').hide()}, 2000);
+                }
+                });
+            });
+                $(function() {
+
+                  $(".numbers-row").append('<div class="inc button_inc">+</div><div class="dec button_inc">-</div>');
+
+                  $(".button_inc").on("click", function() {
+
+                    var $button = $(this);
+                    var oldValue = $button.parent().find("input").val();
+
+                    if ($button.text() == "+") {
+                        if(oldValue<10){
+                            var newVal = parseFloat(oldValue) + 1;
+                        }
+                        else if(oldValue == 10)
+                        {
+                            newVal = 10;
+                        }
+                    } else {
+                       // Don't allow decrementing below zero
+                      if (oldValue > 0) {
+                        var newVal = parseFloat(oldValue) - 1;
+                        }
+                        else if(oldValue == 10){
+                            newVal = 10;
+                        }
+                        else {
+                        newVal = 0;
+                      }
+                      }
+
+                    $button.parent().find("input").val(newVal);
+
+                  });
+
+                });
+                $(document).ready(function(){
+                    $('#myReview').on('hidden.bs.modal', function (e) {
+                        $('#myReview .booking-item-rating-stars .selected').removeClass('selected');
+                        $('#myReview .revew_div .revw_tle').val('');
+                        $('#myReview .revew_div .revw_desc').val('');
+                      // do something...
+                    })
+                });
+
+</script>
+<style type="text/css">
+    .forget_block {
+        float: left;
+        width: 100%;
+        display: none;
+    }
+</style>
+    <script type="text/javascript">
+
+$(function() {
+
+$('.btn_map').click(function(){
+if($( "#map_cllpse" ).hasClass( "map_close" )){
+    $( ".map_collapse" ).removeClass( "map_close" ).addClass( "map_open" );
+} else {
+    $( ".map_collapse" ).removeClass( "map_open" ).addClass( "map_close" );
+}
+});
+
+})
+
+    </script>
+    
+</body>
+</html>

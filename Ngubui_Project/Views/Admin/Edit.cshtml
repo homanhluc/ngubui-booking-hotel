@@ -1,0 +1,98 @@
+﻿@model Ngubui_Project.Models.ROOM_NAME_DETAIL
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<h2>@Model.DiaChi</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ID_Room)
+        @Html.HiddenFor(model => model.AnhDaiDien)
+        @Html.HiddenFor(model => model.BaiXe)
+        @Html.HiddenFor(model => model.DiaChi)
+        @Html.HiddenFor(model => model.GiaPhong)
+        @Html.HiddenFor(model => model.ID_User)
+        @Html.HiddenFor(model => model.Khach)
+        @Html.HiddenFor(model => model.LoaiPhong)
+        @Html.HiddenFor(model => model.MoTa)
+        @Html.HiddenFor(model => model.NoiQuy)
+        @Html.HiddenFor(model => model.SoGiuongNgu)
+        @Html.HiddenFor(model => model.SoPhongNgu)
+        @Html.HiddenFor(model => model.ThucAn)
+        @Html.HiddenFor(model => model.ThucUong)
+        @Html.HiddenFor(model => model.TieuDe)
+        @Html.HiddenFor(model => model.ToaDo)
+        @Html.HiddenFor(model => model.Wifi)
+        @Html.HiddenFor(model => model.XetDuyet,  new { @Value = "Có" } )
+
+        
+
+        <div>
+            <div id="map"></div>
+        </div>
+        <br />
+        <div class="form-group">
+            <div class="row">
+                    <div class="col-lg-1 col-lg-12">
+                        <a class="btn btn-default" href="@Url.Action("Notcheck","Admin")">Quay về</a>
+                    </div>
+                    <div class="col-lg-2 col-lg-12">
+                        <input type="submit" value="Xác nhận vị trí đã được kiểm duyệt" class="btn btn-danger" />
+                    </div>
+                </div>
+        </div>
+    </div>
+}
+
+@if (Model.XetDuyet == "Có")
+{
+    <script>
+        function initMap() {
+            var Location = new google.maps.LatLng(@Model.ToaDo)
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 17,
+                center: Location
+            });
+
+        var image = 'http://i.imgur.com/5JtLzwS.png';
+        var marker = new google.maps.Marker({
+                position: Location,
+                map: map,
+                icon: image,
+                title: 'Đã kiểm duyệt'
+            });
+
+        }
+    </script>
+}
+else
+{
+    <script>
+        function initMap() {
+            var Location = new google.maps.LatLng(@Model.ToaDo)
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 17,
+                center: Location
+            });
+        var marker = new google.maps.Marker({
+                position: Location,
+                map: map,
+                title: 'Chưa kiểm duyệt'
+            });
+
+        }
+    </script>
+}
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF5n-X5G_LPjig6Gf8HIvjPI3XTSFWgfc&callback=initMap">
+</script>
+

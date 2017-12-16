@@ -1,0 +1,93 @@
+﻿@using PagedList.Mvc;
+@using PagedList;
+@model IPagedList<Ngubui_Project.Models.ROOM_NAME_DETAIL>
+@{
+    ViewBag.Title = "RoomSearchResult";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<script>
+    $(document).ready(function () {
+        $('').addClass('active');
+    });
+</script>
+@{
+    foreach (var item in Model)
+    {
+
+        <div class="strip_all_tour_list wow fadeIn animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <!-- <div class="wishlist">+</div> -->
+                    <a class="tooltip_flip tooltip-effect-1 ai  foo hrt1 wish_log abserve_icon-82" href="#" data-toggle="modal" data-target="#Login_pop">
+                        <span class="tooltip-content-flip"><span class="tooltip-back"></span></span>
+                        <input type="hidden" name="room_id" class="room_id" value="10">
+                    </a>
+                    <div class="img_list">
+                        <a href="@Url.Action("RoomDetail", new { @ID_Room = item.ID_Room })" class="book_room">
+                            <div></div>
+                            <img style="cursor:pointer;" src="data:image;base64,@Convert.ToBase64String((byte[])item.AnhDaiDien)" alt="Image">
+
+                            <div class="short_info"><i class="icon_set_1_icon-6"></i>@Html.DisplayFor(modelItem => item.LoaiPhong)</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="clearfix visible-xs-block"></div>
+                <div class="col-lg-5 col-md-5 col-sm-5">
+                    <div class="tour_list_desc">
+
+                        @*<div class="rating">
+                                <i class="icon-star-empty"></i>
+                                <i class="icon-star-empty"></i>
+                                <i class="icon-star-empty"></i>
+                                <i class="icon-star-empty"></i>
+                                <i class="icon-star-empty"></i>
+                            </div>*@
+                        <h3 style="cursor:pointer;"><a href="@Url.Action("RoomDetail", new {@ID_Room = item.ID_Room })" class="book_room">@Html.DisplayFor(modelItem => item.TieuDe)</a></h3>
+                        <p>@Html.DisplayFor(modelItem => item.MoTa)</p>
+                        <ul class="add_info">
+                            <li>
+                                <div class="tooltip_styled tooltip-effect-4">
+                                    <span class="tooltip-item"><i class="icon_set_1_icon-41"></i></span>
+                                    <div class="tooltip-content">
+                                        <h4>Address</h4>
+                                        @Html.DisplayFor(modelItem => item.DiaChi)
+
+                                        <!-- <a href="#">View on map</a> -->
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <div class="price_list">
+                        <div>
+                            @if (item.XetDuyet == "Có")
+                            {
+                                <sup style="color:dodgerblue">Đã duyệt</sup>
+                                <span class="normal_price_list"></span>
+                                <p><a href="@Url.Action("Edit","Admin", new {@ID_Room = item.ID_Room })" class="btn btn-primary book_room Book_avail avail a_tag">Thay đổi</a></p>
+                            }
+                            else
+                            {
+                                <sup>Chưa kiểm duyệt</sup>
+                                <span class="normal_price_list"></span>
+                                <p><a href="@Url.Action("Edit","Admin", new {@ID_Room = item.ID_Room })" class="btn btn-primary book_room Book_avail avail a_tag">Xét duyệt</a></p>
+                            }
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+@ViewBag.ThongBao
+<div class="text-center">
+    <ul class="pagination">
+        @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+        @Html.PagedListPager(Model, page => Url.Action("RoomSearchResult", new { page = page, @sTuKhoa = ViewBag.TuKhoa }))
+    </ul>
+</div>

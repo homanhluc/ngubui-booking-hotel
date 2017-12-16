@@ -1,0 +1,20 @@
+﻿@using Ngubui_Project.Models;
+@model List<ROOM_NAME_DETAIL>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td class="booking-history-type">
+            <i class="fa fa-building-o"></i><small>@item.LoaiPhong</small>
+        </td>
+        <td class="booking-history-title">@item.TieuDe</td>
+        <td>@item.DiaChi</td>
+        <td>@String.Format("{0:0,0}", item.GiaPhong) VNĐ</td>
+        <td><img src="data:image;base64,@Convert.ToBase64String((byte[])@item.AnhDaiDien)" width="100" /></td>
+        <td class="text-center">
+            <a class="btn btn-default" href="@Url.Action("Edit","EditProfile", new { @ID_Room = item.ID_Room })">
+                Đăng lại
+            </a>
+        </td>
+    </tr>
+}

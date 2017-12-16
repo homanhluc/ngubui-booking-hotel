@@ -1,0 +1,7083 @@
+/*a:hover{color: #333;}*/
+
+
+
+
+
+
+
+a,.top-user-area .top-user-area-list > li > a{color: #333;font-family: "Montserrat", Arial, sans-serif;}
+
+
+
+
+
+
+
+ul.slimmenu li.active > a, ul.slimmenu li:hover > a {background: #e04f67;}
+
+
+
+
+
+
+
+.text-color {color: #e04f67 !important;}
+
+
+
+
+
+
+
+.btn-primary {background: #e04f67;border-color: #e04f67;}
+
+
+
+
+
+
+
+.btn-group-select-num >.btn.active, .btn-group-select-num >.btn.active:hover {
+
+
+
+
+
+
+
+    background: #e04f67;
+
+
+
+
+
+
+
+    border-color: #e04f67;
+
+
+
+
+
+
+
+    }
+
+.dropdown-menu > li > a{padding: 5px 20px;}
+
+.nav .open > a.dropdown-toggle{background-color: transparent;}
+
+.dropdown-menu > li > a:hover{color:#ffffff;}
+
+.dropdown-menu {/*background-color: rgba(0, 0, 0, 0.66);*/padding: 0;z-index: 99;}
+
+.abserve li.dropdown-submenu:hover > .dropdown-menu {display: block;z-index: 2;}
+
+.dropdown-submenu {position: relative;}
+
+.dropdown-submenu > .dropdown-menu {left: -100%;top: 0;right: 100%;}
+
+
+
+.search-tabs-bg > .tabbable > .nav-tabs > li > a:hover > .fa{background: #e04f67;}
+
+
+
+
+
+
+
+.search-tabs-bg > .tabbable > .nav-tabs > li.active > a,.nav-pills > li.active > a:hover {background: #e04f67;}
+
+
+
+
+
+
+
+.search-tabs-bg > .tabbable > .nav-tabs1 > li > a:hover > .fa{background: #e04f67;}
+
+
+
+
+
+
+
+.search-tabs-bg > .tabbable > .nav-tabs1 > li.active > a,.nav-pills > li.active > a:hover {background: #e04f67;}
+
+
+
+
+
+
+
+.box-icon, [class^="box-icon-"], [class*=" box-icon-"] {background: #e04f67;}
+
+
+
+
+
+
+
+.booking-item.booking-item-small .booking-item-rating-stars {color: #e04f67;}
+
+
+
+
+
+
+
+.last-minute-rating,.trends h3{color: #e04f67;}
+
+
+
+
+
+
+
+.booking-item:hover, .booking-item.active{border: 1px solid #e04f67;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+
+
+
+
+
+
+
+    position: relative;
+
+
+
+
+
+
+
+    z-index: 4;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+/*Display:None*/
+
+
+
+
+
+
+
+.testimonial {
+
+
+
+
+
+
+
+    display: none;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+/*Header*/
+
+
+
+
+
+
+
+.header_gap
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    padding: 25px 0;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.abserve .navbar-brand {
+
+
+
+
+
+
+
+    padding: 5px 10px;
+
+
+
+
+
+
+
+    height:auto;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.abserve .navbar-brand > img {
+
+
+
+
+
+
+
+    height: 40px;
+
+
+
+
+
+
+
+    width: auto;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.abserve .navbar-collapse a
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    color: #ffffff;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.abserve .navbar-collapse a:hover, .abserve .navbar-collapse a:focus
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    background-color: rgba(0, 0, 0, 0.70);
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+#main-header .head_profile
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    padding: 5px 10px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.special-area {
+
+
+
+
+
+
+
+    top: -60px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+img.user_image {
+
+
+
+
+
+
+
+    height: 30px;
+
+
+
+
+
+
+
+    margin-right: 7px;
+
+
+
+
+
+
+
+    object-fit: cover;
+
+
+
+
+
+
+
+    width: 30px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+header#main-header {
+
+
+
+
+
+
+
+    position: fixed;
+
+
+
+
+
+
+
+    z-index: 10;
+
+
+
+
+
+
+
+    width: 100%;
+
+
+
+
+
+
+
+    top: 0;
+
+
+
+
+
+
+
+    border-bottom: none;
+
+
+
+
+
+
+
+    background-color: rgba(0, 0, 0, 0.66);
+
+
+
+
+
+
+
+  -webkit-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.41);
+
+
+
+
+
+
+
+  -moz-box-shadow:0px 2px 10px -2px rgba(0, 0, 0, 0.41);
+
+
+
+
+
+
+
+  box-shadow:0px 2px 10px -2px rgba(0, 0, 0, 0.41);
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.header-top, .navbar-toggle .icon-bar {
+
+
+
+
+
+
+
+    background: #fff;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.navbar-header .navbar-toggle
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    border-color: #fff;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.header-top .logo img {
+
+
+
+
+
+
+
+    width: 39%;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Video BG*/
+
+
+
+
+
+
+
+.bg-holder > .bg-video {
+
+
+
+
+
+
+
+   /* z-index: 4;
+
+
+
+
+
+
+
+    position: fixed;*/
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.bg-holder .thumb .thumb-header {
+
+
+
+
+
+
+
+    margin-bottom: 15px;
+
+
+
+
+
+
+
+    margin: 0 auto;
+
+
+
+
+
+
+
+    display: table;
+
+
+
+
+
+
+
+    padding: 20px 0 30px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Trends*/
+
+
+
+
+
+
+
+.trends .row {
+
+
+
+
+
+
+
+   /* background: rgba(0,0,0,.5);
+
+
+
+
+
+
+
+    padding: 10px;*/
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Breadcrumb*/
+
+
+
+
+
+
+
+.breadcrumb {
+
+
+/*
+
+
+
+
+    background: #182123;
+
+
+
+
+
+
+
+    padding: 5px;
+
+
+
+
+
+
+
+    font-size: 13px;
+
+
+
+    float: left;
+
+
+
+    margin-top: 15px;
+
+
+
+    width: 100%;
+
+
+
+    margin-bottom: 0;
+
+
+*/
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Search page*/
+
+
+
+
+
+
+
+.abserve_icon-82.wishlist1 {color: #5bc45c;}
+
+
+
+
+
+
+
+.abserve_icon-82.wishlist {color: #ffffff;}
+
+
+
+
+
+
+
+.booking-filters {background: #FFFFFF;color: #777;font-size: 12px;border: 1px solid #ddd;}
+
+
+
+
+
+
+
+.booking-filters .booking-filters-list > li {border-top: 1px solid #ddd;}
+
+
+
+
+
+
+
+.text-white big, .text-white h1, .text-white h2, .text-white h3, .text-white h4, .text-white small, .text-white .text-hero, .text-white a, .text-white a:hover, .text-white span {
+
+
+
+
+
+
+
+    color: #777;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+h5 {font-size: 14px;}
+
+
+
+
+
+
+
+.booking-item-img-wrap:before {
+
+
+
+
+
+
+
+background: -moz-linear-gradient(top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.9) 15%, rgba(0,0,0,0.82) 28%, rgba(0,0,0,0.7) 41%, rgba(0,0,0,0.48) 59%, rgba(0,0,0,0.29) 72%, rgba(0,0,0,0.09) 87%, rgba(0,0,0,0.02) 95%, rgba(0,0,0,0.01) 97%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+
+
+
+
+
+
+
+background: -webkit-linear-gradient(top, rgba(0,0,0,0.95) 0%,rgba(0,0,0,0.9) 15%,rgba(0,0,0,0.82) 28%,rgba(0,0,0,0.7) 41%,rgba(0,0,0,0.48) 59%,rgba(0,0,0,0.29) 72%,rgba(0,0,0,0.09) 87%,rgba(0,0,0,0.02) 95%,rgba(0,0,0,0.01) 97%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+
+
+
+
+
+
+
+background: linear-gradient(to bottom, rgba(0,0,0,0.95) 0%,rgba(0,0,0,0.9) 15%,rgba(0,0,0,0.82) 28%,rgba(0,0,0,0.7) 41%,rgba(0,0,0,0.48) 59%,rgba(0,0,0,0.29) 72%,rgba(0,0,0,0.09) 87%,rgba(0,0,0,0.02) 95%,rgba(0,0,0,0.01) 97%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+
+
+
+
+
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2000000', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+
+
+
+
+
+
+
+    width: 100%;
+
+
+
+
+
+
+
+    height: 40px;
+
+
+
+
+
+
+
+    /*transform: rotate(180deg);background-size: cover;*/
+
+
+
+
+
+
+
+    content: "";
+
+
+
+
+
+
+
+    position: absolute;
+
+
+
+
+
+
+
+    top: 0;
+
+
+
+
+
+
+
+    z-index: 1;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+h5.booking-filters-title, .booking-filters h3
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    color: #333333;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+/*.pagination > .active > span{background-color: #e04f67;border-color: #e04f67;}*/
+
+
+
+
+
+
+
+.booking-filters .checkbox
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    border-bottom: 1px solid #dddddd;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.booking-filters .checkbox:last-child
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    border-bottom: 0px none;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.booking-item .booking-item-img-wrap img
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    position: absolute;
+
+
+
+    object-fit: cover;
+
+
+
+    transform: scale(1.2);
+
+
+
+
+
+
+
+    -webkit-transform: scale(1.2);
+
+
+
+
+
+
+
+    -moz-transform: scale(1.2);
+
+
+
+
+
+
+
+    transition: all 0.7s ease 0s;
+
+
+
+
+
+
+
+    -webkit-transition: all 0.7s ease 0s;
+
+
+
+
+
+
+
+    -moz-transition: all 0.7s ease 0s;
+
+
+
+
+
+
+
+    height: 220px;
+
+
+
+
+
+
+
+    width: 110%;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.booking-item .booking-item-img-wrap img:hover
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    transform: scale(1);
+
+
+
+
+
+
+
+    -webkit-transform: scale(1);
+
+
+
+
+
+
+
+    -moz-transform: scale(1);
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.booking-item-img-wrap {
+
+
+
+
+
+
+
+    position: relative;
+
+
+
+
+
+
+
+    min-height: 220px;
+
+
+
+
+
+
+
+    overflow: hidden;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.booking-item-img-wrap .ai.abserve_icon-82 {
+
+
+
+
+
+
+
+    position: absolute;
+
+
+
+
+
+
+
+    top: 5px;
+
+
+
+
+
+
+
+    right: 7px;
+
+
+
+
+
+
+
+    z-index: 2;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.booking-item-title{margin-bottom: 10px;color: #333333;font-size: 17px;text-transform: uppercase;}
+
+
+
+
+
+
+
+.booking-item-address {
+
+
+
+
+
+
+
+    line-height: 18px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.booking-item-address i {
+
+
+
+
+
+
+
+    margin-right: 6px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.breadcrumb a, .breadcrumb li {
+
+
+
+
+
+
+
+    color: #ffffff;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Footer*/
+
+
+
+
+
+
+
+footer#main-footer {
+
+
+
+
+
+
+
+    background: rgba(0, 0, 0, 0) url("../img/footer_bg.jpg") repeat fixed 0 0 / cover;
+
+
+
+
+
+
+
+    position: relative;
+
+
+
+    margin: 0 !important;
+
+
+
+    z-index: 4;font-size: 13px;font-family: "Montserrat", Arial, sans-serif;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer#main-footer::before, .last_deal_bg:before {
+
+
+
+
+
+
+
+    background-color: rgba(10, 49, 82, 0.8);
+
+
+
+
+
+
+
+    content: "";
+
+
+
+
+
+
+
+    display: block;
+
+
+
+
+
+
+
+    height: 100%;
+
+
+
+
+
+
+
+    left: 0;
+
+
+
+
+
+
+
+    position: absolute;
+
+
+
+
+
+
+
+    right: 0;
+
+
+
+
+
+
+
+    top: 0;
+
+
+
+
+
+
+
+    width: 100%;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+footer small
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    color: #ffffff;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+footer#main-footer .form-control {
+
+
+
+
+
+
+
+    background: #e6e6e6 none repeat scroll 0 0;
+
+
+
+
+
+
+
+    border-color: #e6e6e6;
+
+
+
+
+
+
+
+    color: #333333;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+footer h4 {
+    padding-bottom: 15px;
+    text-transform: uppercase;
+    font-size: 16px;
+    color:  #FFF;
+}
+
+#top_tools .right_menu
+{
+    margin: 20px 0px 0px;
+    padding: 0px !important;
+}
+#top_tools .right_menu a
+{
+    padding: 0px !important;
+}
+#top_tools .right_menu a:hover, #top_tools .right_menu a:active, #top_tools .right_menu a:active
+{
+    background: none !important;
+    text-decoration: underline !important;
+}
+.pre-header .nav > li > a:hover, .nav > li > a:focus, .nav > li > a:active
+{
+    background: none !important;
+}
+.pre-header .nav > li > a
+{
+    cursor: pointer !important;
+}
+footer .navbar-nav > li > a
+{
+    padding: 15px 5px !important;
+}
+footer .navbar-nav > li > a:active, footer .navbar-nav > li > a:hover
+{
+    color: #999 !important;
+}
+footer .dropdown-menu > li > a:hover
+{
+    color: #999 !important;
+}
+/*
+.navbar-nav .open .dropdown-menu .dropdown-header, .navbar-nav .open .dropdown-menu > li > a
+{
+	padding: 5px 25px !important;
+}*/
+
+/*
+footer .list-footer
+{
+    position: absolute;
+}*/
+
+@media(max-width: 640px)
+{
+    footer h4         
+    {
+        margin-top: 30px;
+    }
+    .bg-holder > .bg-video, .bg-holder > .bg-front
+    {
+        position: static !important;
+    }
+    header ul#top_tools .dropdown-menu a
+    {
+    	color: #FFF;
+    }
+    header ul#top_tools .dropdown-menu a:hover
+    {
+    	color: #333;
+    }
+}
+footer .list-footer
+{
+	margin-bottom: 50px !important;
+}
+footer .list-footer > li {
+    margin-bottom: 15px;
+}
+
+
+
+
+
+
+
+footer .contact_us {
+
+
+
+
+
+
+
+    font-family: arial;
+
+
+
+
+
+
+
+    font-size: 14px;
+
+
+
+
+
+
+
+    padding-bottom: 25px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+footer .contact_us i {
+
+
+
+
+
+
+
+    display: inline-block;
+
+
+
+
+
+
+
+    padding-right: 10px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.in_top {
+
+
+
+
+
+
+
+    padding-top: 60px;
+
+
+
+
+
+
+
+    clear: both;
+
+
+
+
+
+
+
+    background-color: #ffffff;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.abs_footer_code {
+
+
+
+
+
+
+
+      height: 3px;
+
+
+
+
+
+
+
+    width: 100%;
+
+
+
+
+
+
+
+    background: #f76570;
+
+
+
+
+
+
+
+    background: -moz-linear-gradient(left, #f76570 0%, #f76570 8%, #f3a46b 8%, #f3a46b 16%, #f3a46b 16%, #ffd205 16%, #ffd205 24%, #ffd205 24%, #1bbc9b 24%, #1bbc9b 25%, #1bbc9b 32%, #14b9d5 32%, #14b9d5 40%, #c377e4 40%, #c377e4 48%, #f76570 48%, #f76570 56%, #f3a46b 56%, #f3a46b 64%, #ffd205 64%, #ffd205 72%, #1bbc9b 72%, #1bbc9b 80%, #14b9d5 80%, #14b9d5 80%, #14b9d5 89%, #c377e4 89%, #c377e4 100%);
+
+
+
+
+
+
+
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#f76570), color-stop(8%,#f76570), color-stop(8%,#f3a46b), color-stop(16%,#f3a46b), color-stop(16%,#f3a46b), color-stop(16%,#ffd205), color-stop(24%,#ffd205), color-stop(24%,#ffd205), color-stop(24%,#1bbc9b), color-stop(25%,#1bbc9b), color-stop(32%,#1bbc9b), color-stop(32%,#14b9d5), color-stop(40%,#14b9d5), color-stop(40%,#c377e4), color-stop(48%,#c377e4), color-stop(48%,#f76570), color-stop(56%,#f76570), color-stop(56%,#f3a46b), color-stop(64%,#f3a46b), color-stop(64%,#ffd205), color-stop(72%,#ffd205), color-stop(72%,#1bbc9b), color-stop(80%,#1bbc9b), color-stop(80%,#14b9d5), color-stop(80%,#14b9d5), color-stop(89%,#14b9d5), color-stop(89%,#c377e4), color-stop(100%,#c377e4));
+
+
+
+
+
+
+
+    background: -webkit-linear-gradient(left, #f76570 0%,#f76570 8%,#f3a46b 8%,#f3a46b 16%,#f3a46b 16%,#ffd205 16%,#ffd205 24%,#ffd205 24%,#1bbc9b 24%,#1bbc9b 25%,#1bbc9b 32%,#14b9d5 32%,#14b9d5 40%,#c377e4 40%,#c377e4 48%,#f76570 48%,#f76570 56%,#f3a46b 56%,#f3a46b 64%,#ffd205 64%,#ffd205 72%,#1bbc9b 72%,#1bbc9b 80%,#14b9d5 80%,#14b9d5 80%,#14b9d5 89%,#c377e4 89%,#c377e4 100%);
+
+
+
+
+
+
+
+    background: -o-linear-gradient(left, #f76570 0%,#f76570 8%,#f3a46b 8%,#f3a46b 16%,#f3a46b 16%,#ffd205 16%,#ffd205 24%,#ffd205 24%,#1bbc9b 24%,#1bbc9b 25%,#1bbc9b 32%,#14b9d5 32%,#14b9d5 40%,#c377e4 40%,#c377e4 48%,#f76570 48%,#f76570 56%,#f3a46b 56%,#f3a46b 64%,#ffd205 64%,#ffd205 72%,#1bbc9b 72%,#1bbc9b 80%,#14b9d5 80%,#14b9d5 80%,#14b9d5 89%,#c377e4 89%,#c377e4 100%);
+
+
+
+
+
+
+
+    background: -ms-linear-gradient(left, #f76570 0%,#f76570 8%,#f3a46b 8%,#f3a46b 16%,#f3a46b 16%,#ffd205 16%,#ffd205 24%,#ffd205 24%,#1bbc9b 24%,#1bbc9b 25%,#1bbc9b 32%,#14b9d5 32%,#14b9d5 40%,#c377e4 40%,#c377e4 48%,#f76570 48%,#f76570 56%,#f3a46b 56%,#f3a46b 64%,#ffd205 64%,#ffd205 72%,#1bbc9b 72%,#1bbc9b 80%,#14b9d5 80%,#14b9d5 80%,#14b9d5 89%,#c377e4 89%,#c377e4 100%);
+
+
+
+
+
+
+
+    background: linear-gradient(to right, #f76570 0%,#f76570 8%,#f3a46b 8%,#f3a46b 16%,#f3a46b 16%,#ffd205 16%,#ffd205 24%,#ffd205 24%,#1bbc9b 24%,#1bbc9b 25%,#1bbc9b 32%,#14b9d5 32%,#14b9d5 40%,#c377e4 40%,#c377e4 48%,#f76570 48%,#f76570 56%,#f3a46b 56%,#f3a46b 64%,#ffd205 64%,#ffd205 72%,#1bbc9b 72%,#1bbc9b 80%,#14b9d5 80%,#14b9d5 80%,#14b9d5 89%,#c377e4 89%,#c377e4 100%);
+
+
+
+
+
+
+
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f76570', endColorstr='#c377e4',GradientType=1 );
+
+
+
+
+
+
+
+}
+
+
+
+.tabs_abs ul{
+
+
+
+    float: left;
+
+
+
+    width: 100%;
+
+
+
+}
+
+
+
+
+
+
+
+.tabs_abs .nav li{
+
+
+
+    clear: both;
+
+
+
+}
+
+
+
+
+
+
+
+/*home page*/
+
+
+
+
+
+
+
+/* #city_tab::-webkit-input-placeholder,#city_tab::-moz-placeholder {
+
+
+
+
+
+
+
+    color: #ffffff;
+
+
+
+
+
+
+
+}*/
+
+
+
+
+
+
+
+.trends .caroufredsel_wrapper
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    max-height: 320px;
+
+
+
+
+
+
+
+}
+
+
+
+.search-tabs .hotel_search_form #city_err {
+
+
+
+    position: absolute;
+
+
+
+    bottom: -20px;
+
+
+
+}
+
+
+
+.form-group.form-group-lg{position: relative;}
+
+
+
+.search-tabs h2,.search-tabs .hotel_search_form label,.search-tabs .hotel_search_form #city_err,.search-tabs .hotel_search_form .btn-group-select-num > .btn
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    color: #ffffff;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.search-tabs-bg > .tabbable > .tab-content > .tab-pane
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    background: rgba(0,0,0,0.30);
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.section-title 
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    padding: 5% 0 4%;
+
+
+
+
+
+
+
+    text-align: center;
+
+
+
+
+
+
+
+    text-transform: uppercase;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.btn:focus, .btn:active:focus, .btn.active:focus
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    outline:none !important;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.section-title label {
+
+
+
+
+
+
+
+    color: #5e6d81;
+
+
+
+
+
+
+
+    font-size: 26px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.section-title > h4 {
+
+
+
+
+
+
+
+    color: #a4a4a4;
+
+
+
+
+
+
+
+    font-size: 20px;
+
+
+
+
+
+
+
+    font-weight: normal;
+
+
+
+
+
+
+
+    padding: 13px 0 0;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.thumb .discover_img {
+
+
+
+
+
+
+
+    height: 250px;
+
+
+
+
+
+
+
+    object-fit: cover;
+
+
+
+
+
+
+
+    -webkit-transform:all 3000ms;
+
+
+
+
+
+
+
+    -moz-transform:all 3000ms;
+
+
+
+
+
+
+
+    -o-transform:all 3000ms;
+
+
+
+
+
+
+
+    transform:all 3000ms;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.thumb .book_now:hover .discover_img
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    opacity: 1;
+
+
+
+
+
+
+
+    -webkit-transform:rotate(3deg) scale(1.2, 1.2);
+
+
+
+
+
+
+
+    -moz-transform:rotate(3deg) scale(1.2, 1.2);
+
+
+
+
+
+
+
+    -o-transform:rotate(3deg) scale(1.2, 1.2);
+
+
+
+
+
+
+
+    transform:rotate(3deg) scale(1.2, 1.2);
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.contry_name {
+
+
+
+
+
+
+
+    background: #434a54;
+
+
+
+
+
+
+
+    color: #ffffff;
+
+
+
+
+
+
+
+    padding: 10px;
+
+
+
+
+
+
+
+    font-size: 17px;
+
+
+
+
+
+
+
+    text-overflow: ellipsis;
+
+
+
+
+
+
+
+    white-space: nowrap;
+
+
+
+
+
+
+
+    overflow: hidden;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.new_hotel_desc label {
+
+
+
+
+
+
+
+    color: #ffffff;
+
+
+
+
+
+
+
+    float: left;
+
+
+
+
+
+
+
+    overflow: hidden;
+
+
+
+
+
+
+
+    padding: 7px 15px;
+
+
+
+
+
+
+
+    text-overflow: ellipsis;
+
+
+
+
+
+
+
+    white-space: nowrap;
+
+
+
+
+
+
+
+    width: 50%;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.detail_text {
+
+
+
+
+
+
+
+    position: absolute;
+
+
+
+
+
+
+
+    left: 0;
+
+
+
+
+
+
+
+    right: 0;
+
+
+
+
+
+
+
+    top: 50%;
+
+
+
+
+
+
+
+    text-align: center;
+
+
+
+
+
+
+
+    border: 1px solid;
+
+
+
+
+
+
+
+    width: 100px;
+
+
+
+
+
+
+
+    margin: auto;
+
+
+
+
+
+
+
+    padding: 8px;
+
+
+
+
+
+
+
+    font-size: 15px;
+
+
+
+
+
+
+
+    color: #ffffff;
+
+
+
+
+
+
+
+    opacity: 0;
+
+
+
+
+
+
+
+    z-index:1;
+
+
+
+
+
+
+
+    -webkit-transition: opacity;
+
+
+
+
+
+
+
+    -webkit-transition-timing-function: ease-out;
+
+
+
+
+
+
+
+    -webkit-transition-duration: 500ms;
+
+
+
+
+
+
+
+    -moz-transition: opacity;
+
+
+
+
+
+
+
+    -moz-transition-timing-function: ease-out;
+
+
+
+
+
+
+
+    -moz-transition-duration: 500ms;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.last_deal_bg {
+
+
+
+
+
+
+
+    background: rgba(0, 0, 0, 0) url("../img/bg_image.jpg") no-repeat fixed 0 0 / cover ;
+
+
+
+
+
+
+
+    position: relative;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.last_deal_bg .text-white h5, .last_deal_bg .text-white h2
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    color: #ffffff;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.last-minute-title {
+
+
+
+
+
+
+
+  font-size: 50px;
+
+
+
+
+
+
+
+  padding: 15px 0;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.choose_img
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    background:rgba(0, 0, 0, 0) url("../img/dubai.png") no-repeat fixed 0 0 / cover;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.choose_us
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    background: rgba(10, 49, 82, 0.5);
+
+
+
+
+
+
+
+    color: #ffffff;
+
+
+
+
+
+
+
+    padding: 50px 0;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.choose_us h2 {
+
+
+
+
+
+
+
+    color: #ffffff;
+
+
+
+
+
+
+
+    font-size: 32px;
+
+
+
+
+
+
+
+    margin-bottom: 7px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.choose_us h4 {
+
+
+
+
+
+
+
+    color: #ffffff;
+
+
+
+
+
+
+
+    font-size: 19px;
+
+
+
+
+
+
+
+    margin-bottom: 30px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.choose_us p {
+
+
+
+
+
+
+
+    font-size: 15px;
+
+
+
+
+
+
+
+    line-height: 35px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.choose_us .thumb {
+
+
+
+
+
+
+
+    background-color: #ffffff;
+
+
+
+
+
+
+
+    margin-top: 70px;
+
+
+
+
+
+
+
+    min-height: 250px;
+
+
+
+
+
+
+
+    padding: 15px;
+
+
+
+
+
+
+
+    position: relative;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.choose_us .thumb p.thumb-desc {
+
+
+
+
+
+
+
+    color: #07253f;
+
+
+
+
+
+
+
+    font-size: 16px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.choose_us .thumb .thumb-header {
+
+
+
+
+
+
+
+    background-color: #e04f67;
+
+
+
+
+
+
+
+    font-size: 28px;
+
+
+
+
+
+
+
+    padding: 10px 5px;
+
+
+
+
+
+
+
+    position: absolute;
+
+
+
+
+
+
+
+    top: -27px;
+
+
+
+
+
+
+
+    text-align: center;
+
+
+
+
+
+
+
+    left: 0;
+
+
+
+
+
+
+
+    right: 0;
+
+
+
+
+
+
+
+    width: 55px;
+
+
+
+
+
+
+
+    transform:rotate(45deg);
+
+
+
+
+
+
+
+    -webkit-transform:rotate(45deg);
+
+
+
+
+
+
+
+    -moz-transform:rotate(45deg);
+
+
+
+
+
+
+
+    -o-transform:rotate(45deg);
+
+
+
+
+
+
+
+    height: 55px;
+
+
+
+
+
+
+
+    margin: auto;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.choose_us .thumb .thumb-header i
+{
+   transform:rotate(-45deg);
+   -webkit-transform:rotate(-45deg);
+   -moz-transform:rotate(-45deg);
+   -o-transform:rotate(-45deg);
+   position: relative;
+   top: 5px;
+   color:#ffffff;
+}
+.choose_us .thumb-caption {
+    padding-top: 50px;
+}
+.choose_us .thumb-caption .thumb-title a {
+    color: #07253f;
+    font-size: 18px;
+    font-weight: bold;
+}
+.common_img_block:hover .detail_text
+{
+    opacity: 1;
+}
+.new_hotel_desc p {
+    color: #a4a4a4;
+    float: left;
+    font-size: 15px;
+    padding: 10px;
+
+
+
+
+
+
+
+    height: 56px;
+
+
+
+
+
+
+
+    overflow: hidden;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.disc_main a:hover::before {
+
+
+
+
+
+
+
+    background-color: rgba(0, 0, 0, 0.4);
+
+
+
+
+
+
+
+    content: "";
+
+
+
+
+
+
+
+    display: block;
+
+
+
+
+
+
+
+    height: 100%;
+
+
+
+
+
+
+
+    position: absolute;
+
+
+
+
+
+
+
+    top: 0;
+
+
+
+
+
+
+
+    width: 100%;
+
+
+
+
+
+
+
+    z-index: 1;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.disc_main:nth-child(3n+1) .new_hotel_desc .light_bg
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    background-color: #f76570;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.disc_main:nth-child(3n+1) .new_hotel_desc .dark_bg
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    background-color: #ef606b;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.disc_main:nth-child(3n+2) .new_hotel_desc .light_bg
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    background-color:#14b9d5 ;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.disc_main:nth-child(3n+2) .new_hotel_desc .dark_bg
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    background-color: #15b0ca;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.disc_main:nth-child(3n+3) .new_hotel_desc .light_bg
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    background-color: #c377e4;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.disc_main:nth-child(3n+3) .new_hotel_desc .dark_bg
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    background-color: #BA71DA;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.top_destination .thumb-title {
+
+
+
+
+
+
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+
+
+
+
+
+
+    color: #ffffff;
+
+
+
+
+
+
+
+    font-size: 23px;
+
+
+
+
+
+
+
+    font-weight: normal;
+
+
+
+
+
+
+
+    left: 0;
+
+
+
+
+
+
+
+    padding: 13px 20px;
+
+
+
+
+
+
+
+    position: absolute;
+
+
+
+
+
+
+
+    right: 0;
+
+
+
+
+
+
+
+    text-align: center;
+
+
+
+
+
+
+
+    top: 0;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.top_destination .thumb-desc {
+
+
+
+
+
+
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+
+
+
+
+
+
+    bottom: 0;
+
+
+
+
+
+
+
+    color: #ffffff;
+
+
+
+
+
+
+
+    padding: 5px;
+
+
+
+
+
+
+
+    position: absolute;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.hover_img_tw > img{
+
+
+
+
+
+
+
+    transition: all 3000ms ease 0s;
+
+
+
+
+
+
+
+    -webkit-transition: all 3000ms ease 0s;
+
+
+
+
+
+
+
+    -moz-transition: all 3000ms ease 0s;
+
+
+
+
+
+
+
+    -o-transition: all 3000ms ease 0s;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.hover_img_tw:hover > img {
+
+
+
+
+
+
+
+    transform: rotate(3deg) scale(1.2, 1.2);
+
+
+
+
+
+
+
+    -webkit-transform: rotate(3deg) scale(1.2, 1.2);
+
+
+
+
+
+
+
+    -moz-transform: rotate(3deg) scale(1.2, 1.2);
+
+
+
+
+
+
+
+    -o-transform: rotate(3deg) scale(1.2, 1.2);
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.hover_img_tw {
+
+
+
+
+
+
+
+    display: block;
+
+
+
+
+
+
+
+    overflow: hidden;
+
+
+
+
+
+
+
+    position: relative;
+
+
+
+
+
+
+
+    transition: all 0.3s ease 0s;
+
+
+
+
+
+
+
+    z-index: 1;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+/*login and register*/
+
+
+
+
+
+
+
+.register_log .log_box
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    background-color: #ffffff;
+
+
+
+
+
+
+
+    margin: 30px auto;
+
+
+
+
+
+
+
+    max-width: 500px;
+
+
+
+
+
+
+
+    padding: 20px;
+
+
+
+    overflow: hidden;
+
+
+
+
+
+
+
+    position: relative;
+
+
+
+
+
+
+
+    z-index: 2;
+
+
+
+
+
+
+
+    border-radius: 5px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.register_log_bg
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    background: rgba(0, 0, 0, 0) url("../img/hotel5.jpg") no-repeat fixed 0 0 / 100% 100%;
+
+
+
+
+
+
+
+    height: 100%;
+
+
+
+
+
+
+
+    left: 0;
+
+
+
+
+
+
+
+    position: fixed;
+
+
+
+
+
+
+
+    top: 0;
+
+
+
+
+
+
+
+    width: 100%;
+
+
+
+
+
+
+
+    z-index: 1;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.register_log .form-control {
+
+
+
+
+
+
+
+    color: #000000;
+
+
+
+
+
+
+
+    font-size: 15px;
+
+
+
+
+
+
+
+    height: auto;
+
+
+
+
+
+
+
+    padding: 12px 15px 12px 40px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.register_log label {
+
+
+
+
+
+
+
+    font-size: 16px;
+
+
+
+
+
+
+
+    font-weight: normal;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.register_log_bg:before {
+
+
+
+
+
+
+
+    background-color: rgba(10, 49, 82, 0.8);
+
+
+
+
+
+
+
+    content: "";
+
+
+
+
+
+
+
+    display: block;
+
+
+
+
+
+
+
+    height: 100%;
+
+
+
+
+
+
+
+    left: 0;
+
+
+
+
+
+
+
+    position: absolute;
+
+
+
+
+
+
+
+    right: 0;
+
+
+
+
+
+
+
+    top: 0;
+
+
+
+
+
+
+
+    width: 100%;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.has-feedback .form-control-feedfront {
+
+
+
+
+
+
+
+    display: block;
+
+
+
+
+
+
+
+    height: 46px;
+
+
+
+
+
+
+
+    left: 0;
+
+
+
+
+
+
+
+    line-height: 44px;
+
+
+
+
+
+
+
+    position: absolute;
+
+
+
+
+
+
+
+    text-align: center;
+
+
+
+
+
+
+
+    top: 29px;
+
+
+
+
+
+
+
+    width: 46px;
+
+
+
+
+
+
+
+    color: #e04f67;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+/*.register_log .btn-primary {
+
+
+
+
+
+
+
+    font-size: 20px;
+
+
+
+
+
+
+
+    margin-top: 15px;
+
+
+
+
+
+
+
+    padding: 12px;
+
+
+
+
+
+
+
+}*/
+
+
+
+
+
+
+
+.forget {
+
+
+
+
+
+
+
+    float: right;
+
+
+
+
+
+
+
+    font-size: 15px;
+
+
+
+
+
+
+
+    color: #e04f67;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.have_account
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    color: #e04f67;
+
+
+
+
+
+
+
+    font-size: 16px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.register_log {
+
+
+
+
+
+
+
+    padding: 0 15px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*about us page*/
+
+
+
+
+
+
+
+.about_us_bg
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    background: rgba(0, 0, 0, 0) url("../img/footer_bg.jpg") repeat fixed 0 0;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.bg-holder-content .text-white h2 {
+
+
+
+
+
+
+
+    color: #ffffff;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*booking conformation page*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.head_book {
+
+
+
+
+
+
+
+    background-color: #e04f67;
+
+
+
+
+
+
+
+    border-bottom: 1px solid #ffffff;
+
+
+
+
+
+
+
+    color: #ffffff;
+
+
+
+
+
+
+
+    padding: 10px 12px;
+
+
+
+
+
+
+
+    font-size: 16px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.sub_book {
+
+
+
+
+
+
+
+    border-bottom: 1px solid #e04f67;
+
+
+
+
+
+
+
+    color: #333333;
+
+
+
+
+
+
+
+    font-size: 15px;
+
+
+
+
+
+
+
+    overflow: hidden;
+
+
+
+
+
+
+
+    padding: 10px 15px;
+
+
+
+
+
+
+
+    text-overflow: ellipsis;
+
+
+
+
+
+
+
+    white-space: nowrap;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.sub_book label {
+
+
+
+
+
+
+
+    display: inline;
+
+
+
+
+
+
+
+    padding: 0 10px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.book_btn
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    float: right;
+
+
+
+
+
+
+
+    font-size: 20px;
+
+
+
+
+
+
+
+    margin: 20px 5px 0;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.travel_book {
+
+
+
+
+
+
+
+    border: 1px solid #e04f67;
+
+
+
+
+
+
+
+    border-radius: 5px;
+
+
+
+
+
+
+
+    overflow: hidden;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.no_pad
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    padding: 0 !important;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*profile page*/
+
+
+
+
+
+
+
+.pad_t_15
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    padding-top: 15px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.table_div {
+
+
+
+
+
+
+
+    overflow: auto;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.right_profile #tab-5
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    padding: 15px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.right_profile .form-group .error_ {
+
+
+
+
+
+
+
+    text-align: left;
+
+
+
+
+
+
+
+    color: red;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.right_profile #status_error_area, .right_profile .error_
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    text-align: center; color: Red;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.right_profile  #status-area, .right_profile .success_
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    text-align: center; color: #59C45A;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.profile_bg h2.page_title {
+
+
+
+
+
+
+
+    color: #1ab394;
+
+
+
+
+
+
+
+    font-size: 35px;
+
+
+
+
+
+
+
+    margin: 0;
+
+
+
+
+
+
+
+    padding: 15px 15px 0;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.left_profile .user-profile-avatar > h5 {
+
+
+
+
+
+
+
+    background-color: rgba(0, 0, 0, 0.65);
+
+
+
+
+
+
+
+    bottom: 35px;
+
+
+
+
+
+
+
+    color: #ffffff;
+
+
+
+
+
+
+
+    font-family: arial;
+
+
+
+
+
+
+
+    font-size: 15px;
+
+
+
+
+
+
+
+    padding: 4px 7px;
+
+
+
+
+
+
+
+    position: absolute;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.left_profile .user-profile-avatar {
+
+
+
+
+
+
+
+    position: relative;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.profile_bg {
+
+
+
+
+
+
+
+    background-color: #eeeeee;
+
+
+
+
+
+
+
+    overflow: hidden;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.left_profile {
+
+
+
+
+
+
+
+    background-color: #ffffff;
+
+
+
+
+
+
+
+    border: 1px solid #dddddd;
+
+
+
+
+
+
+
+    padding: 15px;
+
+
+
+
+
+
+
+    margin-top:15px;
+
+
+
+
+
+
+
+    overflow: hidden;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.right_profile .tab_bl{
+
+
+
+
+
+
+
+    background-color: #ffffff;
+
+
+
+
+
+
+
+    box-shadow: 0 0 3px 0;
+
+
+
+
+
+
+
+    min-height: 280px;
+
+
+
+
+
+
+
+    overflow: hidden;
+
+
+
+
+
+
+
+    padding-bottom: 20px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.right_profile h4 {
+
+
+
+
+
+
+
+    background-color: #efefef;
+
+
+
+
+
+
+
+    border-bottom: 1px solid #dddddd;
+
+
+
+
+
+
+
+    padding: 10px 8px;
+
+
+
+
+
+
+
+    width: 100%;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.right_profile .previewImage {
+
+
+
+
+
+
+
+    border: 1px solid #737373;
+
+
+
+
+
+
+
+    border-radius: 5px;
+
+
+
+
+
+
+
+    display: block;
+
+
+
+
+
+
+
+    overflow: hidden;
+
+
+
+
+
+
+
+    padding: 5px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.right_profile .img-circle {
+
+
+
+
+
+
+
+    border-radius: 5px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.right_profile .form-group {
+
+
+
+
+
+
+
+    margin: 0 0 15px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.right_profile h6 {
+
+
+
+
+
+
+
+    font-size: 16px;
+
+
+
+
+
+
+
+    font-weight: bold;
+
+
+
+
+
+
+
+    padding: 0 15px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.left_profile .nav > li > a, .left_profile .nav > a:focus,.left_profile .nav.nav-tabs, .left_profile .nav > li {
+
+
+
+
+
+
+
+    border: 0 none;
+
+
+
+
+
+
+
+    width: 100%;
+
+
+
+
+
+
+
+    outline: none;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.left_profile .nav > li.active a, .left_profile .nav > li a:hover {
+
+
+
+
+
+
+
+    background-color: #1ab394;
+
+
+
+
+
+
+
+    color: #ffffff;
+
+
+
+
+
+
+
+    border: 0 none;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.left_profile .nav > li > a {
+
+
+
+
+
+
+
+    border: 0 none;
+
+
+
+
+
+
+
+    width: 100%;
+
+
+
+
+
+
+
+    margin-top: 2px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.form-horizontal .btn.btn-primary {
+
+
+
+
+
+
+
+    float: right;
+
+
+
+
+
+
+
+    margin-left: 10px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.right_profile
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    margin-top:15px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Detail page*/
+
+
+
+
+
+
+
+/*.booking-item-details .booking-item-header {
+
+
+
+
+
+
+
+    margin-top: -220px;
+
+
+
+
+
+
+
+    display: block;
+
+
+
+
+
+
+
+    float: left;
+
+
+
+
+
+
+
+    width: 100%;
+
+
+
+
+
+
+
+}*/
+
+
+
+.smilar_list .row {
+
+
+
+    margin: 0;
+
+
+
+}
+
+
+
+.smilar_list .row > div {
+
+
+
+    padding: 0 5px;
+
+
+
+    word-wrap: break-word;
+
+
+
+}
+
+
+
+.booking-item-reviews > li .booking-item-review-person-avatar > img {
+
+
+
+  width: 70px;
+
+
+
+  height: 70px;
+
+
+
+}
+
+
+
+.pagin > .active > a, .pagin > .active > span, .pagin > .active > a:hover, .pagin > .active > span:hover, .pagin > .active > a:focus, .pagin > .active > span:focus
+
+
+
+{
+
+
+
+    background-color: #e04f67;
+
+
+
+}
+
+
+
+.pagin > li > a, .pagin > li > span {color: #e04f67;}
+
+
+
+.pagin > li > a:hover, .pagin > li > span:hover, .pagin > li > a:focus, .pagin > li > span:focus{background-color: #e04f67;color:#ffffff;}
+
+
+
+.booking-item-details .booking-details-tabbable #tab-2 {
+
+
+
+    max-height: 470px;
+
+
+
+    overflow: auto;
+
+
+
+}
+
+
+
+.alert { /*display: none;*/ }
+
+
+
+.popup_abs span
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    /*background-color: #ffffff;*/
+
+
+
+
+
+
+
+    border-radius: 5px;
+
+
+
+
+
+
+
+    display: block;
+
+
+
+
+
+
+
+    font-size: 15px;
+
+
+
+
+
+
+
+    margin: 0;
+
+
+
+    float: right;
+
+
+
+    right: 15px;
+
+
+
+    max-width: 500px;
+
+
+
+
+
+
+
+    padding: 20px;
+
+
+
+
+
+
+
+    position: relative;
+
+
+
+
+
+
+
+    top: 60px;
+
+
+
+
+
+
+
+    text-align: center;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.popup_abs 
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+
+
+
+
+
+
+    border: 1px solid #dddddd;
+
+
+
+
+
+
+
+    display: none;
+
+
+
+
+
+
+
+    bottom: 0;
+
+
+
+
+
+
+
+    left: 0;
+
+
+
+
+
+
+
+    position: fixed;
+
+
+
+
+
+
+
+    right: 0;
+
+
+
+
+
+
+
+    top: 0;
+
+
+
+
+
+
+
+    z-index: 10;
+
+
+
+
+
+
+
+    width: 100%;
+
+
+
+
+
+
+
+    height:100%;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.booking-item-header h2, .booking-item-header p, .booking-item-header a, .booking-item-header big, .booking-item-header .text-lg, .booking-item-header small {
+
+
+
+
+
+
+
+    color: #FFF;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.detail_baner
+
+
+
+
+
+
+
+{
+
+
+
+
+    width: 100%;
+
+
+    height: 620px;
+
+
+
+
+
+
+
+    object-fit: cover;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.booking-item-header .text-small i {
+
+
+
+
+
+
+
+    padding-right: 7px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.booking-item-header .text-small li
+
+
+
+
+
+
+
+{
+
+
+
+
+
+
+
+    color: #ffffff
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.booking-item-header {
+
+
+
+
+
+
+
+    bottom: 10px;
+
+
+
+
+
+
+
+    right: 0;
+
+
+
+
+
+
+
+    left: 0;
+
+
+
+
+
+
+
+    position: absolute;
+
+
+
+
+
+
+
+    z-index: 1;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.booking-item-header .container {
+
+
+
+
+
+
+
+    background-color: rgba(0, 0, 0, 0.2);
+
+
+
+
+
+
+
+    padding: 10px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.read-more-show i {
+
+
+
+
+
+
+
+    padding-left: 3px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.booking-item-review-person{
+
+
+
+
+
+
+
+    text-align: center;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.booking-item-review-person .booking-item-review-person-name {
+
+
+
+
+
+
+
+    overflow: hidden;
+
+
+
+
+
+
+
+    text-overflow: ellipsis;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.booking-item-review-person {
+
+
+
+
+
+
+
+    text-align: center;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Blog page*/
+
+
+
+
+
+
+
+.post-header .hover-img > img {
+
+
+
+    max-height: 540px;
+
+
+
+    object-fit: cover;
+
+
+
+}
+
+
+
+.post .post-inner .post-title {
+
+
+
+    font-size: 28px;
+
+
+
+}
+
+
+
+.static_page h2 {
+
+
+
+    color: #e04f67;
+
+
+
+    padding: 20px 0 10px;
+
+
+
+}
+
+
+
+.gray_bg
+
+
+
+{
+
+
+
+    /*background-color: #dddddd;*/
+
+
+
+}
+
+
+
+.blog_bg .static_page
+
+
+
+{
+
+
+
+    background-color: #ffffff;
+
+
+
+}
+
+
+
+
+
+
+
+/*service page*/
+
+
+
+
+
+
+
+.services {
+
+
+
+    /*background-color: #d6d0c2;*/
+
+
+
+    padding-bottom: 30px;
+
+
+
+}
+
+
+
+
+
+
+
+.services .title_ p {
+
+
+
+    font-size: 18px;
+
+
+
+    margin: 0;
+
+
+
+    padding: 10px 15px;
+
+
+
+}
+
+
+
+
+
+
+
+.services .title_ h2 {
+
+
+
+    font-size: 30px;
+
+
+
+    margin: 0;
+
+
+
+    padding: 10px 15px;
+
+
+
+}
+
+
+
+.services > img {
+
+
+    width: 100%;
+    max-height: 650px;
+
+
+
+    object-fit: cover;
+
+
+
+}
+
+
+
+.services .title_ {
+
+
+
+    border-bottom: 1px solid #565656;
+
+
+
+    border-top: 1px solid #565656;
+
+
+
+    float: left;
+
+
+
+    width: 100%;
+
+
+
+    margin: 15px 0 30px;
+
+
+
+}
+
+
+
+.services h4 label {
+
+
+
+    bottom: -30px;
+
+
+
+    left: 0;
+
+
+
+    position: absolute;
+
+
+
+    right: 0;
+
+
+
+    z-index: 2;
+
+
+
+}
+
+
+
+
+
+
+
+.services h4 label span {
+
+
+
+    background-color: #ffffff;
+
+
+
+    display: inline-block;
+
+
+
+    font-size: 22px;
+
+
+
+    padding: 10px;
+
+
+
+}
+
+
+
+.services i {
+
+
+
+    display: block;
+
+
+
+    font-size: 45px;
+
+
+
+    margin: 15px auto 35px;
+
+
+
+    text-align: center;
+
+
+
+}
+
+
+
+.services h4 {
+
+
+
+    border-bottom: 1px solid #565656;
+
+
+
+    margin-bottom: 20px;
+
+
+
+    position: relative;
+
+
+
+    text-align: center;
+
+
+
+}
+
+
+
+.contact_bg .parsley-error-list {
+
+
+
+    color: #ff0000;
+
+
+
+    padding: 0;
+
+
+
+}
+
+
+
+.contact_bg
+
+
+
+{
+
+
+
+ /*   background-color: #fff7e9;*/
+
+
+
+}
+
+
+
+div.loading-invisible{
+
+
+
+    display:none;
+
+
+
+}
+
+
+
+
+
+
+
+/*For Preloader*/
+
+
+
+#loading{
+
+
+
+    background:#5bacc1;
+
+
+
+    height: 100%;
+
+
+
+    width: 100%;
+
+
+
+    position: fixed;
+
+
+
+    z-index:9999999;
+
+
+
+    margin-top: 0px;
+
+
+
+    top: 0px;
+
+
+
+    color:#fff;
+
+
+
+    text-align:center;
+
+
+
+    font-size:18px;
+
+
+
+    letter-spacing:4px;
+
+
+
+}
+
+
+
+
+
+
+
+.loading-center{
+
+
+
+    width: 100%;
+
+
+
+    height: 100%;
+
+
+
+    position: relative;
+
+
+
+}
+
+
+
+
+
+
+
+.loading-center-absolute {
+
+
+
+    position: absolute;
+
+
+
+    left: 50%;
+
+
+
+    top: 50%;
+
+
+
+    height: 50px;
+
+
+
+    width: 150px;
+
+
+
+    margin-top: -25px;
+
+
+
+    margin-left: -75px;
+
+
+
+
+
+
+
+}
+
+
+
+/*404 page*/
+
+
+
+.error_page {
+
+
+
+    padding: 60px 0px 20px;text-align: center;
+
+
+
+}
+
+
+
+.error_page .btn-ghost.btn-white
+
+
+
+{background-color: #e04f67;color:#ffffff;}
+
+
+
+.error_page .text-hero{font-size: 160px;}
+
+
+
+
+
+
+
+.trendy img, .deals img, .special img {
+
+
+
+    object-fit: cover;
+
+
+
+}
+.sticky .navbar-toggle .icon-bar {
+    background-color: #333333;
+}
+.sticky .navbar-toggle {
+    border-color: #333333;
+}
+#access_link.sign_up:before{content:"\e981";}
+.search-tabs h2 {margin-top: 0;}
+footer .row > div.full_width {min-height: 250px;}
+.caroufredsel_wrapper .booking-item.booking-item-small .booking-item-title {
+  overflow: hidden;
+  height: 43px;
+}
+@media screen and ( min-width : 1200px)
+ {
+    .booking-item .price_block
+    {
+        height: 220px;
+        /*display: table;*/
+        padding-top: 40px;
+         border-left: 1px solid #dddddd;
+    }
+    .booking-item .price_block .price_center
+    {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+}
+@media screen and ( max-width : 767px)
+{
+    .choose_us .thumb
+    {
+        min-height: auto;
+    }
+     .last_deal_bg .text-white h2{font-size:24px;}
+    .last-minute-title {
+    font-size: 25px;
+    }
+    .search-tabs-bottom
+    {
+        bottom:15px;
+        position: relative;
+    }
+    .bg-holder > .bg-video, .bg-holder > .bg-front
+
+    {
+        position: relative;
+    }
+    .bg-img{display: none;}
+    .top-area
+    {
+        height: auto;
+    }
+}
+@media (min-width: 768px) and (max-width: 1000px){
+ .top-area{
+    height: 430px;
+    }
+}
+@media screen and (max-width: 500px){
+    .full_width
+    {
+        width: 100% !important;
+    }
+}
+@media (min-width: 501px) and (max-width: 1023px){
+    #main-footer .full_width {
+        min-height: 220px;
+    }
+}
+@media (min-width: 768px){
+    .center_menu, .dropdown-access
+    {
+        margin: 20px 0px 0px;
+    }
+}
+@media(max-width: 767px)
+{
+    .sticky ul#top_tools, ul#top_tools{margin:0 50px 0 0;}
+}
+@media(max-width: 479px)
+{
+    .dropdown-access .dropdown-menu{right: -160px;}
+    .dropdown-access .dropdown-menu:before {border: 0 none;}
+}
+/*Login page*/
+
+.log_box img {   
+
+ height: 39px;   
+
+  width: 180px;  
+
+ }
+.facebook_return{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    background: rgba(0, 0, 0, 0) url("../img/facebook_return.jpg") no-repeat fixed 0 -260px / 100%;
+    z-index: -1;
+}
+.twitte.facebook_return{background-image:url("../img/twitter_return.jpg");}
+.alert-box.success h2
+{
+    position: relative;
+    top: 175px;
+    text-align: center;
+    z-index: 1;
+    color:#ffffff;
+}
+.space-top {
+    height: 60px;
+    background-color: #333;
+}
+
+.hide_blok {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    display: none;
+}
+.navbar-toggle{
+    border-color: #ffffff;
+    margin: 0;
+    position: absolute;
+    right: -50px;
+    top: -5px;
+}
+.navbar-collapse{margin: 0;width: 100%;}
