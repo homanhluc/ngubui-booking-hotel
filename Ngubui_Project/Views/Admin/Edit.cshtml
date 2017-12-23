@@ -5,13 +5,13 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-
-<h2>@Model.DiaChi</h2>
+<h3>Khách sạn: <i style="color:#F7584C">@Model.TieuDe</i></h3>
+<h3>Địa chỉ: <i style="color:#F7584C">@Model.DiaChi</i></h3>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ID_Room)
@@ -31,13 +31,15 @@
         @Html.HiddenFor(model => model.TieuDe)
         @Html.HiddenFor(model => model.ToaDo)
         @Html.HiddenFor(model => model.Wifi)
-        @Html.HiddenFor(model => model.XetDuyet,  new { @Value = "Có" } )
+        @Html.HiddenFor(model => model.XetDuyet, new { @Value = "Có" })
 
         
 
         <div>
             <div id="map"></div>
         </div>
+        <h3 style="color:#3878C7">BẢN ĐỒ XÁC THỰC</h3>
+        <div>@RenderPage("~/Views/Admin/GisMap.cshtml")</div>
         <br />
         <div class="form-group">
             <div class="row">
@@ -49,6 +51,8 @@
                     </div>
                 </div>
         </div>
+
+       
     </div>
 }
 

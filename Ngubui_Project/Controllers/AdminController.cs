@@ -14,7 +14,10 @@ namespace Ngubui_Project.Controllers
     {
         // GET: Admin
         NgubuiEntities db = new NgubuiEntities();
-        
+        public ActionResult GisMap()
+        {
+            return View();
+        }
         public ActionResult Notcheck(int? page)
         {
             var listNewRooms = (from p in db.ROOM_NAME_DETAIL

@@ -1,0 +1,71 @@
+﻿<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>
+        DevLabs - Display a Web Map
+    </title>
+    <style>
+        #viewDiv {
+            height: 450px;
+            width: 1020px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.6/esri/css/main.css">
+    <script src="https://js.arcgis.com/4.6/"></script>
+    <script>
+        require([
+            "esri/WebMap",
+            "esri/views/MapView",
+            "esri/widgets/Search",
+            "dojo/domReady!"
+        ], function (WebMap, MapView, Search) {
+
+            var webmap = new WebMap({
+                portalItem: {
+                    id: "248865f840aa4621a23c7160c0087162"
+                }
+            });
+
+            var view = new MapView({
+                container: "viewDiv",
+                map: webmap
+            });
+            var searchWidget = new Search({
+                view: view,
+                sources: [{
+                    featureLayer: {
+                        url: "https://services8.arcgis.com/iSH3qpTNbbdmKHg8/arcgis/rest/services/layer_hotel/FeatureServer/0",
+                        popupTemplate: { // autocasts as new PopupTemplate()
+                            title: "Khách sạn: {name_hotel}",
+                            content: "Thuộc tuyến đường {name_path}</br><img src='{path_image}'/>",
+                            overwriteActions: false
+                        }
+                    },
+                    searchFields: ["name_hotel", "name_path"],
+                    suggestionTemplate: "Khách sạn {name_hotel}, đường {name_path}",
+                    exactMatch: true,
+                    outFields: ["*"],
+                    placeholder: "Nhập tên khách sạn...",
+                    name: "Khách sạn",
+                    zoomScale: 10000,
+                    resultSymbol: {
+                        type: "picture-marker", // autocasts as new PictureMarkerSymbol()
+                        url: "http://i68.tinypic.com/jrczzd.jpg",
+                        height: 40,
+                        width: 40
+                    }
+                }]
+            });
+
+            // Add the search widget to the top left corner of the view
+            view.ui.add(searchWidget, {
+                position: "top-right"
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="viewDiv"></div>
+</body>
+</html>
