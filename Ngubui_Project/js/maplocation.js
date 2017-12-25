@@ -14,7 +14,7 @@ if (!document.getElementById('googleMapAPI')) {
     var s = document.createElement('script');
     s.type = 'text/javascript';
     s.id = 'googleMapAPI';
-    s.src = 'https://maps.google.com/maps/api/js?key=AIzaSyBmakwIjdQn-ZZi9VdDpG9Bc17AJvppfSc&libraries=places&callback=controlMap';
+    s.src = 'https://maps.google.com/maps/api/js?key=AIzaSyBla7okNiyEgRrlfZ0AHuy-uAGV9NYq-9M&libraries=places&callback=controlMap';
     document.body.appendChild(s);
 } else {
     controlMap();
